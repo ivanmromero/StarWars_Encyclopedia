@@ -12,10 +12,10 @@
 		D2360ADB28EE572E0010847F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360ADA28EE572E0010847F /* ViewController.swift */; };
 		D2360ADE28EE572E0010847F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2360ADC28EE572E0010847F /* Main.storyboard */; };
 		D2360AE028EE57300010847F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2360ADF28EE57300010847F /* Assets.xcassets */; };
-		D2360AE328EE57300010847F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D2360AE128EE57300010847F /* LaunchScreen.storyboard */; };
 		D2360AEE28EE57300010847F /* StarWars_EncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AED28EE57300010847F /* StarWars_EncyclopediaTests.swift */; };
 		D2360AF828EE57300010847F /* StarWars_EncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AF728EE57300010847F /* StarWars_EncyclopediaUITests.swift */; };
 		D2360AFA28EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AF928EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift */; };
+		D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,13 +42,13 @@
 		D2360ADA28EE572E0010847F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2360ADD28EE572E0010847F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D2360ADF28EE57300010847F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D2360AE228EE57300010847F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D2360AE428EE57300010847F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2360AE928EE57300010847F /* StarWars EncyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StarWars EncyclopediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2360AED28EE57300010847F /* StarWars_EncyclopediaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars_EncyclopediaTests.swift; sourceTree = "<group>"; };
 		D2360AF328EE57300010847F /* StarWars EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StarWars EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2360AF728EE57300010847F /* StarWars_EncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars_EncyclopediaUITests.swift; sourceTree = "<group>"; };
 		D2360AF928EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars_EncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +104,8 @@
 				D2360ADA28EE572E0010847F /* ViewController.swift */,
 				D2360ADC28EE572E0010847F /* Main.storyboard */,
 				D2360ADF28EE57300010847F /* Assets.xcassets */,
-				D2360AE128EE57300010847F /* LaunchScreen.storyboard */,
 				D2360AE428EE57300010847F /* Info.plist */,
+				D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */,
 			);
 			path = "StarWars Encyclopedia";
 			sourceTree = "<group>";
@@ -231,7 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D2360AE328EE57300010847F /* LaunchScreen.storyboard in Resources */,
+				D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */,
 				D2360AE028EE57300010847F /* Assets.xcassets in Resources */,
 				D2360ADE28EE572E0010847F /* Main.storyboard in Resources */,
 			);
@@ -303,14 +303,6 @@
 				D2360ADD28EE572E0010847F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		D2360AE128EE57300010847F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D2360AE228EE57300010847F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -441,7 +433,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "StarWars Encyclopedia/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -469,7 +461,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "StarWars Encyclopedia/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.xib;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
