@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SfDistantGalaxyItalic.ttf">
+            <string>SFDistantGalaxy-Italic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" rowHeight="111" id="KGk-i7-Jjw" customClass="CategoryTableViewCell" customModule="StarWars_Encyclopedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="266" height="111"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="266" height="111"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hji-Gj-wpu">
+                        <rect key="frame" x="0.0" y="0.0" width="266" height="111"/>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QhY-nX-rc8">
+                        <rect key="frame" x="0.0" y="71" width="266" height="40"/>
+                        <color key="backgroundColor" name="StarWarsColor"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="9t9-Eo-9nf"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="SFDistantGalaxy-Italic" family="SF Distant Galaxy" pointSize="20"/>
+                        <color key="textColor" name="TextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <constraints>
+                    <constraint firstItem="hji-Gj-wpu" firstAttribute="trailing" secondItem="QhY-nX-rc8" secondAttribute="trailing" symbolic="YES" id="7A2-sh-BP3"/>
+                    <constraint firstAttribute="trailing" secondItem="hji-Gj-wpu" secondAttribute="trailing" id="Hq7-lz-tyf"/>
+                    <constraint firstAttribute="bottom" secondItem="hji-Gj-wpu" secondAttribute="bottom" id="Qbd-ka-mlr"/>
+                    <constraint firstItem="hji-Gj-wpu" firstAttribute="bottom" secondItem="QhY-nX-rc8" secondAttribute="bottom" id="aaG-mB-WA2"/>
+                    <constraint firstItem="hji-Gj-wpu" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="bbf-sC-AOD"/>
+                    <constraint firstItem="hji-Gj-wpu" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="cGW-Ii-ygF"/>
+                    <constraint firstItem="QhY-nX-rc8" firstAttribute="leading" secondItem="hji-Gj-wpu" secondAttribute="leading" id="msg-nX-8nG"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="categoryImage" destination="hji-Gj-wpu" id="BIm-z0-VEc"/>
+                <outlet property="categoryName" destination="QhY-nX-rc8" id="002-eS-13w"/>
+            </connections>
+            <point key="canvasLocation" x="-4.615384615384615" y="12.440758293838861"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="StarWarsColor">
+            <color red="1" green="0.83499997854232788" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

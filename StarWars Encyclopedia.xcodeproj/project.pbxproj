@@ -9,11 +9,20 @@
 /* Begin PBXBuildFile section */
 		D2360AD728EE572E0010847F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AD628EE572E0010847F /* AppDelegate.swift */; };
 		D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AD828EE572E0010847F /* SceneDelegate.swift */; };
-		D2360ADB28EE572E0010847F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360ADA28EE572E0010847F /* ViewController.swift */; };
 		D2360AE028EE57300010847F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2360ADF28EE57300010847F /* Assets.xcassets */; };
 		D2360AEE28EE57300010847F /* StarWars_EncyclopediaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AED28EE57300010847F /* StarWars_EncyclopediaTests.swift */; };
 		D2360AF828EE57300010847F /* StarWars_EncyclopediaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AF728EE57300010847F /* StarWars_EncyclopediaUITests.swift */; };
 		D2360AFA28EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AF928EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift */; };
+		D2A0DA1D28F1FD39006FF15C /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A0DA1B28F1FD39006FF15C /* CategoryTableViewCell.swift */; };
+		D2A0DA1E28F1FD39006FF15C /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA1C28F1FD39006FF15C /* CategoryTableViewCell.xib */; };
+		D2A0DA2028F221D2006FF15C /* CategoriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A0DA1F28F221D2006FF15C /* CategoriesViewModel.swift */; };
+		D2A0DA3228F22C05006FF15C /* Starjedi.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA2C28F22C04006FF15C /* Starjedi.ttf */; };
+		D2A0DA3328F22C05006FF15C /* Starjhol.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA2D28F22C04006FF15C /* Starjhol.ttf */; };
+		D2A0DA3428F22C05006FF15C /* NewsCycle-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA2E28F22C04006FF15C /* NewsCycle-Regular.ttf */; };
+		D2A0DA3528F22C05006FF15C /* Starjedi.ttf.old.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA2F28F22C04006FF15C /* Starjedi.ttf.old.ttf */; };
+		D2A0DA3628F22C05006FF15C /* SfDistantGalaxyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA3028F22C04006FF15C /* SfDistantGalaxyItalic.ttf */; };
+		D2A0DA3728F22C05006FF15C /* NewsCycle-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2A0DA3128F22C05006FF15C /* NewsCycle-Bold.ttf */; };
+		D2A0DA3B28F22D13006FF15C /* CategoriesEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A0DA3A28F22D13006FF15C /* CategoriesEnums.swift */; };
 		D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */; };
 		D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */; };
 		D2B80C2428F1E1BF0021F4AD /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */; };
@@ -40,7 +49,6 @@
 		D2360AD328EE572E0010847F /* StarWars Encyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StarWars Encyclopedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2360AD628EE572E0010847F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2360AD828EE572E0010847F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D2360ADA28EE572E0010847F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2360ADF28EE57300010847F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D2360AE428EE57300010847F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D2360AE928EE57300010847F /* StarWars EncyclopediaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StarWars EncyclopediaTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -48,9 +56,19 @@
 		D2360AF328EE57300010847F /* StarWars EncyclopediaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "StarWars EncyclopediaUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2360AF728EE57300010847F /* StarWars_EncyclopediaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars_EncyclopediaUITests.swift; sourceTree = "<group>"; };
 		D2360AF928EE57300010847F /* StarWars_EncyclopediaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWars_EncyclopediaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		D2A0DA1B28F1FD39006FF15C /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		D2A0DA1C28F1FD39006FF15C /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		D2A0DA1F28F221D2006FF15C /* CategoriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewModel.swift; sourceTree = "<group>"; };
+		D2A0DA2C28F22C04006FF15C /* Starjedi.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf; sourceTree = "<group>"; };
+		D2A0DA2D28F22C04006FF15C /* Starjhol.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjhol.ttf; sourceTree = "<group>"; };
+		D2A0DA2E28F22C04006FF15C /* NewsCycle-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewsCycle-Regular.ttf"; sourceTree = "<group>"; };
+		D2A0DA2F28F22C04006FF15C /* Starjedi.ttf.old.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Starjedi.ttf.old.ttf; sourceTree = "<group>"; };
+		D2A0DA3028F22C04006FF15C /* SfDistantGalaxyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SfDistantGalaxyItalic.ttf; sourceTree = "<group>"; };
+		D2A0DA3128F22C05006FF15C /* NewsCycle-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NewsCycle-Bold.ttf"; sourceTree = "<group>"; };
+		D2A0DA3A28F22D13006FF15C /* CategoriesEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesEnums.swift; sourceTree = "<group>"; };
 		D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
-		D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesViewController.swift; sourceTree = "<group>"; };
-		D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoriesViewController.xib; sourceTree = "<group>"; };
+		D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesViewController.swift; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.swift"; sourceTree = SOURCE_ROOT; };
+		D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoriesViewController.xib; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +96,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D21F88D128F1F2DD00C62CA3 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				D2A0DA1B28F1FD39006FF15C /* CategoryTableViewCell.swift */,
+				D2A0DA1C28F1FD39006FF15C /* CategoryTableViewCell.xib */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
 		D2360ACA28EE572E0010847F = {
 			isa = PBXGroup;
 			children = (
@@ -101,12 +128,13 @@
 		D2360AD528EE572E0010847F /* StarWars Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				D2A0DA3828F22CDC006FF15C /* Utils */,
+				D2A0DA2B28F22BE7006FF15C /* Fonts */,
 				D2B80C1F28F1E05A0021F4AD /* Models */,
 				D2B80C1E28F1E0570021F4AD /* ViewModels */,
 				D2B80C1D28F1E0530021F4AD /* Views */,
 				D2360AD628EE572E0010847F /* AppDelegate.swift */,
 				D2360AD828EE572E0010847F /* SceneDelegate.swift */,
-				D2360ADA28EE572E0010847F /* ViewController.swift */,
 				D2360ADF28EE57300010847F /* Assets.xcassets */,
 				D2360AE428EE57300010847F /* Info.plist */,
 				D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */,
@@ -131,10 +159,39 @@
 			path = "StarWars EncyclopediaUITests";
 			sourceTree = "<group>";
 		};
+		D2A0DA2B28F22BE7006FF15C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D2A0DA3128F22C05006FF15C /* NewsCycle-Bold.ttf */,
+				D2A0DA2E28F22C04006FF15C /* NewsCycle-Regular.ttf */,
+				D2A0DA3028F22C04006FF15C /* SfDistantGalaxyItalic.ttf */,
+				D2A0DA2C28F22C04006FF15C /* Starjedi.ttf */,
+				D2A0DA2F28F22C04006FF15C /* Starjedi.ttf.old.ttf */,
+				D2A0DA2D28F22C04006FF15C /* Starjhol.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		D2A0DA3828F22CDC006FF15C /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				D2A0DA3928F22CE4006FF15C /* Enums */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		D2A0DA3928F22CE4006FF15C /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				D2A0DA3A28F22D13006FF15C /* CategoriesEnums.swift */,
+			);
+			path = Enums;
+			sourceTree = "<group>";
+		};
 		D2B80C1D28F1E0530021F4AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				D2B80C2028F1E0F90021F4AD /* Categorys */,
+				D2FDDB6228F1F24C005200FD /* Categories */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -142,6 +199,7 @@
 		D2B80C1E28F1E0570021F4AD /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				D2A0DA1F28F221D2006FF15C /* CategoriesViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -153,13 +211,14 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
-		D2B80C2028F1E0F90021F4AD /* Categorys */ = {
+		D2FDDB6228F1F24C005200FD /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D21F88D128F1F2DD00C62CA3 /* Category */,
 				D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */,
 				D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */,
 			);
-			path = Categorys;
+			path = Categories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +326,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				D2B80C2428F1E1BF0021F4AD /* CategoriesViewController.xib in Resources */,
+				D2A0DA3328F22C05006FF15C /* Starjhol.ttf in Resources */,
 				D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */,
+				D2A0DA3428F22C05006FF15C /* NewsCycle-Regular.ttf in Resources */,
 				D2360AE028EE57300010847F /* Assets.xcassets in Resources */,
+				D2A0DA3228F22C05006FF15C /* Starjedi.ttf in Resources */,
+				D2A0DA1E28F1FD39006FF15C /* CategoryTableViewCell.xib in Resources */,
+				D2A0DA3528F22C05006FF15C /* Starjedi.ttf.old.ttf in Resources */,
+				D2A0DA3628F22C05006FF15C /* SfDistantGalaxyItalic.ttf in Resources */,
+				D2A0DA3728F22C05006FF15C /* NewsCycle-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,9 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D2A0DA1D28F1FD39006FF15C /* CategoryTableViewCell.swift in Sources */,
 				D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */,
-				D2360ADB28EE572E0010847F /* ViewController.swift in Sources */,
+				D2A0DA3B28F22D13006FF15C /* CategoriesEnums.swift in Sources */,
 				D2360AD728EE572E0010847F /* AppDelegate.swift in Sources */,
+				D2A0DA2028F221D2006FF15C /* CategoriesViewModel.swift in Sources */,
 				D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
