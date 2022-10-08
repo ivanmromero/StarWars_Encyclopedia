@@ -13,6 +13,10 @@ class CategoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCell()
+    }
+    
+    func setupCell() {
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius = 15
         self.selectionStyle = .none
