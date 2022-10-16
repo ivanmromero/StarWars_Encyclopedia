@@ -26,4 +26,21 @@ enum Categories: String, CaseIterable {
             return UIImage(named: "vehicles")!
         }
     }
+    
+    func getSingularCategoriesRawValue() -> String {
+        switch self {
+        case .people:
+            return "people"
+        case .films:
+            return "film"
+        case .planets:
+            return "planet"
+        case .species:
+            return "specie"
+        case .starships:
+            return "starship"
+        case .vehicles:
+            return "vehicle"
+        }
+    }
 }

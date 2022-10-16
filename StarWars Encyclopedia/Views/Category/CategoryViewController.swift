@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import iProgressHUD
 
 class CategoryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -13,6 +14,7 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel: CategoryViewModel = CategoryViewModel()
+    private let iprogress: iProgressHUD = iProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,12 +22,27 @@ class CategoryViewController: UIViewController {
         setupCollectionView()
         setupCategoryLabel()
         setupBackButton()
+        setupSpinner()
         viewModel.getData {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
         }
     }
+    
+    private func setupSpinner() {
+        iprogress.captionSize = 15
+        iprogress.isShowModal = false
+        iprogress.isShowBox = false
+        iprogress.iprogressStyle = .horizontal
+        iprogress.indicatorStyle = .ballRotateChase
+        iprogress.alphaModal = 0.7
+        iprogress.indicatorColor = UIColor(named: "StarWarsColor")!
+        iprogress.attachProgress(toView: self.collectionView)
+
+        collectionView.showProgress()
+    }
+    
     private func setupCollectionView() {
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -35,7 +52,7 @@ class CategoryViewController: UIViewController {
     private func setupSearchBar() {
         searchBar.searchTextField.backgroundColor = .black
         searchBar.searchTextField.textColor = UIColor(named: "StarWarsColor")
-        searchBar.placeholder = "Find your favorite \(CategoryManager.shared.category!.rawValue)"
+        searchBar.placeholder = "Find your favorite \(CategoryManager.shared.category!.getSingularCategoriesRawValue())"
         searchBar.delegate = self
     }
     
@@ -83,6 +100,7 @@ extension CategoryViewController: UICollectionViewDataSource {
                     }
                 }
             }
+            collectionView.dismissProgress()
         }
         return cell
     }

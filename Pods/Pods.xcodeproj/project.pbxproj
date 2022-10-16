@@ -1,0 +1,1142 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		09E993421FA47DE8618865C05D18D025 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		0B6A3541E520EF38699C1AD06EF71CD3 /* NVActivityIndicatorViewable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2340A86E5D7A79E86574F33ADF1C1F88 /* NVActivityIndicatorViewable.swift */; };
+		0C0DF504BCC5E89C8CC3559DC424F8D5 /* iProgressHUD-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 280942028DAC88CA6872283A99749FA8 /* iProgressHUD-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0F584F40E062BBF8EDAF45B85A68FBCA /* NVActivityIndicatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9008C86A4A5287F9F4BB5997F3AC960B /* NVActivityIndicatorPresenter.swift */; };
+		11A923C8E3FAFB5258926E5881F907F9 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64E202ABDB41EAA940DBCDA5E296ECD /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */; };
+		1256727F1219FBAA2E7A70C56AEDCC32 /* Pods-StarWars Encyclopedia-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AA79CDF11F453F463EFB995012011566 /* Pods-StarWars Encyclopedia-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1369334E38A23A179186509384820823 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EC4DCB35A683A7E0AFB8834D499C79A /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */; };
+		1560FB011B7F40409DDC6075A03813BC /* Pods-StarWars EncyclopediaTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 4FBD81DD40508E7BD6DA20049A49CE5D /* Pods-StarWars EncyclopediaTests-dummy.m */; };
+		1825803A66FB6A916F994E9EDD2B388B /* NVActivityIndicatorAnimationBallBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7DBC232F636779C1C1DEE62DC4E0FE9 /* NVActivityIndicatorAnimationBallBeat.swift */; };
+		19F066044948A2CC1EF06B0A43B6E1C8 /* iProgressHUDGlobal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32D91985ED30FC0E99F3455D5DDDA285 /* iProgressHUDGlobal.swift */; };
+		1E602A5A4ADEAEF2E0A9DA08B508C65F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17588C68401D9969DF1326E5B404685F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */; };
+		1FE2F5D929FDD98648E6C0126C0750E7 /* iProgressHUD-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9CB9FC660E7CAF9453ACF214723A4D3 /* iProgressHUD-dummy.m */; };
+		22612F1D6D0EB5CCFF21DD80E24B9863 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50348A92CC278E6B7D928AD27BB4583B /* NVActivityIndicatorAnimationBallRotateChase.swift */; };
+		29BF856B93E8F4FE6E3FB9556E729CD6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B9CC173C020966E043BAC20F920DA /* NVActivityIndicatorAnimationBallScaleRipple.swift */; };
+		3369E09AEA91FEA23CCE1E519880ED5B /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67DB0132C47D2ED72059349F1A4A1BFC /* NVActivityIndicatorAnimationSquareSpin.swift */; };
+		368D43C51B1E6FAF4FB91EEBAAFA0632 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 66B469A05611F9A54A008AA906AE7EFF /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		36BC158C478827A074CB42C1392A5286 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		3B93569D49664DAB2E9CCC1C52BA3247 /* Pods-StarWars EncyclopediaTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3FE3873C13137F7ACE051DE96959AA23 /* Pods-StarWars EncyclopediaTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3C581CB004CAADA10C1F28DF8FE934BD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		3DF6043D42FAB5AC5EC3DE5F717FEFC5 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 430B5D005A68D7811F159AE6BA2C1B12 /* NVActivityIndicatorAnimationCubeTransition.swift */; };
+		3EE154C247A5E330ED4E7D1EEBCD3813 /* iProgressHUDDelegete.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C67D215C77AEC04C278852F400D0B4F /* iProgressHUDDelegete.swift */; };
+		445C5EB0F32AF31F858DD9CB52B61B93 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = E84BF4E1111BE514A369F0F384CFB10D /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */; };
+		4749F270B7D9AF3E3C8DB5B34F395718 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AA1DC0747690D23B62AC5CC1C5F0203 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */; };
+		4C3D3648D3B8162F988313C3DC1CC0DE /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C74BF92E9B19363AE2AEA74BE87072D /* NVActivityIndicatorAnimationLineScaleParty.swift */; };
+		4C4A6FC81CF3D9713D6A14441EF8A3E9 /* NVActivityIndicatorAnimationOrbit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1330B8479429196F0C9FE273553B2C /* NVActivityIndicatorAnimationOrbit.swift */; };
+		53B3A85322FC371491EACAE728DFE1FE /* NVActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551543D8CEA3E1744F9CA2B1B67B2750 /* NVActivityIndicatorView.swift */; };
+		582CB1D9E2BE5E8A84BD3A9C026F1553 /* NVActivityIndicatorAnimationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 429CD8DBFFB217E8F0952B24A2167D5B /* NVActivityIndicatorAnimationDelegate.swift */; };
+		5972592764F4D8B9B174A1D49EEDAB95 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49B20228F4249CB2E29F17BB73DC29B /* NVActivityIndicatorAnimationBallGridPulse.swift */; };
+		6156F35C847542D47BCA573B63BD2311 /* iProgressHUD.h in Headers */ = {isa = PBXBuildFile; fileRef = 087D8725DC73A1E07B7D133611DDDF80 /* iProgressHUD.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		63F3DDD4CDA28499F09BB241E09D9E58 /* Pods-StarWars Encyclopedia-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 446F92F7DC3CF1044521BC84372C01C4 /* Pods-StarWars Encyclopedia-dummy.m */; };
+		7100E8E5F7D79F849F6F6C004ABEF7F7 /* NVActivityIndicatorAnimationBallScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43EB011B4DF90E8D56F8B22B1E4F291A /* NVActivityIndicatorAnimationBallScale.swift */; };
+		71211533927975D052B0313AA01D247C /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2F1D275429FA57999B741EC7ABA9930 /* NVActivityIndicatorAnimationBallTrianglePath.swift */; };
+		7124D06BCD0A9FB3E2754B88A139A3BF /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F412D0C060A89C042AAB66CF4937656 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */; };
+		716630CAFCEB8B24D931B5102AC0D3E9 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F0394E03C029615FB98D5D10A804B61 /* NVActivityIndicatorAnimationBallZigZag.swift */; };
+		7F5F37CCFD148BDF4E44684C3219C550 /* NVActivityIndicatorAnimationBlank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 029C8E51B260283CB124C0F8C7D333A6 /* NVActivityIndicatorAnimationBlank.swift */; };
+		835A29607A512E21E7138CFEE26FBEAF /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */; };
+		835D802A2E196A2C83EF8C747A9A0F7D /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3060BD88E94EE1D01670165EA0FC10F9 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */; };
+		8406DC4DC9977ABC26941A3FA03E5658 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B1FCC78AA3BA9CDC9CD5755AD70E33 /* NVActivityIndicatorAnimationBallPulseSync.swift */; };
+		89FFCEBD6CDEA4A6E995FBF63D9A611E /* NVActivityIndicatorAnimationPacman.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A6B6B5BF70FBE07A02C6377884F067 /* NVActivityIndicatorAnimationPacman.swift */; };
+		A4647D8B33487A46F19658644E1EC4D7 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFB027C310A5971F538DBD0B656A3C8 /* NVActivityIndicatorAnimationBallGridBeat.swift */; };
+		A9A07E39B25F22366B8497843E419F07 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39D0B316E8F60E8F295A219FC716858 /* NVActivityIndicatorAnimationBallClipRotate.swift */; };
+		A9A305E8A355DA3952245DCC32405F76 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E37FF067C8A407108CB6835D4EBCA5D /* NVActivityIndicatorAnimationSemiCircleSpin.swift */; };
+		B1F3191816B566F29E71E5AC554DEFE0 /* NVActivityIndicatorShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDA4AF59743D22085716C7630BE910C /* NVActivityIndicatorShape.swift */; };
+		BE0EE96B7BF9EEB1DE81197F7547A4C6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57AAE8636C540575090216A40227AAC6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */; };
+		C3930E729AF217A378697F426719832A /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A2BC2C39860820B655EC46FD7753D820 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m */; };
+		D2C90627B3181AC48ED27DA8D96D227E /* iProgressHUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 260A7115862A21859C8EAA4788A9919A /* iProgressHUD.swift */; };
+		D775E9075DA19A92E876D9A6FB4FB116 /* iProgressHUDUtilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7415B71308C13F32326DD5C9D6357DB4 /* iProgressHUDUtilities.swift */; };
+		D83B153E0B2447A3F8EDF80B19F83C05 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D8614DE4CEC3EFDDB631A624585B48 /* NVActivityIndicatorAnimationAudioEqualizer.swift */; };
+		DA84222EEABF681D23727716DA55ECE4 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9A68956547641537E2D4D31F991CE54 /* NVActivityIndicatorAnimationBallPulseRise.swift */; };
+		DB6F1444E80F7CEDC9D81364FB192AA9 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */ = {isa = PBXBuildFile; fileRef = 042CB443CC74C5EE7393755E26090D38 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */; };
+		DED502871598332D4E4C15E6D9481695 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52FD530A2AF603A34B0C4F00EFB8563 /* NVActivityIndicatorAnimationBallRotate.swift */; };
+		E878B98E26D99BF8DC5C9E6A27115AD1 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E393AE2A0734DF77541A08A4E8AD066 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */; };
+		E8CD0EDE24B738CD368836DBF79B5196 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */; };
+		EC2F50E928AF5558502D2FB27ED92D74 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF728DEFABF6109211A5CDC7AB49691F /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */; };
+		F63296E236B27F22EED99A2A90C4D46F /* NVActivityIndicatorAnimationBallPulse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF5DD31709A5B41C07F865EC7F340A8 /* NVActivityIndicatorAnimationBallPulse.swift */; };
+		FEA699B819D129D84964FA5BE7CF6177 /* NVActivityIndicatorAnimationLineScale.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CE468182F2319745712085CA5044418 /* NVActivityIndicatorAnimationLineScale.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1A4BB00E32A0C0AAECB669288EB32637 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B350276D4749496E38AB8782E04E0C6A;
+			remoteInfo = iProgressHUD;
+		};
+		2DAC56A472C7081552B854DAD09E3C8F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B350276D4749496E38AB8782E04E0C6A;
+			remoteInfo = iProgressHUD;
+		};
+		CA041D21C529315D5193DA05D4BFF29E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 268768F667FEAB56AD486F849520BB7E;
+			remoteInfo = "Pods-StarWars Encyclopedia";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		029C8E51B260283CB124C0F8C7D333A6 /* NVActivityIndicatorAnimationBlank.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBlank.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBlank.swift; sourceTree = "<group>"; };
+		042CB443CC74C5EE7393755E26090D38 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRippleMultiple.swift; sourceTree = "<group>"; };
+		087D8725DC73A1E07B7D133611DDDF80 /* iProgressHUD.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = iProgressHUD.h; path = iProgressHUD/iProgressHUD/iProgressHUD.h; sourceTree = "<group>"; };
+		0AEE287C24AA94552A7853F38372592B /* Pods-StarWars Encyclopedia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars Encyclopedia.debug.xcconfig"; sourceTree = "<group>"; };
+		0E393AE2A0734DF77541A08A4E8AD066 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineSpinFadeLoader.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineSpinFadeLoader.swift; sourceTree = "<group>"; };
+		106B9CC173C020966E043BAC20F920DA /* NVActivityIndicatorAnimationBallScaleRipple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleRipple.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleRipple.swift; sourceTree = "<group>"; };
+		113898DB86A71DDB1A0EBCEF32FDCEE1 /* Pods-StarWars EncyclopediaTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars EncyclopediaTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		118BBFD066A284F43C2A9A27157E3BB2 /* Pods-StarWars Encyclopedia-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StarWars Encyclopedia-frameworks.sh"; sourceTree = "<group>"; };
+		17588C68401D9969DF1326E5B404685F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZagDeflect.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZagDeflect.swift; sourceTree = "<group>"; };
+		1AA1DC0747690D23B62AC5CC1C5F0203 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotatePulse.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotatePulse.swift; sourceTree = "<group>"; };
+		1CE468182F2319745712085CA5044418 /* NVActivityIndicatorAnimationLineScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScale.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScale.swift; sourceTree = "<group>"; };
+		22A6B6B5BF70FBE07A02C6377884F067 /* NVActivityIndicatorAnimationPacman.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationPacman.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationPacman.swift; sourceTree = "<group>"; };
+		2340A86E5D7A79E86574F33ADF1C1F88 /* NVActivityIndicatorViewable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorViewable.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Presenter/NVActivityIndicatorViewable.swift; sourceTree = "<group>"; };
+		260A7115862A21859C8EAA4788A9919A /* iProgressHUD.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iProgressHUD.swift; path = iProgressHUD/iProgressHUD/iProgressHUD.swift; sourceTree = "<group>"; };
+		280942028DAC88CA6872283A99749FA8 /* iProgressHUD-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iProgressHUD-umbrella.h"; sourceTree = "<group>"; };
+		2A1330B8479429196F0C9FE273553B2C /* NVActivityIndicatorAnimationOrbit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationOrbit.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationOrbit.swift; sourceTree = "<group>"; };
+		3060BD88E94EE1D01670165EA0FC10F9 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOut.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOut.swift; sourceTree = "<group>"; };
+		32D91985ED30FC0E99F3455D5DDDA285 /* iProgressHUDGlobal.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iProgressHUDGlobal.swift; path = iProgressHUD/iProgressHUD/iProgressHUDGlobal.swift; sourceTree = "<group>"; };
+		332CD2A3E4957C7414CB3BE37A0CCB2F /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.release.xcconfig"; sourceTree = "<group>"; };
+		3FE3873C13137F7ACE051DE96959AA23 /* Pods-StarWars EncyclopediaTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StarWars EncyclopediaTests-umbrella.h"; sourceTree = "<group>"; };
+		429CD8DBFFB217E8F0952B24A2167D5B /* NVActivityIndicatorAnimationDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationDelegate.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/NVActivityIndicatorAnimationDelegate.swift; sourceTree = "<group>"; };
+		430B5D005A68D7811F159AE6BA2C1B12 /* NVActivityIndicatorAnimationCubeTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCubeTransition.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCubeTransition.swift; sourceTree = "<group>"; };
+		43EB011B4DF90E8D56F8B22B1E4F291A /* NVActivityIndicatorAnimationBallScale.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScale.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScale.swift; sourceTree = "<group>"; };
+		446F92F7DC3CF1044521BC84372C01C4 /* Pods-StarWars Encyclopedia-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StarWars Encyclopedia-dummy.m"; sourceTree = "<group>"; };
+		47F5D6E78A98E3E21D652B0751A77747 /* Pods-StarWars Encyclopedia */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StarWars Encyclopedia"; path = Pods_StarWars_Encyclopedia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		48FA221D011D66C650A469F0A9EAC5DF /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-Info.plist"; sourceTree = "<group>"; };
+		4FBD81DD40508E7BD6DA20049A49CE5D /* Pods-StarWars EncyclopediaTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StarWars EncyclopediaTests-dummy.m"; sourceTree = "<group>"; };
+		4FCA9C61EA887FBFF957E80CF07CDA05 /* iProgressHUD.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iProgressHUD.release.xcconfig; sourceTree = "<group>"; };
+		50348A92CC278E6B7D928AD27BB4583B /* NVActivityIndicatorAnimationBallRotateChase.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotateChase.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotateChase.swift; sourceTree = "<group>"; };
+		547BD2A03CBC0CD637833C6580B69452 /* Pods-StarWars Encyclopedia-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars Encyclopedia-acknowledgements.plist"; sourceTree = "<group>"; };
+		551543D8CEA3E1744F9CA2B1B67B2750 /* NVActivityIndicatorView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorView.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/NVActivityIndicatorView.swift; sourceTree = "<group>"; };
+		57AAE8636C540575090216A40227AAC6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallScaleMultiple.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallScaleMultiple.swift; sourceTree = "<group>"; };
+		5C67D215C77AEC04C278852F400D0B4F /* iProgressHUDDelegete.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iProgressHUDDelegete.swift; path = iProgressHUD/iProgressHUD/iProgressHUDDelegete.swift; sourceTree = "<group>"; };
+		5DDA4AF59743D22085716C7630BE910C /* NVActivityIndicatorShape.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorShape.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/NVActivityIndicatorShape.swift; sourceTree = "<group>"; };
+		66B469A05611F9A54A008AA906AE7EFF /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h"; sourceTree = "<group>"; };
+		66B9634FE559752AD64940BD9FFEE6E5 /* Pods-StarWars EncyclopediaTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars EncyclopediaTests-Info.plist"; sourceTree = "<group>"; };
+		67DB0132C47D2ED72059349F1A4A1BFC /* NVActivityIndicatorAnimationSquareSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSquareSpin.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSquareSpin.swift; sourceTree = "<group>"; };
+		6C74BF92E9B19363AE2AEA74BE87072D /* NVActivityIndicatorAnimationLineScaleParty.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScaleParty.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScaleParty.swift; sourceTree = "<group>"; };
+		6CB30B55DBCEB91D403123A8DD8FBE21 /* iProgressHUD.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = iProgressHUD.modulemap; sourceTree = "<group>"; };
+		7415B71308C13F32326DD5C9D6357DB4 /* iProgressHUDUtilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = iProgressHUDUtilities.swift; path = iProgressHUD/iProgressHUD/iProgressHUDUtilities.swift; sourceTree = "<group>"; };
+		7C2967797D4F863D5FBB8EAE6DF2BC86 /* Pods-StarWars EncyclopediaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars EncyclopediaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		7EC4DCB35A683A7E0AFB8834D499C79A /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationTriangleSkewSpin.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationTriangleSkewSpin.swift; sourceTree = "<group>"; };
+		7EF5DD31709A5B41C07F865EC7F340A8 /* NVActivityIndicatorAnimationBallPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulse.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulse.swift; sourceTree = "<group>"; };
+		8124943BB128EB19BA9892EC9E4F2A18 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		8544F2E466DAEC937F36DA69F8183AE1 /* Pods-StarWars EncyclopediaTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StarWars EncyclopediaTests.modulemap"; sourceTree = "<group>"; };
+		89D8614DE4CEC3EFDDB631A624585B48 /* NVActivityIndicatorAnimationAudioEqualizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationAudioEqualizer.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationAudioEqualizer.swift; sourceTree = "<group>"; };
+		89EAA00D2457D263CA5D418EFA5B482A /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests"; path = Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8BFB027C310A5971F538DBD0B656A3C8 /* NVActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridBeat.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
+		8E37FF067C8A407108CB6835D4EBCA5D /* NVActivityIndicatorAnimationSemiCircleSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationSemiCircleSpin.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationSemiCircleSpin.swift; sourceTree = "<group>"; };
+		8FE85F81C6F009F7C0C5429345E2721E /* Pods-StarWars EncyclopediaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars EncyclopediaTests.release.xcconfig"; sourceTree = "<group>"; };
+		9008C86A4A5287F9F4BB5997F3AC960B /* NVActivityIndicatorPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorPresenter.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Presenter/NVActivityIndicatorPresenter.swift; sourceTree = "<group>"; };
+		908AD58F1B11657A8EA70CC1B8215543 /* Pods-StarWars Encyclopedia.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StarWars Encyclopedia.modulemap"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9F0394E03C029615FB98D5D10A804B61 /* NVActivityIndicatorAnimationBallZigZag.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallZigZag.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallZigZag.swift; sourceTree = "<group>"; };
+		9F412D0C060A89C042AAB66CF4937656 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationLineScalePulseOutRapid.swift; sourceTree = "<group>"; };
+		A28D65E5DA60C020165E7E642DA88A84 /* iProgressHUD.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = iProgressHUD.debug.xcconfig; sourceTree = "<group>"; };
+		A2BC2C39860820B655EC46FD7753D820 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m"; sourceTree = "<group>"; };
+		A2C4531B1475B2D721F5F4CEC9381769 /* iProgressHUD-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "iProgressHUD-prefix.pch"; sourceTree = "<group>"; };
+		A52FD530A2AF603A34B0C4F00EFB8563 /* NVActivityIndicatorAnimationBallRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallRotate.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallRotate.swift; sourceTree = "<group>"; };
+		A7B80A1F7997848797995A64F59B03B5 /* Pods-StarWars EncyclopediaTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StarWars EncyclopediaTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		A93AD6E0F26E9474CB20DD46501FE92D /* Pods-StarWars Encyclopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars Encyclopedia.release.xcconfig"; sourceTree = "<group>"; };
+		A9CB9FC660E7CAF9453ACF214723A4D3 /* iProgressHUD-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "iProgressHUD-dummy.m"; sourceTree = "<group>"; };
+		AA79CDF11F453F463EFB995012011566 /* Pods-StarWars Encyclopedia-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-StarWars Encyclopedia-umbrella.h"; sourceTree = "<group>"; };
+		B3A53ED6BB30C1B174F23875CE9AC721 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		B64E202ABDB41EAA940DBCDA5E296ECD /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotateMultiple.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotateMultiple.swift; sourceTree = "<group>"; };
+		B6B1FCC78AA3BA9CDC9CD5755AD70E33 /* NVActivityIndicatorAnimationBallPulseSync.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulseSync.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseSync.swift; sourceTree = "<group>"; };
+		B7D51407F1B2322E15D1D790671A59F6 /* Pods-StarWars EncyclopediaTests */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-StarWars EncyclopediaTests"; path = Pods_StarWars_EncyclopediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B9A68956547641537E2D4D31F991CE54 /* NVActivityIndicatorAnimationBallPulseRise.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallPulseRise.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallPulseRise.swift; sourceTree = "<group>"; };
+		C2F1D275429FA57999B741EC7ABA9930 /* NVActivityIndicatorAnimationBallTrianglePath.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallTrianglePath.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallTrianglePath.swift; sourceTree = "<group>"; };
+		C49B20228F4249CB2E29F17BB73DC29B /* NVActivityIndicatorAnimationBallGridPulse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridPulse.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallGridPulse.swift; sourceTree = "<group>"; };
+		C6C83254CDDD8719A97EFA88867D9C64 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-frameworks.sh"; sourceTree = "<group>"; };
+		C7DBC232F636779C1C1DEE62DC4E0FE9 /* NVActivityIndicatorAnimationBallBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallBeat.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallBeat.swift; sourceTree = "<group>"; };
+		C7F3009C46A1B0B31DEF83020F572862 /* iProgressHUD-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "iProgressHUD-Info.plist"; sourceTree = "<group>"; };
+		CF728DEFABF6109211A5CDC7AB49691F /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationCircleStrokeSpin.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationCircleStrokeSpin.swift; sourceTree = "<group>"; };
+		D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		D6FAB1F32A95C90C9910EE8281A5C041 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		DE8C8B1540AEFC232B0356065F466C22 /* Pods-StarWars Encyclopedia-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-StarWars Encyclopedia-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E84BF4E1111BE514A369F0F384CFB10D /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallSpinFadeLoader.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallSpinFadeLoader.swift; sourceTree = "<group>"; };
+		EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		EC24C6872B897BA6E9B2EFF90F16EE9B /* Pods-StarWars Encyclopedia-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-StarWars Encyclopedia-Info.plist"; sourceTree = "<group>"; };
+		F39D0B316E8F60E8F295A219FC716858 /* NVActivityIndicatorAnimationBallClipRotate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallClipRotate.swift; path = iProgressHUD/iProgressHUD/NVActivityIndicatorView/Animations/NVActivityIndicatorAnimationBallClipRotate.swift; sourceTree = "<group>"; };
+		F5F61692373D8170051B0CFD64BC34D4 /* iProgressHUD.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = iProgressHUD.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F7D3FE0CE9A86D5266B356B3CC11C763 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.modulemap"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		41EA0720119D2C16823788657743A5C5 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				36BC158C478827A074CB42C1392A5286 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		551EFD92DA98B03C412D7EC4B16C2BC1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				09E993421FA47DE8618865C05D18D025 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9D26AA6CFFC0F4A1AC1337470477623 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C581CB004CAADA10C1F28DF8FE934BD /* Foundation.framework in Frameworks */,
+				835A29607A512E21E7138CFEE26FBEAF /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1D670D4A2C2940AC5D3E41012836F77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8CD0EDE24B738CD368836DBF79B5196 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		34028C00D480F364F8CE8C7F40637306 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ECCE933EAA7146AEFC6AA35B5C912F11 /* iProgressHUD */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		4565F811A720B35E99FADE015B38D846 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6CB30B55DBCEB91D403123A8DD8FBE21 /* iProgressHUD.modulemap */,
+				A9CB9FC660E7CAF9453ACF214723A4D3 /* iProgressHUD-dummy.m */,
+				C7F3009C46A1B0B31DEF83020F572862 /* iProgressHUD-Info.plist */,
+				A2C4531B1475B2D721F5F4CEC9381769 /* iProgressHUD-prefix.pch */,
+				280942028DAC88CA6872283A99749FA8 /* iProgressHUD-umbrella.h */,
+				A28D65E5DA60C020165E7E642DA88A84 /* iProgressHUD.debug.xcconfig */,
+				4FCA9C61EA887FBFF957E80CF07CDA05 /* iProgressHUD.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/iProgressHUD";
+			sourceTree = "<group>";
+		};
+		4A01E86AC94C11444D18A86BC39D8D84 /* Pods-StarWars Encyclopedia */ = {
+			isa = PBXGroup;
+			children = (
+				908AD58F1B11657A8EA70CC1B8215543 /* Pods-StarWars Encyclopedia.modulemap */,
+				DE8C8B1540AEFC232B0356065F466C22 /* Pods-StarWars Encyclopedia-acknowledgements.markdown */,
+				547BD2A03CBC0CD637833C6580B69452 /* Pods-StarWars Encyclopedia-acknowledgements.plist */,
+				446F92F7DC3CF1044521BC84372C01C4 /* Pods-StarWars Encyclopedia-dummy.m */,
+				118BBFD066A284F43C2A9A27157E3BB2 /* Pods-StarWars Encyclopedia-frameworks.sh */,
+				EC24C6872B897BA6E9B2EFF90F16EE9B /* Pods-StarWars Encyclopedia-Info.plist */,
+				AA79CDF11F453F463EFB995012011566 /* Pods-StarWars Encyclopedia-umbrella.h */,
+				0AEE287C24AA94552A7853F38372592B /* Pods-StarWars Encyclopedia.debug.xcconfig */,
+				A93AD6E0F26E9474CB20DD46501FE92D /* Pods-StarWars Encyclopedia.release.xcconfig */,
+			);
+			name = "Pods-StarWars Encyclopedia";
+			path = "Target Support Files/Pods-StarWars Encyclopedia";
+			sourceTree = "<group>";
+		};
+		59D41BFD3C519D60C2132E226865927E /* Pods-StarWars EncyclopediaTests */ = {
+			isa = PBXGroup;
+			children = (
+				8544F2E466DAEC937F36DA69F8183AE1 /* Pods-StarWars EncyclopediaTests.modulemap */,
+				A7B80A1F7997848797995A64F59B03B5 /* Pods-StarWars EncyclopediaTests-acknowledgements.markdown */,
+				113898DB86A71DDB1A0EBCEF32FDCEE1 /* Pods-StarWars EncyclopediaTests-acknowledgements.plist */,
+				4FBD81DD40508E7BD6DA20049A49CE5D /* Pods-StarWars EncyclopediaTests-dummy.m */,
+				66B9634FE559752AD64940BD9FFEE6E5 /* Pods-StarWars EncyclopediaTests-Info.plist */,
+				3FE3873C13137F7ACE051DE96959AA23 /* Pods-StarWars EncyclopediaTests-umbrella.h */,
+				7C2967797D4F863D5FBB8EAE6DF2BC86 /* Pods-StarWars EncyclopediaTests.debug.xcconfig */,
+				8FE85F81C6F009F7C0C5429345E2721E /* Pods-StarWars EncyclopediaTests.release.xcconfig */,
+			);
+			name = "Pods-StarWars EncyclopediaTests";
+			path = "Target Support Files/Pods-StarWars EncyclopediaTests";
+			sourceTree = "<group>";
+		};
+		59DA5C1F72E1D5BABC43EACBA672C3BA /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				EAB6F611E86A4758835A715E4B4184F6 /* Foundation.framework */,
+				D245E0514AAC1A2B9A6D5EA2F383E90F /* UIKit.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		6EC33ADCB7CA27AAD925AA1299DE8C8E /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F7D3FE0CE9A86D5266B356B3CC11C763 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.modulemap */,
+				D6FAB1F32A95C90C9910EE8281A5C041 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.markdown */,
+				8124943BB128EB19BA9892EC9E4F2A18 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-acknowledgements.plist */,
+				A2BC2C39860820B655EC46FD7753D820 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m */,
+				C6C83254CDDD8719A97EFA88867D9C64 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-frameworks.sh */,
+				48FA221D011D66C650A469F0A9EAC5DF /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-Info.plist */,
+				66B469A05611F9A54A008AA906AE7EFF /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h */,
+				B3A53ED6BB30C1B174F23875CE9AC721 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig */,
+				332CD2A3E4957C7414CB3BE37A0CCB2F /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.release.xcconfig */,
+			);
+			name = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests";
+			path = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests";
+			sourceTree = "<group>";
+		};
+		8521001DB278290F64D850AE655E0B63 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F5F61692373D8170051B0CFD64BC34D4 /* iProgressHUD.framework */,
+				47F5D6E78A98E3E21D652B0751A77747 /* Pods-StarWars Encyclopedia */,
+				89EAA00D2457D263CA5D418EFA5B482A /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */,
+				B7D51407F1B2322E15D1D790671A59F6 /* Pods-StarWars EncyclopediaTests */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				1628BF05B4CAFDCC3549A101F5A10A17 /* Frameworks */,
+				34028C00D480F364F8CE8C7F40637306 /* Pods */,
+				8521001DB278290F64D850AE655E0B63 /* Products */,
+				E635950BB0000BEC185153B135753124 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		E635950BB0000BEC185153B135753124 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				4A01E86AC94C11444D18A86BC39D8D84 /* Pods-StarWars Encyclopedia */,
+				6EC33ADCB7CA27AAD925AA1299DE8C8E /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */,
+				59D41BFD3C519D60C2132E226865927E /* Pods-StarWars EncyclopediaTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		ECCE933EAA7146AEFC6AA35B5C912F11 /* iProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				087D8725DC73A1E07B7D133611DDDF80 /* iProgressHUD.h */,
+				260A7115862A21859C8EAA4788A9919A /* iProgressHUD.swift */,
+				5C67D215C77AEC04C278852F400D0B4F /* iProgressHUDDelegete.swift */,
+				32D91985ED30FC0E99F3455D5DDDA285 /* iProgressHUDGlobal.swift */,
+				7415B71308C13F32326DD5C9D6357DB4 /* iProgressHUDUtilities.swift */,
+				89D8614DE4CEC3EFDDB631A624585B48 /* NVActivityIndicatorAnimationAudioEqualizer.swift */,
+				C7DBC232F636779C1C1DEE62DC4E0FE9 /* NVActivityIndicatorAnimationBallBeat.swift */,
+				F39D0B316E8F60E8F295A219FC716858 /* NVActivityIndicatorAnimationBallClipRotate.swift */,
+				B64E202ABDB41EAA940DBCDA5E296ECD /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift */,
+				1AA1DC0747690D23B62AC5CC1C5F0203 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift */,
+				8BFB027C310A5971F538DBD0B656A3C8 /* NVActivityIndicatorAnimationBallGridBeat.swift */,
+				C49B20228F4249CB2E29F17BB73DC29B /* NVActivityIndicatorAnimationBallGridPulse.swift */,
+				7EF5DD31709A5B41C07F865EC7F340A8 /* NVActivityIndicatorAnimationBallPulse.swift */,
+				B9A68956547641537E2D4D31F991CE54 /* NVActivityIndicatorAnimationBallPulseRise.swift */,
+				B6B1FCC78AA3BA9CDC9CD5755AD70E33 /* NVActivityIndicatorAnimationBallPulseSync.swift */,
+				A52FD530A2AF603A34B0C4F00EFB8563 /* NVActivityIndicatorAnimationBallRotate.swift */,
+				50348A92CC278E6B7D928AD27BB4583B /* NVActivityIndicatorAnimationBallRotateChase.swift */,
+				43EB011B4DF90E8D56F8B22B1E4F291A /* NVActivityIndicatorAnimationBallScale.swift */,
+				57AAE8636C540575090216A40227AAC6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift */,
+				106B9CC173C020966E043BAC20F920DA /* NVActivityIndicatorAnimationBallScaleRipple.swift */,
+				042CB443CC74C5EE7393755E26090D38 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift */,
+				E84BF4E1111BE514A369F0F384CFB10D /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift */,
+				C2F1D275429FA57999B741EC7ABA9930 /* NVActivityIndicatorAnimationBallTrianglePath.swift */,
+				9F0394E03C029615FB98D5D10A804B61 /* NVActivityIndicatorAnimationBallZigZag.swift */,
+				17588C68401D9969DF1326E5B404685F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift */,
+				029C8E51B260283CB124C0F8C7D333A6 /* NVActivityIndicatorAnimationBlank.swift */,
+				CF728DEFABF6109211A5CDC7AB49691F /* NVActivityIndicatorAnimationCircleStrokeSpin.swift */,
+				430B5D005A68D7811F159AE6BA2C1B12 /* NVActivityIndicatorAnimationCubeTransition.swift */,
+				429CD8DBFFB217E8F0952B24A2167D5B /* NVActivityIndicatorAnimationDelegate.swift */,
+				1CE468182F2319745712085CA5044418 /* NVActivityIndicatorAnimationLineScale.swift */,
+				6C74BF92E9B19363AE2AEA74BE87072D /* NVActivityIndicatorAnimationLineScaleParty.swift */,
+				3060BD88E94EE1D01670165EA0FC10F9 /* NVActivityIndicatorAnimationLineScalePulseOut.swift */,
+				9F412D0C060A89C042AAB66CF4937656 /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift */,
+				0E393AE2A0734DF77541A08A4E8AD066 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift */,
+				2A1330B8479429196F0C9FE273553B2C /* NVActivityIndicatorAnimationOrbit.swift */,
+				22A6B6B5BF70FBE07A02C6377884F067 /* NVActivityIndicatorAnimationPacman.swift */,
+				8E37FF067C8A407108CB6835D4EBCA5D /* NVActivityIndicatorAnimationSemiCircleSpin.swift */,
+				67DB0132C47D2ED72059349F1A4A1BFC /* NVActivityIndicatorAnimationSquareSpin.swift */,
+				7EC4DCB35A683A7E0AFB8834D499C79A /* NVActivityIndicatorAnimationTriangleSkewSpin.swift */,
+				9008C86A4A5287F9F4BB5997F3AC960B /* NVActivityIndicatorPresenter.swift */,
+				5DDA4AF59743D22085716C7630BE910C /* NVActivityIndicatorShape.swift */,
+				551543D8CEA3E1744F9CA2B1B67B2750 /* NVActivityIndicatorView.swift */,
+				2340A86E5D7A79E86574F33ADF1C1F88 /* NVActivityIndicatorViewable.swift */,
+				4565F811A720B35E99FADE015B38D846 /* Support Files */,
+			);
+			path = iProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		01E5C3ADD68EFC4058173A715BEEE287 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1256727F1219FBAA2E7A70C56AEDCC32 /* Pods-StarWars Encyclopedia-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7A3DEC8D594CBA77D4643CB61A6AE95D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B93569D49664DAB2E9CCC1C52BA3247 /* Pods-StarWars EncyclopediaTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5101B8105C62E639D5E21BDCF9D4260 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6156F35C847542D47BCA573B63BD2311 /* iProgressHUD.h in Headers */,
+				0C0DF504BCC5E89C8CC3559DC424F8D5 /* iProgressHUD-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D9B528D6A1F570223E76824091415F1A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				368D43C51B1E6FAF4FB91EEBAAFA0632 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1232BE1E855A8D54B630F1B24323C80B /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC314AD319E1EECAAF64D4C40A1838D5 /* Build configuration list for PBXNativeTarget "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests" */;
+			buildPhases = (
+				D9B528D6A1F570223E76824091415F1A /* Headers */,
+				D64DDCD6693F2E120BD47B7480D349D9 /* Sources */,
+				F1D670D4A2C2940AC5D3E41012836F77 /* Frameworks */,
+				4F67DC4DDCA73D26D0810088B8D19D9E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8C4F43D58BF0CCC795330D25B2927F25 /* PBXTargetDependency */,
+			);
+			name = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests";
+			productName = Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests;
+			productReference = 89EAA00D2457D263CA5D418EFA5B482A /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */;
+			productType = "com.apple.product-type.framework";
+		};
+		268768F667FEAB56AD486F849520BB7E /* Pods-StarWars Encyclopedia */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 657E76158C7A278C21F469509BDAEABB /* Build configuration list for PBXNativeTarget "Pods-StarWars Encyclopedia" */;
+			buildPhases = (
+				01E5C3ADD68EFC4058173A715BEEE287 /* Headers */,
+				C260ADEC575AC5CEC6C5274858B3C2E5 /* Sources */,
+				41EA0720119D2C16823788657743A5C5 /* Frameworks */,
+				8108D2C173C657BC8C5DA7CEC81A8703 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA66CD3F8420ACD7233DF53167744513 /* PBXTargetDependency */,
+			);
+			name = "Pods-StarWars Encyclopedia";
+			productName = Pods_StarWars_Encyclopedia;
+			productReference = 47F5D6E78A98E3E21D652B0751A77747 /* Pods-StarWars Encyclopedia */;
+			productType = "com.apple.product-type.framework";
+		};
+		B2A2863E2539DB18224E4A243C37224D /* Pods-StarWars EncyclopediaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F20865A638F31C84B3BFCCFAE482CC72 /* Build configuration list for PBXNativeTarget "Pods-StarWars EncyclopediaTests" */;
+			buildPhases = (
+				7A3DEC8D594CBA77D4643CB61A6AE95D /* Headers */,
+				8F08ED7452057AAC5E4FC1C8252EB69D /* Sources */,
+				551EFD92DA98B03C412D7EC4B16C2BC1 /* Frameworks */,
+				34242E0B40220ACA2A0DB7DB7979C44A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA6345C51D94BC1BDE922C7B62F45FCC /* PBXTargetDependency */,
+			);
+			name = "Pods-StarWars EncyclopediaTests";
+			productName = Pods_StarWars_EncyclopediaTests;
+			productReference = B7D51407F1B2322E15D1D790671A59F6 /* Pods-StarWars EncyclopediaTests */;
+			productType = "com.apple.product-type.framework";
+		};
+		B350276D4749496E38AB8782E04E0C6A /* iProgressHUD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9DBDE47EAA20D704479231DEB4B9568D /* Build configuration list for PBXNativeTarget "iProgressHUD" */;
+			buildPhases = (
+				B5101B8105C62E639D5E21BDCF9D4260 /* Headers */,
+				7974B50C569B91B7267D4C9074C12ED5 /* Sources */,
+				C9D26AA6CFFC0F4A1AC1337470477623 /* Frameworks */,
+				3F9996988DF45A3B33BF05849C1790AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iProgressHUD;
+			productName = iProgressHUD;
+			productReference = F5F61692373D8170051B0CFD64BC34D4 /* iProgressHUD.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1400;
+				TargetAttributes = {
+					B350276D4749496E38AB8782E04E0C6A = {
+						LastSwiftMigration = "";
+					};
+				};
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 8521001DB278290F64D850AE655E0B63 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B350276D4749496E38AB8782E04E0C6A /* iProgressHUD */,
+				268768F667FEAB56AD486F849520BB7E /* Pods-StarWars Encyclopedia */,
+				1232BE1E855A8D54B630F1B24323C80B /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests */,
+				B2A2863E2539DB18224E4A243C37224D /* Pods-StarWars EncyclopediaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		34242E0B40220ACA2A0DB7DB7979C44A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3F9996988DF45A3B33BF05849C1790AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F67DC4DDCA73D26D0810088B8D19D9E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8108D2C173C657BC8C5DA7CEC81A8703 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7974B50C569B91B7267D4C9074C12ED5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2C90627B3181AC48ED27DA8D96D227E /* iProgressHUD.swift in Sources */,
+				1FE2F5D929FDD98648E6C0126C0750E7 /* iProgressHUD-dummy.m in Sources */,
+				3EE154C247A5E330ED4E7D1EEBCD3813 /* iProgressHUDDelegete.swift in Sources */,
+				19F066044948A2CC1EF06B0A43B6E1C8 /* iProgressHUDGlobal.swift in Sources */,
+				D775E9075DA19A92E876D9A6FB4FB116 /* iProgressHUDUtilities.swift in Sources */,
+				D83B153E0B2447A3F8EDF80B19F83C05 /* NVActivityIndicatorAnimationAudioEqualizer.swift in Sources */,
+				1825803A66FB6A916F994E9EDD2B388B /* NVActivityIndicatorAnimationBallBeat.swift in Sources */,
+				A9A07E39B25F22366B8497843E419F07 /* NVActivityIndicatorAnimationBallClipRotate.swift in Sources */,
+				11A923C8E3FAFB5258926E5881F907F9 /* NVActivityIndicatorAnimationBallClipRotateMultiple.swift in Sources */,
+				4749F270B7D9AF3E3C8DB5B34F395718 /* NVActivityIndicatorAnimationBallClipRotatePulse.swift in Sources */,
+				A4647D8B33487A46F19658644E1EC4D7 /* NVActivityIndicatorAnimationBallGridBeat.swift in Sources */,
+				5972592764F4D8B9B174A1D49EEDAB95 /* NVActivityIndicatorAnimationBallGridPulse.swift in Sources */,
+				F63296E236B27F22EED99A2A90C4D46F /* NVActivityIndicatorAnimationBallPulse.swift in Sources */,
+				DA84222EEABF681D23727716DA55ECE4 /* NVActivityIndicatorAnimationBallPulseRise.swift in Sources */,
+				8406DC4DC9977ABC26941A3FA03E5658 /* NVActivityIndicatorAnimationBallPulseSync.swift in Sources */,
+				DED502871598332D4E4C15E6D9481695 /* NVActivityIndicatorAnimationBallRotate.swift in Sources */,
+				22612F1D6D0EB5CCFF21DD80E24B9863 /* NVActivityIndicatorAnimationBallRotateChase.swift in Sources */,
+				7100E8E5F7D79F849F6F6C004ABEF7F7 /* NVActivityIndicatorAnimationBallScale.swift in Sources */,
+				BE0EE96B7BF9EEB1DE81197F7547A4C6 /* NVActivityIndicatorAnimationBallScaleMultiple.swift in Sources */,
+				29BF856B93E8F4FE6E3FB9556E729CD6 /* NVActivityIndicatorAnimationBallScaleRipple.swift in Sources */,
+				DB6F1444E80F7CEDC9D81364FB192AA9 /* NVActivityIndicatorAnimationBallScaleRippleMultiple.swift in Sources */,
+				445C5EB0F32AF31F858DD9CB52B61B93 /* NVActivityIndicatorAnimationBallSpinFadeLoader.swift in Sources */,
+				71211533927975D052B0313AA01D247C /* NVActivityIndicatorAnimationBallTrianglePath.swift in Sources */,
+				716630CAFCEB8B24D931B5102AC0D3E9 /* NVActivityIndicatorAnimationBallZigZag.swift in Sources */,
+				1E602A5A4ADEAEF2E0A9DA08B508C65F /* NVActivityIndicatorAnimationBallZigZagDeflect.swift in Sources */,
+				7F5F37CCFD148BDF4E44684C3219C550 /* NVActivityIndicatorAnimationBlank.swift in Sources */,
+				EC2F50E928AF5558502D2FB27ED92D74 /* NVActivityIndicatorAnimationCircleStrokeSpin.swift in Sources */,
+				3DF6043D42FAB5AC5EC3DE5F717FEFC5 /* NVActivityIndicatorAnimationCubeTransition.swift in Sources */,
+				582CB1D9E2BE5E8A84BD3A9C026F1553 /* NVActivityIndicatorAnimationDelegate.swift in Sources */,
+				FEA699B819D129D84964FA5BE7CF6177 /* NVActivityIndicatorAnimationLineScale.swift in Sources */,
+				4C3D3648D3B8162F988313C3DC1CC0DE /* NVActivityIndicatorAnimationLineScaleParty.swift in Sources */,
+				835D802A2E196A2C83EF8C747A9A0F7D /* NVActivityIndicatorAnimationLineScalePulseOut.swift in Sources */,
+				7124D06BCD0A9FB3E2754B88A139A3BF /* NVActivityIndicatorAnimationLineScalePulseOutRapid.swift in Sources */,
+				E878B98E26D99BF8DC5C9E6A27115AD1 /* NVActivityIndicatorAnimationLineSpinFadeLoader.swift in Sources */,
+				4C4A6FC81CF3D9713D6A14441EF8A3E9 /* NVActivityIndicatorAnimationOrbit.swift in Sources */,
+				89FFCEBD6CDEA4A6E995FBF63D9A611E /* NVActivityIndicatorAnimationPacman.swift in Sources */,
+				A9A305E8A355DA3952245DCC32405F76 /* NVActivityIndicatorAnimationSemiCircleSpin.swift in Sources */,
+				3369E09AEA91FEA23CCE1E519880ED5B /* NVActivityIndicatorAnimationSquareSpin.swift in Sources */,
+				1369334E38A23A179186509384820823 /* NVActivityIndicatorAnimationTriangleSkewSpin.swift in Sources */,
+				0F584F40E062BBF8EDAF45B85A68FBCA /* NVActivityIndicatorPresenter.swift in Sources */,
+				B1F3191816B566F29E71E5AC554DEFE0 /* NVActivityIndicatorShape.swift in Sources */,
+				53B3A85322FC371491EACAE728DFE1FE /* NVActivityIndicatorView.swift in Sources */,
+				0B6A3541E520EF38699C1AD06EF71CD3 /* NVActivityIndicatorViewable.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8F08ED7452057AAC5E4FC1C8252EB69D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1560FB011B7F40409DDC6075A03813BC /* Pods-StarWars EncyclopediaTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C260ADEC575AC5CEC6C5274858B3C2E5 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				63F3DDD4CDA28499F09BB241E09D9E58 /* Pods-StarWars Encyclopedia-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D64DDCD6693F2E120BD47B7480D349D9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C3930E729AF217A378697F426719832A /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8C4F43D58BF0CCC795330D25B2927F25 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iProgressHUD;
+			target = B350276D4749496E38AB8782E04E0C6A /* iProgressHUD */;
+			targetProxy = 1A4BB00E32A0C0AAECB669288EB32637 /* PBXContainerItemProxy */;
+		};
+		BA6345C51D94BC1BDE922C7B62F45FCC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-StarWars Encyclopedia";
+			target = 268768F667FEAB56AD486F849520BB7E /* Pods-StarWars Encyclopedia */;
+			targetProxy = CA041D21C529315D5193DA05D4BFF29E /* PBXContainerItemProxy */;
+		};
+		BA66CD3F8420ACD7233DF53167744513 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = iProgressHUD;
+			target = B350276D4749496E38AB8782E04E0C6A /* iProgressHUD */;
+			targetProxy = 2DAC56A472C7081552B854DAD09E3C8F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		214701C661C943F5214130710FA54AC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4FCA9C61EA887FBFF957E80CF07CDA05 /* iProgressHUD.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iProgressHUD/iProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iProgressHUD/iProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/iProgressHUD/iProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = iProgressHUD;
+				PRODUCT_NAME = iProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		471A28A8D19AA690FB472EA2A74A1508 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A93AD6E0F26E9474CB20DD46501FE92D /* Pods-StarWars Encyclopedia.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		53B4EF94DD1F81B0FD9279ED818A244F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B3A53ED6BB30C1B174F23875CE9AC721 /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		92F343C7236DB0890B0BE5040F3741F2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0AEE287C24AA94552A7853F38372592B /* Pods-StarWars Encyclopedia.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		BCAA03329199D7F5E9A071C691D2B0A2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FE85F81C6F009F7C0C5429345E2721E /* Pods-StarWars EncyclopediaTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars EncyclopediaTests/Pods-StarWars EncyclopediaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars EncyclopediaTests/Pods-StarWars EncyclopediaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		C4A66F380A2CB52A2955D64070F80B12 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A28D65E5DA60C020165E7E642DA88A84 /* iProgressHUD.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/iProgressHUD/iProgressHUD-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/iProgressHUD/iProgressHUD-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/iProgressHUD/iProgressHUD.modulemap";
+				PRODUCT_MODULE_NAME = iProgressHUD;
+				PRODUCT_NAME = iProgressHUD;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D85AAE61EBA35B8622BACF300CA5352F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 332CD2A3E4957C7414CB3BE37A0CCB2F /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		DFF4B4F0BC1315A85EFB3521F34F093B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C2967797D4F863D5FBB8EAE6DF2BC86 /* Pods-StarWars EncyclopediaTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-StarWars EncyclopediaTests/Pods-StarWars EncyclopediaTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-StarWars EncyclopediaTests/Pods-StarWars EncyclopediaTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		657E76158C7A278C21F469509BDAEABB /* Build configuration list for PBXNativeTarget "Pods-StarWars Encyclopedia" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				92F343C7236DB0890B0BE5040F3741F2 /* Debug */,
+				471A28A8D19AA690FB472EA2A74A1508 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9DBDE47EAA20D704479231DEB4B9568D /* Build configuration list for PBXNativeTarget "iProgressHUD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C4A66F380A2CB52A2955D64070F80B12 /* Debug */,
+				214701C661C943F5214130710FA54AC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC314AD319E1EECAAF64D4C40A1838D5 /* Build configuration list for PBXNativeTarget "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				53B4EF94DD1F81B0FD9279ED818A244F /* Debug */,
+				D85AAE61EBA35B8622BACF300CA5352F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F20865A638F31C84B3BFCCFAE482CC72 /* Build configuration list for PBXNativeTarget "Pods-StarWars EncyclopediaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DFF4B4F0BC1315A85EFB3521F34F093B /* Debug */,
+				BCAA03329199D7F5E9A071C691D2B0A2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}
