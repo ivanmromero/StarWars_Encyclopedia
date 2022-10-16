@@ -31,12 +31,14 @@ class CategoryViewController: UIViewController {
     }
     
     private func setupSpinner() {
-        iprogress.captionSize = 15
+        iprogress.captionSize = 25
         iprogress.isShowModal = false
         iprogress.isShowBox = false
         iprogress.iprogressStyle = .horizontal
         iprogress.indicatorStyle = .ballRotateChase
+        iprogress.indicatorSize = 90
         iprogress.alphaModal = 0.7
+        iprogress.captionDistance = 10
         iprogress.indicatorColor = UIColor(named: "StarWarsColor")!
         iprogress.attachProgress(toView: self.collectionView)
 
