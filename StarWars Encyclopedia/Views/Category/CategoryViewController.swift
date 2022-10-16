@@ -55,6 +55,7 @@ class CategoryViewController: UIViewController {
         searchBar.searchTextField.backgroundColor = .black
         searchBar.searchTextField.textColor = UIColor(named: "StarWarsColor")
         searchBar.placeholder = "Find your favorite \(CategoryManager.shared.category!.getSingularCategoriesRawValue())"
+        searchBar.searchTextField.clearButtonMode = .never
         searchBar.delegate = self
     }
     
@@ -120,6 +121,7 @@ extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: UISearchBarDelegate
 extension CategoryViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
