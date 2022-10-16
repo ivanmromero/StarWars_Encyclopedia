@@ -6,15 +6,15 @@
 //
 
 class CategoriesViewModel {
-    func getAllCategories() -> [categories] {
-        categories.allCases
+    func getAllCategories() -> [Categories] {
+        Categories.allCases
     }
     
     func getCategoriesCount() -> Int {
-        categories.allCases.count
+        Categories.allCases.count
     }
     
-    func getSelectedCategory(indexPath: Int) -> categories {
+    func getSelectedCategory(indexPath: Int) -> Categories {
         return getAllCategories()[indexPath]
     }
 }

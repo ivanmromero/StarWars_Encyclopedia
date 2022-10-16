@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="NewsCycle-Regular.ttf">
+            <string>NewsCycle</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="gTV-IL-0wX" customClass="CategoryCollectionViewCell" customModule="StarWars_Encyclopedia" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="326" height="205"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="326" height="205"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tk-JF-gsq">
+                        <rect key="frame" x="10" y="10" width="306" height="185"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-9K-YlF">
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="125"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="ivancito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Je-IZc">
+                                <rect key="frame" x="0.0" y="125" width="306" height="60"/>
+                                <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="RyD-9f-qC7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="NewsCycle" family="News Cycle" pointSize="19"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="wB1-Je-IZc" secondAttribute="trailing" id="A4W-vh-Any"/>
+                            <constraint firstAttribute="trailing" secondItem="xUd-9K-YlF" secondAttribute="trailing" id="EXI-LQ-zlK"/>
+                            <constraint firstAttribute="bottom" secondItem="wB1-Je-IZc" secondAttribute="bottom" id="O2A-9i-2PI"/>
+                            <constraint firstItem="wB1-Je-IZc" firstAttribute="top" secondItem="xUd-9K-YlF" secondAttribute="bottom" id="eh5-aV-Rh2"/>
+                            <constraint firstItem="xUd-9K-YlF" firstAttribute="leading" secondItem="8tk-JF-gsq" secondAttribute="leading" id="i76-Xc-ZRL"/>
+                            <constraint firstItem="xUd-9K-YlF" firstAttribute="top" secondItem="8tk-JF-gsq" secondAttribute="top" id="nKq-H9-dJv"/>
+                            <constraint firstItem="wB1-Je-IZc" firstAttribute="leading" secondItem="8tk-JF-gsq" secondAttribute="leading" id="okR-lV-PHp"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                <integer key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="8tk-JF-gsq" secondAttribute="trailing" constant="10" id="7ZB-vo-FIT"/>
+                <constraint firstAttribute="bottom" secondItem="8tk-JF-gsq" secondAttribute="bottom" constant="10" id="B0t-a6-aVp"/>
+                <constraint firstItem="8tk-JF-gsq" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="HGI-e9-1QO"/>
+                <constraint firstItem="8tk-JF-gsq" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="J0X-wH-9PJ"/>
+            </constraints>
+            <size key="customSize" width="326" height="205"/>
+            <connections>
+                <outlet property="categoryImage" destination="xUd-9K-YlF" id="aSx-g5-sd0"/>
+                <outlet property="categoryLabel" destination="wB1-Je-IZc" id="6Xu-cj-1kB"/>
+            </connections>
+            <point key="canvasLocation" x="341.53846153846155" y="77.843601895734594"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="character" width="400" height="200"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

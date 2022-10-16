@@ -14,12 +14,14 @@ class CategoriesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
+
+        
     }
     
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UINib.init(nibName: "CategoryTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoryCell")
+        tableView.register(UINib.init(nibName: "CategoriesTableViewCell", bundle: nil), forCellReuseIdentifier: "CategoriesCell")
     }
 }
 
@@ -31,10 +33,10 @@ extension CategoriesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let allCategories = viewModel.getAllCategories()
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath) as! CategoryTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoriesCell", for: indexPath) as! CategoriesTableViewCell
         
-        cell.categoryName.text = allCategories[indexPath.row].rawValue.uppercased()
-        cell.categoryImage.image = allCategories[indexPath.row].getCategoriesImage()
+        cell.categoriesName.text = allCategories[indexPath.row].rawValue.uppercased()
+        cell.categoriesImage.image = allCategories[indexPath.row].getCategoryImage()
         
         return cell
     }
@@ -44,6 +46,7 @@ extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(viewModel.getSelectedCategory(indexPath: indexPath.row))
-        print("Apreteeeee una celditaaaaa")
+        CategoryManager.shared.category = viewModel.getSelectedCategory(indexPath: indexPath.row)
+        self.navigationController?.pushViewController(CategoryViewController(), animated: true)
     }
 }

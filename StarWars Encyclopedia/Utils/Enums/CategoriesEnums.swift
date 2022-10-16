@@ -7,10 +7,10 @@
 
 import UIKit
 
-enum categories: String, CaseIterable {
+enum Categories: String, CaseIterable {
     case people = "characters", films, planets, species, starships, vehicles
     
-    func getCategoriesImage() -> UIImage {
+    func getCategoryImage() -> UIImage {
         switch self {
         case .people:
             return UIImage(named: "character")!

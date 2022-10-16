@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SfDistantGalaxyItalic.ttf">
+            <string>SFDistantGalaxy-Italic</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CategoryViewController" customModule="StarWars_Encyclopedia" customModuleProvider="target">
+            <connections>
+                <outlet property="categoryLabel" destination="5tT-Fi-qUF" id="LCQ-8j-HSZ"/>
+                <outlet property="collectionView" destination="kFB-TU-epW" id="w0w-de-KO9"/>
+                <outlet property="searchBar" destination="gGk-je-Ijy" id="JfL-6L-cnH"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tT-Fi-qUF">
+                    <rect key="frame" x="15" y="57" width="360" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="9YD-wd-HpM"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="SFDistantGalaxy-Italic" family="SF Distant Galaxy" pointSize="37"/>
+                    <color key="textColor" name="StarWarsColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <searchBar contentMode="redraw" searchBarStyle="minimal" showsCancelButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gGk-je-Ijy">
+                    <rect key="frame" x="15" y="117" width="360" height="56"/>
+                    <color key="tintColor" name="StarWarsColor"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="DMW-sW-Kyl"/>
+                    </connections>
+                </searchBar>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="kFB-TU-epW">
+                    <rect key="frame" x="15" y="183" width="360" height="627"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="HSO-iH-aTv">
+                        <size key="itemSize" width="50" height="50"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" red="0.098039215690000001" green="0.098039215690000001" blue="0.24007227889999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kFB-TU-epW" secondAttribute="trailing" constant="15" id="4gy-zQ-LWh"/>
+                <constraint firstItem="kFB-TU-epW" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6AO-MT-9Hj"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5tT-Fi-qUF" secondAttribute="trailing" constant="15" id="EMv-3Z-dLS"/>
+                <constraint firstAttribute="trailing" secondItem="gGk-je-Ijy" secondAttribute="trailing" constant="15" id="JLn-Yz-uJN"/>
+                <constraint firstItem="5tT-Fi-qUF" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="VS1-ep-yX3"/>
+                <constraint firstItem="gGk-je-Ijy" firstAttribute="top" secondItem="5tT-Fi-qUF" secondAttribute="bottom" constant="10" id="ebz-JW-Ubs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="kFB-TU-epW" secondAttribute="bottom" id="hkT-sl-dZp"/>
+                <constraint firstItem="gGk-je-Ijy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="hwJ-cl-ICS"/>
+                <constraint firstItem="kFB-TU-epW" firstAttribute="top" secondItem="gGk-je-Ijy" secondAttribute="bottom" constant="10" id="r2N-TA-nzd"/>
+                <constraint firstItem="5tT-Fi-qUF" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="z16-6H-fWP"/>
+            </constraints>
+            <point key="canvasLocation" x="130.76923076923077" y="-12.085308056872037"/>
+        </view>
+    </objects>
+    <resources>
+        <namedColor name="StarWarsColor">
+            <color red="1" green="0.83499997854232788" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
