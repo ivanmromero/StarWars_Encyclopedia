@@ -99,22 +99,28 @@ class CategoryViewModel {
         switch category {
         case .people:
             let data = getPeopleResult()
-            return requestHandler.imageDictionary[(data[index].name)]
+            return requestHandler.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].name)]
         case .films:
             let data = getFilmResult()
-            return requestHandler.imageDictionary[(data[index].title)]
+            return requestHandler.imageCache.object(forKey: data[index].title as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].title)]
         case .planets:
             let data = getPlanetResult()
-            return requestHandler.imageDictionary[(data[index].name)]
+            return requestHandler.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].name)]
         case .species:
             let data = getSpeciesResult()
-            return requestHandler.imageDictionary[(data[index].name)]
+            return requestHandler.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].name)]
         case .starships:
             let data = getStarshipResult()
-            return requestHandler.imageDictionary[(data[index].name)]
+            return requestHandler.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].name)]
         case .vehicles:
             let data = getVehicleResult()
-            return requestHandler.imageDictionary[(data[index].name)]
+            return requestHandler.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(data[index].name)]
         }
     }
     
@@ -149,22 +155,28 @@ class CategoryViewModel {
         switch category {
         case .people:
             let searchResults = getPeopleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].name)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].name)]
         case .films:
             let searchResults = getFilmResult().filter{$0.title.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].title)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].title as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].title)]
         case .planets:
             let searchResults = getPlanetResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].name)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].name)]
         case .species:
             let searchResults = getSpeciesResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].name)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].name)]
         case .starships:
             let searchResults = getStarshipResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].name)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].name)]
         case .vehicles:
             let searchResults = getVehicleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageDictionary[(searchResults[index].name)]
+            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+//            return requestHandler.imageDictionary[(searchResults[index].name)]
         }
     }
     

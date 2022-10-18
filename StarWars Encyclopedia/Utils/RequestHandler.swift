@@ -13,6 +13,7 @@ class RequestHandler {
     private let category = CategoryManager.shared.category
     var results: [Any] = []
     var imageDictionary: [String: UIImage] = [:]
+    let imageCache = NSCache<AnyObject,AnyObject>()
     
     func getCategoryData(completion: @escaping(Bool)->Void) {
         guard let category = category else { return }
@@ -168,7 +169,8 @@ class RequestHandler {
                     if let urlString = resultGoogle.items?.first?.pagemap?.cseImage?.first?.src {
                         if let urlImage = URL(string: urlString) {
                             if let image = self.transforURLtoImage(url: urlImage) {
-                                self.imageDictionary[searchTerm] = image
+//                                self.imageDictionary[searchTerm] = image
+                                self.imageCache.setObject(image, forKey: searchTerm as AnyObject)
                             }
                         }
                     }

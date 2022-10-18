@@ -4,7 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -25,26 +25,26 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8tk-JF-gsq">
                         <rect key="frame" x="10" y="10" width="306" height="185"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="character" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-9K-YlF">
-                                <rect key="frame" x="0.0" y="0.0" width="306" height="125"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xUd-9K-YlF">
+                                <rect key="frame" x="0.0" y="0.0" width="306" height="185"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="ivancito" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Je-IZc">
-                                <rect key="frame" x="0.0" y="125" width="306" height="60"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Je-IZc">
+                                <rect key="frame" x="0.0" y="145" width="306" height="40"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RyD-9f-qC7"/>
+                                    <constraint firstAttribute="height" constant="40" id="RyD-9f-qC7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NewsCycle" family="News Cycle" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" name="TextColor"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="wB1-Je-IZc" secondAttribute="trailing" id="A4W-vh-Any"/>
+                            <constraint firstItem="xUd-9K-YlF" firstAttribute="bottom" secondItem="wB1-Je-IZc" secondAttribute="bottom" id="BRq-Hz-mke"/>
                             <constraint firstAttribute="trailing" secondItem="xUd-9K-YlF" secondAttribute="trailing" id="EXI-LQ-zlK"/>
                             <constraint firstAttribute="bottom" secondItem="wB1-Je-IZc" secondAttribute="bottom" id="O2A-9i-2PI"/>
-                            <constraint firstItem="wB1-Je-IZc" firstAttribute="top" secondItem="xUd-9K-YlF" secondAttribute="bottom" id="eh5-aV-Rh2"/>
                             <constraint firstItem="xUd-9K-YlF" firstAttribute="leading" secondItem="8tk-JF-gsq" secondAttribute="leading" id="i76-Xc-ZRL"/>
                             <constraint firstItem="xUd-9K-YlF" firstAttribute="top" secondItem="8tk-JF-gsq" secondAttribute="top" id="nKq-H9-dJv"/>
                             <constraint firstItem="wB1-Je-IZc" firstAttribute="leading" secondItem="8tk-JF-gsq" secondAttribute="leading" id="okR-lV-PHp"/>
@@ -76,9 +76,8 @@
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="character" width="400" height="200"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <namedColor name="TextColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

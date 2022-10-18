@@ -96,10 +96,11 @@ extension CategoryViewController: UICollectionViewDataSource {
         
         if !viewModel.isLoading {
             cell.categoryLabel.text = viewModel.getNameOrTitle(index: indexPath.row)
-            if let urlImage = viewModel.getImage(index: indexPath.row) {
+            if let image = viewModel.getImage(index: indexPath.row) {
                 DispatchQueue.global().async {
                     DispatchQueue.main.async {
-                        cell.categoryImage.image = urlImage
+                        cell.categoryImage.image = image
+                        cell.categoryImage.dismissProgress()
                     }
                 }
             }
