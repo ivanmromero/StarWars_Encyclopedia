@@ -9,6 +9,7 @@ import UIKit
 import iProgressHUD
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
@@ -16,19 +17,18 @@ class CategoryCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCellView()
         DispatchQueue.main.async {
-            self.setupSpinner()
+            self.setupImageSpinner()
         }
-        
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         categoryImage.image = nil
-//        setupSpinner()
     }
     
-    func setupSpinner() {
+    private func setupImageSpinner() {
         iprogress.captionSize = 25
         iprogress.isShowModal = false
         iprogress.isShowBox = false
@@ -43,4 +43,10 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryImage.showProgress()
     }
     
+    private func setupCellView() {
+        cellView.layer.masksToBounds = true
+        cellView.layer.cornerRadius = 15
+        cellView.layer.borderWidth = 1
+        cellView.layer.borderColor = UIColor.white.cgColor
+    }
 }
