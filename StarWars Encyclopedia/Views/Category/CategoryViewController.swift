@@ -23,6 +23,10 @@ class CategoryViewController: UIViewController {
         setupCategoryLabel()
         setupBackButton()
         setupSpinner()
+        setupData()
+    }
+    
+    private func setupData() {
         viewModel.getData {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
@@ -105,6 +109,7 @@ extension CategoryViewController: UICollectionViewDataSource {
                 }
             }
             collectionView.dismissProgress()
+            return cell
         }
         return cell
     }
@@ -131,7 +136,7 @@ extension CategoryViewController: UISearchBarDelegate {
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.text = ""
-        viewModel.searchText = ""
+        viewModel.searchText = searchBar.text
         collectionView.reloadData()
     }
 }
