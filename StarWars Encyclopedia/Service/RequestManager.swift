@@ -75,6 +75,17 @@ class RequestManager {
             return nil
         }
     }
+
+    func getURLVisualGuide(index: Int, type: String) -> URL? {
+        let urlString = "https://starwars-visualguide.com/assets/img/$type/$index.jpg"
+            .replacingOccurrences(of: "$type", with: type)
+            .replacingOccurrences(of: "$index", with: "\(index)")
+        if let url = URL(string: urlString) {
+            print(url)
+            return url
+        }
+        return nil
+    }
 }
 
 enum serviceError: Error {

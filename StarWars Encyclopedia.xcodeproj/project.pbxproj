@@ -44,6 +44,8 @@
 		D2FBEF0A28F624D6008A867F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */; };
 		D2FBEF0E28F784B7008A867F /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0D28F784B7008A867F /* CategoryManager.swift */; };
 		D2FBEF1028F87E75008A867F /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0F28F87E75008A867F /* RequestHandler.swift */; };
+		D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */; };
+		D2FBEF1528FF7DEB008A867F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +112,8 @@
 		D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		D2FBEF0D28F784B7008A867F /* CategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		D2FBEF0F28F87E75008A867F /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
+		D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		DF59ED1EA95E99F881875F42 /* Pods-StarWars Encyclopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWars Encyclopedia.release.xcconfig"; path = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -151,7 +155,6 @@
 				599A1A18DA4F8B57A70F62F3 /* Pods-StarWars EncyclopediaTests.debug.xcconfig */,
 				4D0761F3AB737050988C89AD /* Pods-StarWars EncyclopediaTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -275,6 +278,7 @@
 		D2B80C1D28F1E0530021F4AD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D2FBEF1128FF7D35008A867F /* Detail */,
 				D2A0DA3C28F23E20006FF15C /* Category */,
 				D2FDDB6228F1F24C005200FD /* Categories */,
 			);
@@ -319,6 +323,15 @@
 				D2FBEEF728F4B18C008A867F /* RequestManager.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		D2FBEF1128FF7D35008A867F /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */,
+				D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */,
+			);
+			path = Detail;
 			sourceTree = "<group>";
 		};
 		D2FDDB6228F1F24C005200FD /* Categories */ = {
@@ -443,6 +456,7 @@
 				D2FBEEF528F39D59008A867F /* CategoryCollectionViewCell.xib in Resources */,
 				D2B80C2428F1E1BF0021F4AD /* CategoriesViewController.xib in Resources */,
 				D2A0DA3328F22C05006FF15C /* Starjhol.ttf in Resources */,
+				D2FBEF1528FF7DEB008A867F /* DetailViewController.xib in Resources */,
 				D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */,
 				D2A0DA3428F22C05006FF15C /* NewsCycle-Regular.ttf in Resources */,
 				D2360AE028EE57300010847F /* Assets.xcassets in Resources */,
@@ -598,6 +612,7 @@
 				D2FBEF0628F622DB008A867F /* StarshipsModel.swift in Sources */,
 				D2FBEEFE28F61EAA008A867F /* PeopleModel.swift in Sources */,
 				D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */,
+				D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

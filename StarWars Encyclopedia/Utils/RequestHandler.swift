@@ -41,11 +41,10 @@ class RequestHandler {
                 switch result {
                 case .success(let result):
                     self.results = result.results
-                    result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.name) {
-                            completion()
-                        }
+                    result.results.enumerated().forEach { (index,result) in
+                        self.setImageOnCache(result.url, key: result.name)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -63,10 +62,9 @@ class RequestHandler {
                 case .success(let result):
                     self.results = result.results
                     result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.title) {
-                            completion()
-                        }
+                        self.setImageOnCache(result.url, key: result.title)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -84,10 +82,9 @@ class RequestHandler {
                 case .success(let result):
                     self.results = result.results
                     result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.name) {
-                            completion()
-                        }
+                        self.setImageOnCache(result.url, key: result.name)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -105,10 +102,9 @@ class RequestHandler {
                 case .success(let result):
                     self.results = result.results
                     result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.name) {
-                            completion()
-                        }
+                        self.setImageOnCache(result.url, key: result.name)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -126,10 +122,9 @@ class RequestHandler {
                 case .success(let result):
                     self.results = result.results
                     result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.name) {
-                            completion()
-                        }
+                        self.setImageOnCache(result.url, key: result.name)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -147,10 +142,9 @@ class RequestHandler {
                 case .success(let result):
                     self.results = result.results
                     result.results.forEach { result in
-                        self.getImageResults(searchTerm: result.name) {
-                            completion()
-                        }
+                        self.setImageOnCache(result.url, key: result.name)
                     }
+                    completion()
                 case .failure(let error):
                     completion()
                     print(error)
@@ -158,35 +152,7 @@ class RequestHandler {
             }
         }
     }
-    
-    private func getImageResults(searchTerm: String, completion: @escaping ()-> Void) {
-        DispatchQueue.global().async {
-            let urlImage = self.request.getGoogleURL(searchString: searchTerm)
-            self.request.makeRequest(url: urlImage) { [weak self] (resultGoogle: Swift.Result<GoogleModel, Error>) in
-                guard let self = self else { return }
-                switch resultGoogle {
-                case .success(let resultGoogle):
-                    if let urlString = resultGoogle.items?.first?.pagemap?.cseImage?.first?.src {
-                        if let urlImage = URL(string: urlString) {
-                            if let image = self.transforURLtoImage(url: urlImage) {
-//                                self.imageDictionary[searchTerm] = image
-                                self.imageCache.setObject(image, forKey: searchTerm as AnyObject)
-                            }
-                        }
-                    }
-                    DispatchQueue.main.async {
-                        completion()
-                    }
-                case .failure(let errorGoogle):
-                    print(errorGoogle.localizedDescription)
-                    DispatchQueue.main.async {
-                        completion()
-                    }
-                }
-            }
-        }
-    }
-    
+
     private func transforURLtoImage(url: URL) -> UIImage? {
         if let data = try? Data(contentsOf: url) {
             if let image = UIImage(data: data) {
@@ -194,5 +160,26 @@ class RequestHandler {
             }
         }
         return nil
+    }
+    
+    func getIntForString(_ string: String) -> Int?{
+        var number: Int? = nil
+        let stringArray = string.components(separatedBy: CharacterSet.decimalDigits.inverted)
+        for item in stringArray {
+            if let transformedString = Int(item) {
+                number = transformedString
+            }
+        }
+        return number
+    }
+    
+    private func setImageOnCache(_ resultUrl: String, key: String) {
+        if let id: Int =  getIntForString(resultUrl) {
+            if let urlImage = self.request.getURLVisualGuide(index: id, type: category!.rawValue) {
+                if let image = self.transforURLtoImage(url: urlImage) {
+                    self.imageCache.setObject(image, forKey: key as AnyObject)
+                }
+            }
+        }
     }
 }
