@@ -87,31 +87,39 @@ extension CategoryViewController: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCell", for: indexPath) as! CategoryCollectionViewCell
         
         if viewModel.isSearching {
-            cell.categoryLabel.text = viewModel.getNameOrTitleOfSearchResult(index: indexPath.row)
-            if let urlImage = viewModel.getImageOfSearchResult(index: indexPath.row) {
-                DispatchQueue.global().async {
-                    DispatchQueue.main.async {
-                        cell.categoryImage.image = urlImage
-                    }
-                }
-            }
+            setSearchCell(cell, indexPath: indexPath.row)
             return cell
         }
         
         if !viewModel.isLoading {
-            cell.categoryLabel.text = viewModel.getNameOrTitle(index: indexPath.row)
-            if let image = viewModel.getImage(index: indexPath.row) {
-                DispatchQueue.global().async {
-                    DispatchQueue.main.async {
-                        cell.categoryImage.image = image
-                        cell.categoryImage.dismissProgress()
-                    }
-                }
-            }
+            setCell(cell, indexPath: indexPath.row)
             collectionView.dismissProgress()
             return cell
         }
         return cell
+    }
+    
+    private func setSearchCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
+        cell.categoryLabel.text = viewModel.getNameOrTitleOfSearchResult(index: indexPath)
+        if let urlImage = viewModel.getImageOfSearchResult(index: indexPath) {
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    cell.categoryImage.image = urlImage
+                }
+            }
+        }
+    }
+    
+    private func setCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
+        cell.categoryLabel.text = viewModel.getNameOrTitle(index: indexPath)
+        if let image = viewModel.getImage(index: indexPath) {
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    cell.categoryImage.image = image
+                    cell.categoryImage.dismissProgress()
+                }
+            }
+        }
     }
 }
 
@@ -143,19 +151,3 @@ extension CategoryViewController: UISearchBarDelegate {
         collectionView.reloadData()
     }
 }
-
-extension UIImageView {
-    func load(url: URL) {
-        DispatchQueue.global().async { [weak self] in
-            if let data = try? Data(contentsOf: url) {
-                if let image = UIImage(data: data) {
-                    DispatchQueue.main.async {
-                        self?.image = image
-                    }
-                }
-            }
-        }
-    }
-}
-
-
