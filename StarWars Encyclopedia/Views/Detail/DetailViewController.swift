@@ -11,8 +11,12 @@ class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        setupBackButton()
     }
-
+    
+    private func setupBackButton() {
+        let buttonItem = UIBarButtonItem()
+        buttonItem.title = CategoryManager.shared.category!.rawValue
+        self.navigationController?.navigationBar.topItem?.backButtonTitle = CategoryManager.shared.category!.rawValue
+    }
 }
