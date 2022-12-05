@@ -10,6 +10,10 @@
 		6720DDFEF7ACD753FC654BC9 /* Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB98FC21BB73454E6F414714 /* Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests.framework */; };
 		77C5A2225C756F1985F372A0 /* Pods_StarWars_Encyclopedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F7A4B7C987D7FFE1365D939 /* Pods_StarWars_Encyclopedia.framework */; };
 		8328CDF3314B4EF7E8984B86 /* Pods_StarWars_EncyclopediaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A3059B872793C50DC9911112 /* Pods_StarWars_EncyclopediaTests.framework */; };
+		D212C87B2911E77A00B806F2 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212C8792911E77A00B806F2 /* CollectionTableViewCell.swift */; };
+		D212C87C2911E77A00B806F2 /* CollectionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D212C87A2911E77A00B806F2 /* CollectionTableViewCell.xib */; };
+		D212C8842911E9E500B806F2 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D212C8822911E9E500B806F2 /* DetailCollectionViewCell.swift */; };
+		D212C8852911E9E500B806F2 /* DetailCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D212C8832911E9E500B806F2 /* DetailCollectionViewCell.xib */; };
 		D2360AD728EE572E0010847F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AD628EE572E0010847F /* AppDelegate.swift */; };
 		D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2360AD828EE572E0010847F /* SceneDelegate.swift */; };
 		D2360AE028EE57300010847F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D2360ADF28EE57300010847F /* Assets.xcassets */; };
@@ -46,6 +50,9 @@
 		D2FBEF1028F87E75008A867F /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0F28F87E75008A867F /* RequestHandler.swift */; };
 		D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */; };
 		D2FBEF1528FF7DEB008A867F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */; };
+		D2FBEF1729074177008A867F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1629074177008A867F /* DetailViewModel.swift */; };
+		D2FBEF1B290773EB008A867F /* InfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF19290773EB008A867F /* InfoTableViewCell.swift */; };
+		D2FBEF1C290773EB008A867F /* InfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEF1A290773EB008A867F /* InfoTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,6 +81,10 @@
 		A0CA0D814CC0B8C982F8AFBC /* Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig"; path = "Target Support Files/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests/Pods-StarWars Encyclopedia-StarWars EncyclopediaUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A3059B872793C50DC9911112 /* Pods_StarWars_EncyclopediaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWars_EncyclopediaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB98FC21BB73454E6F414714 /* Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StarWars_Encyclopedia_StarWars_EncyclopediaUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D212C8792911E77A00B806F2 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
+		D212C87A2911E77A00B806F2 /* CollectionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CollectionTableViewCell.xib; sourceTree = "<group>"; };
+		D212C8822911E9E500B806F2 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
+		D212C8832911E9E500B806F2 /* DetailCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2360AD328EE572E0010847F /* StarWars Encyclopedia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "StarWars Encyclopedia.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D2360AD628EE572E0010847F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D2360AD828EE572E0010847F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -114,6 +125,9 @@
 		D2FBEF0F28F87E75008A867F /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
+		D2FBEF1629074177008A867F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
+		D2FBEF19290773EB008A867F /* InfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoTableViewCell.swift; sourceTree = "<group>"; };
+		D2FBEF1A290773EB008A867F /* InfoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InfoTableViewCell.xib; sourceTree = "<group>"; };
 		DF59ED1EA95E99F881875F42 /* Pods-StarWars Encyclopedia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StarWars Encyclopedia.release.xcconfig"; path = "Target Support Files/Pods-StarWars Encyclopedia/Pods-StarWars Encyclopedia.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +180,25 @@
 				A3059B872793C50DC9911112 /* Pods_StarWars_EncyclopediaTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D212C8782911E75300B806F2 /* CollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D212C87D2911E89700B806F2 /* DetailCollectionCell */,
+				D212C8792911E77A00B806F2 /* CollectionTableViewCell.swift */,
+				D212C87A2911E77A00B806F2 /* CollectionTableViewCell.xib */,
+			);
+			path = CollectionCell;
+			sourceTree = "<group>";
+		};
+		D212C87D2911E89700B806F2 /* DetailCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				D212C8822911E9E500B806F2 /* DetailCollectionViewCell.swift */,
+				D212C8832911E9E500B806F2 /* DetailCollectionViewCell.xib */,
+			);
+			path = DetailCollectionCell;
 			sourceTree = "<group>";
 		};
 		D21F88D128F1F2DD00C62CA3 /* CategoriesCell */ = {
@@ -250,8 +283,8 @@
 		D2A0DA3828F22CDC006FF15C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
 				D2A0DA3928F22CE4006FF15C /* Enums */,
+				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
 				D2FBEF0F28F87E75008A867F /* RequestHandler.swift */,
 			);
 			path = Utils;
@@ -290,6 +323,7 @@
 			children = (
 				D2A0DA1F28F221D2006FF15C /* CategoriesViewModel.swift */,
 				D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */,
+				D2FBEF1629074177008A867F /* DetailViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -328,10 +362,21 @@
 		D2FBEF1128FF7D35008A867F /* Detail */ = {
 			isa = PBXGroup;
 			children = (
+				D212C8782911E75300B806F2 /* CollectionCell */,
+				D2FBEF18290773B2008A867F /* InfoCell */,
 				D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */,
 				D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */,
 			);
 			path = Detail;
+			sourceTree = "<group>";
+		};
+		D2FBEF18290773B2008A867F /* InfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				D2FBEF19290773EB008A867F /* InfoTableViewCell.swift */,
+				D2FBEF1A290773EB008A867F /* InfoTableViewCell.xib */,
+			);
+			path = InfoCell;
 			sourceTree = "<group>";
 		};
 		D2FDDB6228F1F24C005200FD /* Categories */ = {
@@ -460,8 +505,11 @@
 				D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */,
 				D2A0DA3428F22C05006FF15C /* NewsCycle-Regular.ttf in Resources */,
 				D2360AE028EE57300010847F /* Assets.xcassets in Resources */,
+				D212C8852911E9E500B806F2 /* DetailCollectionViewCell.xib in Resources */,
 				D2A0DA3228F22C05006FF15C /* Starjedi.ttf in Resources */,
 				D2A0DA1E28F1FD39006FF15C /* CategoriesTableViewCell.xib in Resources */,
+				D2FBEF1C290773EB008A867F /* InfoTableViewCell.xib in Resources */,
+				D212C87C2911E77A00B806F2 /* CollectionTableViewCell.xib in Resources */,
 				D2A0DA4028F23E68006FF15C /* CategoryViewController.xib in Resources */,
 				D2A0DA3528F22C05006FF15C /* Starjedi.ttf.old.ttf in Resources */,
 				D2A0DA3628F22C05006FF15C /* SfDistantGalaxyItalic.ttf in Resources */,
@@ -595,6 +643,7 @@
 			files = (
 				D2FBEEF428F39D59008A867F /* CategoryCollectionViewCell.swift in Sources */,
 				D2A0DA1D28F1FD39006FF15C /* CategoriesTableViewCell.swift in Sources */,
+				D212C87B2911E77A00B806F2 /* CollectionTableViewCell.swift in Sources */,
 				D2FBEF0828F62379008A867F /* VehiclesModel.swift in Sources */,
 				D2FBEF0428F6225A008A867F /* SpeciesModel.swift in Sources */,
 				D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */,
@@ -603,14 +652,17 @@
 				D2FBEEFC28F51B06008A867F /* GoogleModel.swift in Sources */,
 				D2A0DA3F28F23E68006FF15C /* CategoryViewController.swift in Sources */,
 				D2FBEF0228F621D1008A867F /* PlanetsModel.swift in Sources */,
+				D212C8842911E9E500B806F2 /* DetailCollectionViewCell.swift in Sources */,
 				D2FBEF0A28F624D6008A867F /* CategoryViewModel.swift in Sources */,
 				D2A0DA3B28F22D13006FF15C /* CategoriesEnums.swift in Sources */,
 				D2FBEF0E28F784B7008A867F /* CategoryManager.swift in Sources */,
 				D2360AD728EE572E0010847F /* AppDelegate.swift in Sources */,
 				D2FBEEF828F4B18C008A867F /* RequestManager.swift in Sources */,
 				D2A0DA2028F221D2006FF15C /* CategoriesViewModel.swift in Sources */,
+				D2FBEF1729074177008A867F /* DetailViewModel.swift in Sources */,
 				D2FBEF0628F622DB008A867F /* StarshipsModel.swift in Sources */,
 				D2FBEEFE28F61EAA008A867F /* PeopleModel.swift in Sources */,
+				D2FBEF1B290773EB008A867F /* InfoTableViewCell.swift in Sources */,
 				D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */,
 				D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */,
 			);
@@ -787,9 +839,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SevenSoftware.StarWars-Encyclopedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -817,9 +872,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SevenSoftware.StarWars-Encyclopedia";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

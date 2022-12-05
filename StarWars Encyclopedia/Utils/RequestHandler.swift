@@ -11,7 +11,7 @@ import UIKit
 class RequestHandler {
     private let request: RequestManager = RequestManager()
     private let category = CategoryManager.shared.category
-    var results: [Any] = []
+    var results: [Decodable] = []
     var imageDictionary: [String: UIImage] = [:]
     let imageCache = NSCache<AnyObject,AnyObject>()
     
@@ -173,7 +173,7 @@ class RequestHandler {
         return number
     }
     
-    private func setImageOnCache(_ resultUrl: String, key: String) {
+    func setImageOnCache(_ resultUrl: String, key: String) {
         if let id: Int =  getIntForString(resultUrl) {
             if let urlImage = self.request.getURLVisualGuide(index: id, type: category!.rawValue) {
                 if let image = self.transforURLtoImage(url: urlImage) {

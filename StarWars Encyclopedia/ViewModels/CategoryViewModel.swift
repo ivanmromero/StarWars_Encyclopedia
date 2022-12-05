@@ -22,7 +22,7 @@ class CategoryViewModel {
         }
     }
     
-    var isSearching = false
+    var isSearching: Bool = false
     var isLoading: Bool = true
     
     init() {
@@ -184,5 +184,9 @@ class CategoryViewModel {
     
     private func getVehicleResult() -> [VehicleResult] {
         return requestHandler.results as! [VehicleResult]
+    }
+    
+    func getResult() -> [Decodable]{
+        return requestHandler.results
     }
 }

@@ -10,4 +10,6 @@ import Foundation
 class CategoryManager {
     static let shared = CategoryManager()
     var category: Categories?
+    
+    var result: Any?
 }
