@@ -173,7 +173,7 @@ class RequestHandler {
         return number
     }
     
-    private func setImageOnCache(_ resultUrl: String, key: String) {
+    func setImageOnCache(_ resultUrl: String, key: String) {
         if let id: Int =  getIntForString(resultUrl) {
             if let urlImage = self.request.getURLVisualGuide(index: id, type: category!.rawValue) {
                 if let image = self.transforURLtoImage(url: urlImage) {

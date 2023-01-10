@@ -126,7 +126,8 @@ extension CategoryViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let informationViewController = DetailViewController()
+        CategoryManager.shared.result = viewModel.getResult()[indexPath.row]
+        let informationViewController = DetailViewController(viewModel: DetailViewModel(result: viewModel.getResult()[indexPath.row] as! Decodable, categoryImage: viewModel.getImage(index: indexPath.row)!))
         self.navigationController?.pushViewController(informationViewController, animated: true)
     }
 }

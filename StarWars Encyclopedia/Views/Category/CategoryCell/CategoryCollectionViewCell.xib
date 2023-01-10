@@ -29,10 +29,10 @@
                                 <rect key="frame" x="0.0" y="0.0" width="306" height="185"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wB1-Je-IZc">
-                                <rect key="frame" x="0.0" y="145" width="306" height="40"/>
+                                <rect key="frame" x="0.0" y="150" width="306" height="35"/>
                                 <color key="backgroundColor" red="0.20000000000000001" green="0.20000000000000001" blue="0.30196078430000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RyD-9f-qC7"/>
+                                    <constraint firstAttribute="height" constant="35" id="RyD-9f-qC7"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="NewsCycle" family="News Cycle" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

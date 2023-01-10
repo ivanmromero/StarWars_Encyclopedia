@@ -33,6 +33,31 @@ class RequestManager {
         }.resume()
     }
     
+    func makeRequest<T: Decodable>(url: URL?, type: T.Type, completion: @escaping (Swift.Result<T, Error>) -> Void) {
+        guard let url = url else {
+            completion(.failure(serviceError.urlError))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            guard let data = data else {
+                if let error = error {
+                    completion(.failure(error))
+                } else {
+                    completion(.failure(serviceError.dataError))
+                }
+                return
+            }
+            
+            do {
+                let result = try JSONDecoder().decode(type, from: data)
+                completion(.success(result))
+            } catch let error {
+                completion(.failure(error))
+            }
+        }.resume()
+    }
+    
     func getURL(valueCategoryPath: String, valueIdPath: String? = nil) -> URL?{
         var url = URLComponents()
         url.host = ProcessInfo.processInfo.environment["host"]

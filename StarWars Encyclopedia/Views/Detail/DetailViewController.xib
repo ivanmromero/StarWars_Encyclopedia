@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="StarWars_Encyclopedia" customModuleProvider="target">
             <connections>
+                <outlet property="categoryImage" destination="vGK-In-U9E" id="HqS-Dm-aFm"/>
+                <outlet property="detailTableView" destination="nYY-a1-Lyl" id="7rm-I0-ZpK"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,19 +24,19 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-XD-JvZ">
-                    <rect key="frame" x="15" y="47" width="360" height="198"/>
+                    <rect key="frame" x="15" y="0.0" width="360" height="198"/>
                     <subviews>
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-In-U9E">
                             <rect key="frame" x="0.0" y="0.0" width="360" height="198"/>
                         </imageView>
                     </subviews>
-                </stackView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-a1-Lyl">
-                    <rect key="frame" x="15" y="255" width="360" height="555"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="555" id="fQE-dc-co7"/>
+                        <constraint firstAttribute="height" constant="198" id="zbX-Z4-FqE"/>
                     </constraints>
+                </stackView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-a1-Lyl">
+                    <rect key="frame" x="15" y="208" width="360" height="636"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
@@ -45,10 +47,11 @@
                 <constraint firstItem="k3J-XD-JvZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6W2-ru-vzF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nYY-a1-Lyl" secondAttribute="bottom" id="BWT-V4-0BU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k3J-XD-JvZ" secondAttribute="trailing" constant="15" id="CG4-lS-bu4"/>
-                <constraint firstItem="nYY-a1-Lyl" firstAttribute="top" secondItem="k3J-XD-JvZ" secondAttribute="bottom" constant="10" id="EqA-ER-uXl"/>
+                <constraint firstItem="nYY-a1-Lyl" firstAttribute="top" secondItem="k3J-XD-JvZ" secondAttribute="bottom" constant="10" id="Kok-CY-nd4"/>
                 <constraint firstAttribute="bottom" secondItem="7gZ-Mf-Sta" secondAttribute="bottom" id="LjL-M3-KN9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nYY-a1-Lyl" secondAttribute="trailing" constant="15" id="Xmq-nW-dow"/>
                 <constraint firstItem="7gZ-Mf-Sta" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="brg-bj-gpV"/>
+                <constraint firstItem="nYY-a1-Lyl" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="e2A-FE-Sp1"/>
                 <constraint firstItem="7gZ-Mf-Sta" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="mSy-Db-K1J"/>
                 <constraint firstItem="k3J-XD-JvZ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="n0h-ao-yPQ"/>
             </constraints>
