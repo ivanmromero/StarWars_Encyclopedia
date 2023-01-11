@@ -44,6 +44,11 @@ class DetailViewController: UIViewController {
     
     private func setupCategoryImage() {
         self.categoryImage.image = viewModel.categoryImage
+        self.categoryImage.layer.borderWidth = 1
+        self.categoryImage.layer.masksToBounds = false
+        self.categoryImage.layer.borderColor = UIColor.white.cgColor
+        self.categoryImage.layer.cornerRadius = CGRectGetWidth(self.categoryImage.frame) / 2
+        self.categoryImage.clipsToBounds = true
     }
 }
 

@@ -24,18 +24,33 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-XD-JvZ">
-                    <rect key="frame" x="15" y="0.0" width="360" height="198"/>
+                    <rect key="frame" x="15" y="47" width="360" height="198"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-In-U9E">
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-Ll-JRi">
                             <rect key="frame" x="0.0" y="0.0" width="360" height="198"/>
-                        </imageView>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-In-U9E">
+                                    <rect key="frame" x="81" y="0.0" width="198" height="198"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="198" id="C8u-rd-Ot4"/>
+                                        <constraint firstAttribute="height" constant="198" id="O97-ej-1Nl"/>
+                                    </constraints>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="198" id="BFs-JP-etD"/>
+                                <constraint firstItem="vGK-In-U9E" firstAttribute="centerY" secondItem="Gib-Ll-JRi" secondAttribute="centerY" id="Ptm-u3-Rpt"/>
+                                <constraint firstItem="vGK-In-U9E" firstAttribute="centerX" secondItem="Gib-Ll-JRi" secondAttribute="centerX" id="iYH-PS-0t6"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
                         <constraint firstAttribute="height" constant="198" id="zbX-Z4-FqE"/>
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-a1-Lyl">
-                    <rect key="frame" x="15" y="208" width="360" height="636"/>
+                    <rect key="frame" x="15" y="255" width="360" height="555"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
