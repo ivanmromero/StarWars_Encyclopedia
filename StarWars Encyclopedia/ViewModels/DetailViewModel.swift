@@ -255,4 +255,21 @@ class DetailViewModel {
         }
     }
     
+    func getNameOrTitle() -> String {
+        switch CategoryManager.shared.category! {
+        case .people:
+            return peopleResult!.name
+        case .films:
+            return filmResult!.title
+        case .planets:
+            return planetResult!.name
+        case .species:
+            return speciesResult!.name
+        case .starships:
+            return starshipResult!.name
+        case .vehicles:
+            return vehicleResult!.name
+        }
+    }
+    
 }

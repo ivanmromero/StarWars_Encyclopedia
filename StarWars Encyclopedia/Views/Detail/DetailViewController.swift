@@ -10,6 +10,7 @@ import UIKit
 class DetailViewController: UIViewController {
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var categoryImage: UIImageView!
+    @IBOutlet weak var selectedCategoryLabel: UILabel!
 
     private var viewModel: DetailViewModel
 
@@ -27,6 +28,7 @@ class DetailViewController: UIViewController {
         setupBackButton()
         setupDetailTableView()
         setupCategoryImage()
+        setupSelectedCategoryLabel()
     }
     
     private func setupDetailTableView() {
@@ -50,8 +52,13 @@ class DetailViewController: UIViewController {
         self.categoryImage.layer.cornerRadius = CGRectGetWidth(self.categoryImage.frame) / 2
         self.categoryImage.clipsToBounds = true
     }
+
+    private func setupSelectedCategoryLabel() {
+        self.selectedCategoryLabel.text = viewModel.getNameOrTitle()
+    }
 }
 
+//MARK: - UITableViewDelegate
 extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section != 0 {
@@ -97,7 +104,7 @@ extension DetailViewController: UITableViewDelegate {
     }
 }
 
-
+//MARK: - UITableViewDataSource
 extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

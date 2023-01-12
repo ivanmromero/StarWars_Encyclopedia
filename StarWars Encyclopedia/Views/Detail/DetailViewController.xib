@@ -7,11 +7,17 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SfDistantGalaxyItalic.ttf">
+            <string>SFDistantGalaxy-Italic</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailViewController" customModule="StarWars_Encyclopedia" customModuleProvider="target">
             <connections>
                 <outlet property="categoryImage" destination="vGK-In-U9E" id="HqS-Dm-aFm"/>
                 <outlet property="detailTableView" destination="nYY-a1-Lyl" id="7rm-I0-ZpK"/>
+                <outlet property="selectedCategoryLabel" destination="R50-xo-F9F" id="M02-em-Y3r"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -24,16 +30,16 @@
                     <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                 </imageView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="k3J-XD-JvZ">
-                    <rect key="frame" x="15" y="47" width="360" height="198"/>
+                    <rect key="frame" x="15" y="47" width="360" height="250"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gib-Ll-JRi">
                             <rect key="frame" x="0.0" y="0.0" width="360" height="198"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vGK-In-U9E">
-                                    <rect key="frame" x="81" y="0.0" width="198" height="198"/>
+                                    <rect key="frame" x="80" y="-1" width="200" height="200"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="198" id="C8u-rd-Ot4"/>
-                                        <constraint firstAttribute="height" constant="198" id="O97-ej-1Nl"/>
+                                        <constraint firstAttribute="width" constant="200" id="C8u-rd-Ot4"/>
+                                        <constraint firstAttribute="height" constant="200" id="O97-ej-1Nl"/>
                                     </constraints>
                                 </imageView>
                             </subviews>
@@ -44,13 +50,19 @@
                                 <constraint firstItem="vGK-In-U9E" firstAttribute="centerX" secondItem="Gib-Ll-JRi" secondAttribute="centerX" id="iYH-PS-0t6"/>
                             </constraints>
                         </view>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R50-xo-F9F">
+                            <rect key="frame" x="0.0" y="198" width="360" height="52"/>
+                            <fontDescription key="fontDescription" name="SFDistantGalaxy-Italic" family="SF Distant Galaxy" pointSize="25"/>
+                            <color key="textColor" red="0.92549019610000005" green="0.94117647059999998" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="198" id="zbX-Z4-FqE"/>
+                        <constraint firstAttribute="height" constant="250" id="zbX-Z4-FqE"/>
                     </constraints>
                 </stackView>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceVertical="YES" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nYY-a1-Lyl">
-                    <rect key="frame" x="15" y="255" width="360" height="555"/>
+                    <rect key="frame" x="15" y="297" width="360" height="513"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </tableView>
             </subviews>
@@ -62,7 +74,7 @@
                 <constraint firstItem="k3J-XD-JvZ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="15" id="6W2-ru-vzF"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="nYY-a1-Lyl" secondAttribute="bottom" id="BWT-V4-0BU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="k3J-XD-JvZ" secondAttribute="trailing" constant="15" id="CG4-lS-bu4"/>
-                <constraint firstItem="nYY-a1-Lyl" firstAttribute="top" secondItem="k3J-XD-JvZ" secondAttribute="bottom" constant="10" id="Kok-CY-nd4"/>
+                <constraint firstItem="nYY-a1-Lyl" firstAttribute="top" secondItem="k3J-XD-JvZ" secondAttribute="bottom" id="Kok-CY-nd4"/>
                 <constraint firstAttribute="bottom" secondItem="7gZ-Mf-Sta" secondAttribute="bottom" id="LjL-M3-KN9"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="nYY-a1-Lyl" secondAttribute="trailing" constant="15" id="Xmq-nW-dow"/>
                 <constraint firstItem="7gZ-Mf-Sta" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="brg-bj-gpV"/>
