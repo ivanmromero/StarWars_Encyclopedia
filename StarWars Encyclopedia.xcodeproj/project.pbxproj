@@ -36,6 +36,10 @@
 		D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */; };
 		D2B80C2428F1E1BF0021F4AD /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */; };
 		D2DDEDD62972002F0006FCA3 /* CollectionTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDD52972002E0006FCA3 /* CollectionTableViewCellViewModel.swift */; };
+		D2DDEDD92973040E0006FCA3 /* ManageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDD82973040E0006FCA3 /* ManageData.swift */; };
+		D2DDEDDB297305860006FCA3 /* PeopleCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDDA297305860006FCA3 /* PeopleCategory.swift */; };
+		D2DDEDDD297306700006FCA3 /* ManageDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDDC297306700006FCA3 /* ManageDataFactory.swift */; };
+		D2DDEDDF297325A40006FCA3 /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDDE297325A40006FCA3 /* ImageCacheManager.swift */; };
 		D2FBEEF428F39D59008A867F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */; };
 		D2FBEEF528F39D59008A867F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */; };
 		D2FBEEF828F4B18C008A867F /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF728F4B18C008A867F /* RequestManager.swift */; };
@@ -112,6 +116,10 @@
 		D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesViewController.swift; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoriesViewController.xib; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.xib"; sourceTree = SOURCE_ROOT; };
 		D2DDEDD52972002E0006FCA3 /* CollectionTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCellViewModel.swift; sourceTree = "<group>"; };
+		D2DDEDD82973040E0006FCA3 /* ManageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageData.swift; sourceTree = "<group>"; };
+		D2DDEDDA297305860006FCA3 /* PeopleCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCategory.swift; sourceTree = "<group>"; };
+		D2DDEDDC297306700006FCA3 /* ManageDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManageDataFactory.swift; sourceTree = "<group>"; };
+		D2DDEDDE297325A40006FCA3 /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
 		D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2FBEEF728F4B18C008A867F /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -237,6 +245,7 @@
 		D2360AD528EE572E0010847F /* StarWars Encyclopedia */ = {
 			isa = PBXGroup;
 			children = (
+				D2DDEDD7297303F10006FCA3 /* Factory */,
 				D2FBEEF628F4B16B008A867F /* Service */,
 				D2A0DA3828F22CDC006FF15C /* Utils */,
 				D2A0DA2B28F22BE7006FF15C /* Fonts */,
@@ -288,6 +297,7 @@
 				D2A0DA3928F22CE4006FF15C /* Enums */,
 				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
 				D2FBEF0F28F87E75008A867F /* RequestHandler.swift */,
+				D2DDEDDE297325A40006FCA3 /* ImageCacheManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -343,6 +353,16 @@
 				D2FBEF0728F62379008A867F /* VehiclesModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		D2DDEDD7297303F10006FCA3 /* Factory */ = {
+			isa = PBXGroup;
+			children = (
+				D2DDEDD82973040E0006FCA3 /* ManageData.swift */,
+				D2DDEDDA297305860006FCA3 /* PeopleCategory.swift */,
+				D2DDEDDC297306700006FCA3 /* ManageDataFactory.swift */,
+			);
+			path = Factory;
 			sourceTree = "<group>";
 		};
 		D2FBEEF128F39B13008A867F /* CategoryCell */ = {
@@ -649,10 +669,13 @@
 				D2DDEDD62972002F0006FCA3 /* CollectionTableViewCellViewModel.swift in Sources */,
 				D212C87B2911E77A00B806F2 /* CollectionTableViewCell.swift in Sources */,
 				D2FBEF0828F62379008A867F /* VehiclesModel.swift in Sources */,
+				D2DDEDDB297305860006FCA3 /* PeopleCategory.swift in Sources */,
 				D2FBEF0428F6225A008A867F /* SpeciesModel.swift in Sources */,
 				D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */,
 				D2FBEF1028F87E75008A867F /* RequestHandler.swift in Sources */,
+				D2DDEDD92973040E0006FCA3 /* ManageData.swift in Sources */,
 				D2FBEEFA28F4BE73008A867F /* FilmsModel.swift in Sources */,
+				D2DDEDDF297325A40006FCA3 /* ImageCacheManager.swift in Sources */,
 				D2FBEEFC28F51B06008A867F /* GoogleModel.swift in Sources */,
 				D2A0DA3F28F23E68006FF15C /* CategoryViewController.swift in Sources */,
 				D2FBEF0228F621D1008A867F /* PlanetsModel.swift in Sources */,
@@ -667,6 +690,7 @@
 				D2FBEF0628F622DB008A867F /* StarshipsModel.swift in Sources */,
 				D2FBEEFE28F61EAA008A867F /* PeopleModel.swift in Sources */,
 				D2FBEF1B290773EB008A867F /* InfoTableViewCell.swift in Sources */,
+				D2DDEDDD297306700006FCA3 /* ManageDataFactory.swift in Sources */,
 				D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */,
 				D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */,
 			);

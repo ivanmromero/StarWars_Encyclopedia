@@ -11,6 +11,7 @@ import UIKit
 class CategoryViewModel {
     private let category: Categories
     private let requestHandler: RequestHandler
+    let manageData: ManageData
     
     var searchText: String? {
         didSet {
@@ -28,10 +29,16 @@ class CategoryViewModel {
     init() {
         self.requestHandler = RequestHandler()
         self.category = CategoryManager.shared.category!
+        self.manageData = ManageDataFactory.buildManageData(typeCategory: self.category)
     }
     
     func getData(completion: @escaping ()->Void) {
-        requestHandler.getCategoryData { isTrue in
+//        requestHandler.getCategoryData { isTrue in
+//            self.isLoading = isTrue
+//            print(self.requestHandler.imageDictionary)
+//            completion()
+//        }
+        manageData.getResults { isTrue in
             self.isLoading = isTrue
             print(self.requestHandler.imageDictionary)
             completion()
@@ -44,26 +51,7 @@ class CategoryViewModel {
     
     func getSearchResultsCount() -> Int{
         guard let searchText = searchText else { return 0 }
-        switch category {
-        case .people:
-            let searchResults = getPeopleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        case .films:
-            let searchResults = getFilmResult().filter{$0.title.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        case .planets:
-            let searchResults = getPlanetResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        case .species:
-            let searchResults = getSpeciesResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        case .starships:
-            let searchResults = getStarshipResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        case .vehicles:
-            let searchResults = getVehicleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults.count
-        }
+        return manageData.getSearchResultsCountFor(searchText: searchText)
     }
     
     func getNameOrTitle(index: Int) -> String {
@@ -114,52 +102,12 @@ class CategoryViewModel {
 
     func getNameOrTitleOfSearchResult(index: Int) -> String? {
         guard let searchText = searchText else { return nil }
-        switch category {
-        case .people:
-            let searchResults = getPeopleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            print(getPeopleResult().filter{$0.name.lowercased().contains(searchText.lowercased())})
-            print(searchResults[index].name)
-            return searchResults[index].name
-        case .films:
-            let searchResults = getFilmResult().filter{$0.title.lowercased().contains(searchText.lowercased())}
-            return searchResults[index].title
-        case .planets:
-            let searchResults = getPlanetResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults[index].name
-        case .species:
-            let searchResults = getSpeciesResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults[index].name
-        case .starships:
-            let searchResults = getStarshipResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults[index].name
-        case .vehicles:
-            let searchResults = getVehicleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return searchResults[index].name
-        }
+        return manageData.getNameOrTitleOfSearchResultAt(index, searchText: searchText)
     }
     
     func getImageOfSearchResult(index: Int) -> UIImage? {
         guard let searchText = searchText else { return nil }
-        switch category {
-        case .people:
-            let searchResults = getPeopleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
-        case .films:
-            let searchResults = getFilmResult().filter{$0.title.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].title as AnyObject) as? UIImage
-        case .planets:
-            let searchResults = getPlanetResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
-        case .species:
-            let searchResults = getSpeciesResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
-        case .starships:
-            let searchResults = getStarshipResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
-        case .vehicles:
-            let searchResults = getVehicleResult().filter{$0.name.lowercased().contains(searchText.lowercased())}
-            return requestHandler.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
-        }
+        return manageData.getImageOfSearchResultAt(index: index, searchText: searchText)
     }
     
     private func getPeopleResult() -> [PeopleResult] {

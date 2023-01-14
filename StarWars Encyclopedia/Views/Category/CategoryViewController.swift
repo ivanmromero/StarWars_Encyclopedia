@@ -80,7 +80,7 @@ extension CategoryViewController: UICollectionViewDataSource {
         if viewModel.isSearching {
             return viewModel.getSearchResultsCount()
         }
-        return viewModel.getResultsCount()
+        return viewModel.manageData.getResultsCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -111,8 +111,8 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     private func setCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
-        cell.categoryLabel.text = viewModel.getNameOrTitle(index: indexPath)
-        if let image = viewModel.getImage(index: indexPath) {
+        cell.categoryLabel.text = viewModel.manageData.getNameOrTitle(index: indexPath)
+        if let image = viewModel.manageData.getImage(index: indexPath) {
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     cell.categoryImage.image = image
