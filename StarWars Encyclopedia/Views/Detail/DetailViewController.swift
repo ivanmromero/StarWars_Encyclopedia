@@ -149,6 +149,8 @@ extension DetailViewController: UITableViewDataSource {
             return cell
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath) as! CollectionTableViewCell
+            cell.viewModel = CollectionTableViewCellViewModel(categoryArray: viewModel.getSectionValuesAt(index: indexPath.section))
+                
             return cell
         }
     }

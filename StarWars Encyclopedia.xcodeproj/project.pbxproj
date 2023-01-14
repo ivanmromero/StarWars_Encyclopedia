@@ -35,6 +35,7 @@
 		D2B80C1C28EE743A0021F4AD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */; };
 		D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */; };
 		D2B80C2428F1E1BF0021F4AD /* CategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */; };
+		D2DDEDD62972002F0006FCA3 /* CollectionTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DDEDD52972002E0006FCA3 /* CollectionTableViewCellViewModel.swift */; };
 		D2FBEEF428F39D59008A867F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */; };
 		D2FBEEF528F39D59008A867F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */; };
 		D2FBEEF828F4B18C008A867F /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF728F4B18C008A867F /* RequestManager.swift */; };
@@ -110,6 +111,7 @@
 		D2B80C1B28EE74390021F4AD /* LaunchScreen.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 		D2B80C2128F1E1BF0021F4AD /* CategoriesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoriesViewController.swift; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.swift"; sourceTree = SOURCE_ROOT; };
 		D2B80C2228F1E1BF0021F4AD /* CategoriesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = CategoriesViewController.xib; path = "StarWars Encyclopedia/Views/Categories/CategoriesViewController.xib"; sourceTree = SOURCE_ROOT; };
+		D2DDEDD52972002E0006FCA3 /* CollectionTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2FBEEF728F4B18C008A867F /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				D2A0DA1F28F221D2006FF15C /* CategoriesViewModel.swift */,
 				D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */,
 				D2FBEF1629074177008A867F /* DetailViewModel.swift */,
+				D2DDEDD52972002E0006FCA3 /* CollectionTableViewCellViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -643,6 +646,7 @@
 			files = (
 				D2FBEEF428F39D59008A867F /* CategoryCollectionViewCell.swift in Sources */,
 				D2A0DA1D28F1FD39006FF15C /* CategoriesTableViewCell.swift in Sources */,
+				D2DDEDD62972002F0006FCA3 /* CollectionTableViewCellViewModel.swift in Sources */,
 				D212C87B2911E77A00B806F2 /* CollectionTableViewCell.swift in Sources */,
 				D2FBEF0828F62379008A867F /* VehiclesModel.swift in Sources */,
 				D2FBEF0428F6225A008A867F /* SpeciesModel.swift in Sources */,

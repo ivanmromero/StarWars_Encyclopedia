@@ -9,6 +9,11 @@ import UIKit
 
 class CollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
+    var viewModel: CollectionTableViewCellViewModel = CollectionTableViewCellViewModel(categoryArray: []) {
+        didSet {
+            horizontalCollectionView.reloadData()
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,7 +33,7 @@ class CollectionTableViewCell: UITableViewCell {
 
 extension CollectionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        3
+        viewModel.getNumberOfCategories()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

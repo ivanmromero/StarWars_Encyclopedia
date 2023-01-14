@@ -162,7 +162,7 @@ class RequestHandler {
         return nil
     }
     
-    func getIntForString(_ string: String) -> Int?{
+    private func getIntForString(_ string: String) -> Int?{
         var number: Int? = nil
         let stringArray = string.components(separatedBy: CharacterSet.decimalDigits.inverted)
         for item in stringArray {
@@ -173,7 +173,7 @@ class RequestHandler {
         return number
     }
     
-    func setImageOnCache(_ resultUrl: String, key: String) {
+    private func setImageOnCache(_ resultUrl: String, key: String) {
         if let id: Int =  getIntForString(resultUrl) {
             if let urlImage = self.request.getURLVisualGuide(index: id, type: category!.rawValue) {
                 if let image = self.transforURLtoImage(url: urlImage) {

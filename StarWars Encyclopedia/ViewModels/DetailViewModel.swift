@@ -16,6 +16,11 @@ class DetailViewModel {
     var vehicleResult: VehicleResult?
     var filmResult: FilmResult?
     let categoryImage: UIImage
+    let requesteManager: RequestManager = RequestManager()
+    
+    
+    let numberOfSectionsOfPeople: Int = 5
+    
     
     init(result: Decodable, categoryImage: UIImage) {
         switch CategoryManager.shared.category! {
@@ -61,6 +66,116 @@ class DetailViewModel {
         Categories.allCases.map { $0.rawValue }.filter { $0 != CategoryManager.shared.category?.rawValue }
     }
     
+    func getValuesOfSectionAt(Index: Int) -> [String] {
+        switch CategoryManager.shared.category! {
+        case .people:
+            return getSectionsOfPeople()
+        case .films:
+            return getSectionsOfFilms()
+        case .planets:
+            return getSectionsOfPlanets()
+        case .species:
+            return getSectionsOfSpecies()
+        case .starships:
+            return getSectionsOfStarships()
+        case .vehicles:
+            return getSectionsOfVehicles()
+        }
+    }
+    
+    func getSectionValuesOfPeople(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return peopleResult!.films
+        case 2:
+            return peopleResult!.species
+        case 3:
+            return peopleResult!.vehicles
+        case 4:
+            return peopleResult!.starships
+        default:
+            return peopleResult!.films
+        }
+    }
+    
+    func getSectionValuesOfFilms(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return filmResult!.characters
+        case 2:
+            return filmResult!.planets
+        case 3:
+            return filmResult!.starships
+        case 4:
+            return filmResult!.vehicles
+        case 5:
+            return filmResult!.species
+        default:
+            return filmResult!.characters
+        }
+    }
+    
+    func getSectionValuesOfPlanets(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return planetResult!.residents
+        case 2:
+            return planetResult!.films
+        default:
+            return planetResult!.residents
+        }
+    }
+    
+    func getSectionValuesOfSpecies(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return speciesResult!.films
+        case 2:
+            return speciesResult!.people
+        default:
+            return speciesResult!.films
+        }
+    }
+    
+    func getSectionValuesOfStarships(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return starshipResult!.pilots
+        case 2:
+            return starshipResult!.films
+        default:
+            return starshipResult!.pilots
+        }
+    }
+    
+    func getSectionValuesOfVehicles(index: Int) -> [String] {
+        switch index {
+        case 1:
+            return vehicleResult!.pilots
+        case 2:
+            return vehicleResult!.films
+        default:
+            return vehicleResult!.pilots
+        }
+    }
+    
+    func getSectionValuesAt(index: Int) -> [String] {
+        switch CategoryManager.shared.category! {
+        case .people:
+            return getSectionValuesOfPeople(index: index)
+        case .films:
+            return getSectionValuesOfFilms(index: index)
+        case .planets:
+            return getSectionValuesOfPlanets(index: index)
+        case .species:
+            return getSectionValuesOfSpecies(index: index)
+        case .starships:
+            return getSectionValuesOfStarships(index: index)
+        case .vehicles:
+            return getSectionValuesOfVehicles(index: index)
+        }
+    }
+    
     func getRestOfSections() -> [String] {
         switch CategoryManager.shared.category! {
         case .people:
@@ -77,6 +192,24 @@ class DetailViewModel {
             return getSectionsOfVehicles()
         }
     }
+    
+//    func getSpecificSection(atIndex: Int) -> [String] {
+//        switch CategoryManager.shared.category! {
+//        case .people:
+//            return getSectionsOfPeople()[]
+//        case .films:
+//            return getSectionsOfFilms()
+//        case .planets:
+//            return getSectionsOfPlanets()
+//        case .species:
+//            return getSectionsOfSpecies()
+//        case .starships:
+//            return getSectionsOfStarships()
+//        case .vehicles:
+//            return getSectionsOfVehicles()
+//        }
+//
+//    }
     
     func getSectionsOfPeople() -> [String]{
         let codingKeys = PeopleResult.CodingKeys.self
