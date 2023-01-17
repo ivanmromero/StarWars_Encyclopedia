@@ -11,9 +11,9 @@ import UIKit
 class ImageCacheManager {
     let imageCache = NSCache<AnyObject,AnyObject>()
     
-    func setImageOnCache(_ resultUrl: String, key: String, request: RequestManager) {
+    func setImageOnCache(_ resultUrl: String, key: String, request: RequestManager, typeOfCategory: Categories) {
         if let id: Int =  getIntForString(resultUrl) {
-            if let urlImage = request.getURLVisualGuide(index: id, type: Categories.people.rawValue) {
+            if let urlImage = request.getURLVisualGuide(index: id, type: typeOfCategory.rawValue) {
                 if let image = self.transforURLtoImage(url: urlImage) {
                     self.imageCache.setObject(image, forKey: key as AnyObject)
                 }

@@ -13,15 +13,15 @@ class ManageDataFactory {
         case .people:
             return PeopleCategory()
         case .films:
-            return PeopleCategory()
+            return FilmsCategory()
         case .planets:
-            return PeopleCategory()
+            return PlanetsCategory()
         case .species:
-            return PeopleCategory()
+            return SpeciesCategory()
         case .starships:
-            return PeopleCategory()
+            return StarshipsCategory()
         case .vehicles:
-            return PeopleCategory()
+            return VehiclesCategory()
         }
     }
 }

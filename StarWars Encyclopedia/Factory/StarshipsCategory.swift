@@ -1,29 +1,29 @@
 //
-//  PeopleCategory.swift
+//  StarshipsCategory.swift
 //  StarWars Encyclopedia
 //
-//  Created by Ivan Romero on 14/01/2023.
+//  Created by Ivan Romero on 16/01/2023.
 //
 
 import Foundation
 import UIKit
 
-class PeopleCategory: ManageData {
+class StarshipsCategory: ManageData {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: People? = nil
+    var result: Starships? = nil
     
-    func getResults(completion: @escaping(Bool)->Void) {
+    func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
-            let url = self.request.getURL(valueCategoryPath: "people")
-            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<People, Error>) in
+            let url = self.request.getURL(valueCategoryPath: Categories.starships.rawValue)
+            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Starships, Error>) in
                 guard let self = self else { return }
                 switch result {
                 case .success(let result):
                     self.result = result
                     result.results.enumerated().forEach { (index,result) in
-                        self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .people)
+                        self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .starships)
                     }
                     completion(false)
                 case .failure(let error):
