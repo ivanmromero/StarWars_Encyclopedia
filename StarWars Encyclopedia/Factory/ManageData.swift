@@ -14,8 +14,8 @@ protocol ManageData {
     func getResults(completion: @escaping(Bool)->Void)
     func getResultsCount() -> Int
     func getNameOrTitle(index: Int) -> String
-    func getSearchResultsCountFor(searchText: String) -> Int
-    func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String) -> String?
+    func getSearchResultsCountFor(searchText: String?) -> Int
+    func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String?
     func getImage(index: Int) -> UIImage?
-    func getImageOfSearchResultAt(index: Int, searchText: String) -> UIImage?
+    func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage?
 }

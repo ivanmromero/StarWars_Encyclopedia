@@ -78,7 +78,7 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isSearching {
-            return viewModel.getSearchResultsCount()
+            return viewModel.manageData.getSearchResultsCountFor(searchText: viewModel.searchText)
         }
         return viewModel.manageData.getResultsCount()
     }
@@ -100,8 +100,8 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     private func setSearchCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
-        cell.categoryLabel.text = viewModel.getNameOrTitleOfSearchResult(index: indexPath)
-        if let urlImage = viewModel.getImageOfSearchResult(index: indexPath) {
+        cell.categoryLabel.text = viewModel.manageData.getNameOrTitleOfSearchResultAt(indexPath, searchText: viewModel.searchText)
+        if let urlImage = viewModel.manageData.getImageOfSearchResultAt(index: indexPath, searchText: viewModel.searchText) {
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     cell.categoryImage.image = urlImage

@@ -33,11 +33,6 @@ class CategoryViewModel {
     }
     
     func getData(completion: @escaping ()->Void) {
-//        requestHandler.getCategoryData { isTrue in
-//            self.isLoading = isTrue
-//            print(self.requestHandler.imageDictionary)
-//            completion()
-//        }
         manageData.getResults { isTrue in
             self.isLoading = isTrue
             print(self.requestHandler.imageDictionary)

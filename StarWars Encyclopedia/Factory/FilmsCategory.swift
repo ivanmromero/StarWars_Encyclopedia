@@ -44,13 +44,15 @@ class FilmsCategory: ManageData {
         return data[index].title
     }
     
-    func getSearchResultsCountFor(searchText: String) -> Int {
+    func getSearchResultsCountFor(searchText: String?) -> Int {
         guard let result = result else { return 0 }
+        guard let searchText = searchText else { return 0 }
         return result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}.count
     }
     
-    func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String) -> String? {
+    func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String? {
         guard let result = result else { return nil }
+        guard let searchText = searchText else { return nil }
         let searchResults = result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}
         print(result.results.filter{$0.title.lowercased().contains(searchText.lowercased())})
         print(searchResults[index].title)
@@ -63,10 +65,10 @@ class FilmsCategory: ManageData {
         return self.imageCacheManager.imageCache.object(forKey: data[index].title as AnyObject) as? UIImage
     }
     
-    func getImageOfSearchResultAt(index: Int, searchText: String) -> UIImage? {
+    func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage? {
         guard let result = result else { return nil }
+        guard let searchText = searchText else { return nil }
         let searchResults = result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].title as AnyObject) as? UIImage
     }
-    
 }
