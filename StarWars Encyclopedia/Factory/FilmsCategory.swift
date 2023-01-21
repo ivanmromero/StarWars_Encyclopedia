@@ -114,11 +114,10 @@ class FilmsCategory: ManageData {
         let codingKeys = FilmResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary[codingKeys.title.rawValue] = resultSelected.title
-        dictionary[codingKeys.openingCrawl.rawValue] = resultSelected.openingCrawl
-        dictionary[codingKeys.director.rawValue] = resultSelected.director
-        dictionary[codingKeys.producer.rawValue] = resultSelected.producer
-        dictionary[codingKeys.releaseDate.rawValue] = resultSelected.releaseDate
+        dictionary["\(codingKeys.openingCrawl.rawValue):"] = resultSelected.openingCrawl
+        dictionary["\(codingKeys.director.rawValue):"] = resultSelected.director
+        dictionary["\(codingKeys.producer.rawValue):"] = resultSelected.producer
+        dictionary["\(codingKeys.releaseDate.rawValue):"] = resultSelected.releaseDate
         
         return dictionary
     }

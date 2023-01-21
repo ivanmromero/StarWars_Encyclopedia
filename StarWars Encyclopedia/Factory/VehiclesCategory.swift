@@ -115,17 +115,16 @@ class VehiclesCategory: ManageData {
         let codingKeys = VehicleResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary[codingKeys.name.rawValue] = resultSelected.name
-        dictionary[codingKeys.model.rawValue] = resultSelected.model
-        dictionary[codingKeys.manufacturer.rawValue] = resultSelected.manufacturer
-        dictionary[codingKeys.costInCredits.rawValue] = resultSelected.costInCredits
-        dictionary[codingKeys.length.rawValue] = resultSelected.length
-        dictionary[codingKeys.crew.rawValue] = resultSelected.crew
-        dictionary[codingKeys.maxAtmospheringSpeed.rawValue] = resultSelected.maxAtmospheringSpeed
-        dictionary[codingKeys.passengers.rawValue] = resultSelected.passengers
-        dictionary[codingKeys.cargoCapacity.rawValue] = resultSelected.cargoCapacity
-        dictionary[codingKeys.consumables.rawValue] = resultSelected.consumables
-        dictionary[codingKeys.vehicleClass.rawValue] = resultSelected.vehicleClass
+        dictionary["\(codingKeys.model.rawValue):"] = resultSelected.model
+        dictionary["\(codingKeys.manufacturer.rawValue):"] = resultSelected.manufacturer
+        dictionary["\(codingKeys.costInCredits.rawValue):"] = resultSelected.costInCredits
+        dictionary["\(codingKeys.length.rawValue):"] = resultSelected.length
+        dictionary["\(codingKeys.crew.rawValue):"] = resultSelected.crew
+        dictionary["\(codingKeys.maxAtmospheringSpeed.rawValue):"] = resultSelected.maxAtmospheringSpeed
+        dictionary["\(codingKeys.passengers.rawValue):"] = resultSelected.passengers
+        dictionary["\(codingKeys.cargoCapacity.rawValue):"] = resultSelected.cargoCapacity
+        dictionary["\(codingKeys.consumables.rawValue):"] = resultSelected.consumables
+        dictionary["\(codingKeys.vehicleClass.rawValue):"] = resultSelected.vehicleClass
         
         return dictionary
     }

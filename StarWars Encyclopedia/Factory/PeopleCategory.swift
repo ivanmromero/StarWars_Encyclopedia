@@ -113,14 +113,15 @@ class PeopleCategory: ManageData {
     
     private func getPeopleInfo() -> [String: String]? {
         guard let resultSelected = resultSelected else { return nil }
+        let codingKeys = PeopleResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary["height"] = "\(resultSelected.height)"
-        dictionary["mass"] = "\(resultSelected.mass)"
-        dictionary["hairColor"] = "\(resultSelected.hairColor)"
-        dictionary["skinColor"] = "\(resultSelected.skinColor)"
-        dictionary["eyeColor"] = "\(resultSelected.eyeColor)"
-        dictionary["birthYear"] = "\(resultSelected.birthYear)"
+        dictionary["\(codingKeys.height.rawValue):"] = "\(resultSelected.height)"
+        dictionary["\(codingKeys.mass.rawValue):"] = "\(resultSelected.mass)"
+        dictionary["\(codingKeys.hairColor.rawValue):"] = "\(resultSelected.hairColor)"
+        dictionary["\(codingKeys.skinColor.rawValue):"] = "\(resultSelected.skinColor)"
+        dictionary["\(codingKeys.eyeColor.rawValue):"] = "\(resultSelected.eyeColor)"
+        dictionary["\(codingKeys.birthYear.rawValue):"] = "\(resultSelected.birthYear)"
         
         return dictionary
     }

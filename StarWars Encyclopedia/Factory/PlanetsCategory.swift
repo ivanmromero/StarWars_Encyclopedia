@@ -115,14 +115,13 @@ class PlanetsCategory: ManageData {
         let codingKeys = PlanetResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary["\(codingKeys.name.rawValue):"] = resultSelected.name
-        dictionary[codingKeys.rotationPeriod.rawValue] = resultSelected.rotationPeriod
-        dictionary[codingKeys.orbitalPeriod.rawValue] = resultSelected.orbitalPeriod
-        dictionary[codingKeys.diameter.rawValue] = resultSelected.diameter
-        dictionary[codingKeys.climate.rawValue] = resultSelected.climate
-        dictionary[codingKeys.gravity.rawValue] = resultSelected.gravity
-        dictionary[codingKeys.terrain.rawValue] = resultSelected.terrain
-        dictionary[codingKeys.surfaceWater.rawValue] = resultSelected.surfaceWater
+        dictionary["\(codingKeys.rotationPeriod.rawValue):"] = resultSelected.rotationPeriod
+        dictionary["\(codingKeys.orbitalPeriod.rawValue):"] = resultSelected.orbitalPeriod
+        dictionary["\(codingKeys.diameter.rawValue):"] = resultSelected.diameter
+        dictionary["\(codingKeys.climate.rawValue):"] = resultSelected.climate
+        dictionary["\(codingKeys.gravity.rawValue):"] = resultSelected.gravity
+        dictionary["\(codingKeys.terrain.rawValue):"] = resultSelected.terrain
+        dictionary["\(codingKeys.surfaceWater.rawValue):"] = resultSelected.surfaceWater
         
         return dictionary
     }

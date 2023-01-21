@@ -114,15 +114,14 @@ class SpeciesCategory: ManageData {
         let codingKeys = SpeciesResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary[codingKeys.name.rawValue] = resultSelected.name
-        dictionary[codingKeys.classification.rawValue] = resultSelected.classification
-        dictionary["designation:"] = resultSelected.designation.rawValue
-        dictionary[codingKeys.averageHeight.rawValue] = resultSelected.averageHeight
-        dictionary[codingKeys.skinColors.rawValue] = resultSelected.skinColors
-        dictionary[codingKeys.hairColors.rawValue] = resultSelected.hairColors
-        dictionary[codingKeys.skinColors.rawValue] = resultSelected.eyeColors
-        dictionary[codingKeys.language.rawValue] = resultSelected.language
-        dictionary[codingKeys.averageLifespan.rawValue] = resultSelected.averageLifespan
+        dictionary["\(codingKeys.classification.rawValue):"] = resultSelected.classification
+        dictionary["\(codingKeys.designation.rawValue):"] = resultSelected.designation.rawValue
+        dictionary["\(codingKeys.averageHeight.rawValue):"] = resultSelected.averageHeight
+        dictionary["\(codingKeys.skinColors.rawValue):"] = resultSelected.skinColors
+        dictionary["\(codingKeys.hairColors.rawValue):"] = resultSelected.hairColors
+        dictionary["\(codingKeys.skinColors.rawValue):"] = resultSelected.eyeColors
+        dictionary["\(codingKeys.language.rawValue):"] = resultSelected.language
+        dictionary["\(codingKeys.averageLifespan.rawValue):"] = resultSelected.averageLifespan
         
         return dictionary
     }
