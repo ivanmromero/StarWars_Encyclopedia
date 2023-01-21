@@ -18,4 +18,11 @@ protocol ManageData {
     func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String?
     func getImage(index: Int) -> UIImage?
     func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage?
+    func setResultSelectedAt(index: Int)
+    func getImageOfResultSelected() -> UIImage?
+    func getNameOrTitle() -> String
+    func getNameOfSection(index: Int) -> String
+    func getNumberOfSections() -> Int
+    func getInfoOfResultSelected() -> [String: String]?
+    func getSectionValuesAt(index: Int) -> [String]?
 }

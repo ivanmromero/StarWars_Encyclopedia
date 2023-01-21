@@ -12,7 +12,8 @@ class PlanetsCategory: ManageData {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: Planets? = nil
+    var result: Planets?
+    var resultSelected: PlanetResult?
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
@@ -71,4 +72,75 @@ class PlanetsCategory: ManageData {
         let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
     }
+    
+    func setResultSelectedAt(index: Int) {
+        guard let result = result else { return }
+        resultSelected = result.results[index]
+    }
+    
+    func getImageOfResultSelected() -> UIImage? {
+        guard let resultSelected = resultSelected else { return nil }
+        return self.imageCacheManager.imageCache.object(forKey: resultSelected.name as AnyObject) as? UIImage
+    }
+    
+    func getNameOrTitle() -> String {
+        guard let resultSelected = resultSelected else { return "No hay resultado seleccionado" }
+        return resultSelected.name
+    }
+    
+    func getNameOfSection(index: Int) -> String {
+        getSectionsOfPlanets()[index - 1]
+    }
+    
+    private func getSectionsOfPlanets() -> [String]{
+        let codingKeys = PlanetResult.CodingKeys.self
+        
+        let sections: [String] = [codingKeys.residents.rawValue,
+                                  codingKeys.films.rawValue]
+        
+        return sections
+    }
+    
+    func getNumberOfSections() -> Int {
+        3
+    }
+    
+    func getInfoOfResultSelected() -> [String : String]? {
+        getPlanetsInfo()
+    }
+    
+    private func getPlanetsInfo()-> [String: String]? {
+        guard let resultSelected = resultSelected else { return nil }
+
+        let codingKeys = PlanetResult.CodingKeys.self
+        var dictionary: [String: String] = [:]
+        
+        dictionary["\(codingKeys.name.rawValue):"] = resultSelected.name
+        dictionary[codingKeys.rotationPeriod.rawValue] = resultSelected.rotationPeriod
+        dictionary[codingKeys.orbitalPeriod.rawValue] = resultSelected.orbitalPeriod
+        dictionary[codingKeys.diameter.rawValue] = resultSelected.diameter
+        dictionary[codingKeys.climate.rawValue] = resultSelected.climate
+        dictionary[codingKeys.gravity.rawValue] = resultSelected.gravity
+        dictionary[codingKeys.terrain.rawValue] = resultSelected.terrain
+        dictionary[codingKeys.surfaceWater.rawValue] = resultSelected.surfaceWater
+        
+        return dictionary
+    }
+    
+    func getSectionValuesAt(index: Int) -> [String]? {
+        getSectionValuesOfPlanets(index: index)
+    }
+    
+    private func getSectionValuesOfPlanets(index: Int) -> [String]? {
+        guard let resultSelected = resultSelected else { return nil }
+        switch index {
+        case 1:
+            return resultSelected.residents
+        case 2:
+            return resultSelected.films
+        default:
+            return resultSelected.residents
+        }
+    }
+    
 }

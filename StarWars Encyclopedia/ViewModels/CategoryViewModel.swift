@@ -11,7 +11,7 @@ import UIKit
 class CategoryViewModel {
     private let category: Categories
     private let requestHandler: RequestHandler
-    let manageData: ManageData
+    private let manageData: ManageData
     
     var searchText: String? {
         didSet {
@@ -38,5 +38,37 @@ class CategoryViewModel {
             print(self.requestHandler.imageDictionary)
             completion()
         }
+    }
+    
+    func getResultsCount() -> Int {
+        manageData.getResultsCount()
+    }
+    
+    func getNameOrTitleAt(_ index: Int) -> String {
+        manageData.getNameOrTitle(index: index)
+    }
+    
+    func getSearchCountFor(_ searchText: String?) -> Int {
+        manageData.getSearchResultsCountFor(searchText: searchText)
+    }
+    
+    func getNameOrTitleOfSearchAt(_ index: Int, searchText: String?) -> String? {
+        manageData.getNameOrTitleOfSearchResultAt(index, searchText: searchText)
+    }
+    
+    func getImageAt(_ index: Int) -> UIImage? {
+        manageData.getImage(index: index)
+    }
+    
+    func getImageOfSearchAt(index: Int, Text: String?) -> UIImage? {
+        manageData.getImageOfSearchResultAt(index: index, searchText: Text)
+    }
+    
+    func setSelectedResultAt(_ index: Int) {
+        manageData.setResultSelectedAt(index: index)
+    }
+    
+    func getManageData() -> ManageData {
+        manageData
     }
 }

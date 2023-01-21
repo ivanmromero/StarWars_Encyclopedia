@@ -78,9 +78,9 @@ class CategoryViewController: UIViewController {
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isSearching {
-            return viewModel.manageData.getSearchResultsCountFor(searchText: viewModel.searchText)
+            return viewModel.getSearchCountFor(viewModel.searchText)
         }
-        return viewModel.manageData.getResultsCount()
+        return viewModel.getResultsCount()
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -100,8 +100,8 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     private func setSearchCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
-        cell.categoryLabel.text = viewModel.manageData.getNameOrTitleOfSearchResultAt(indexPath, searchText: viewModel.searchText)
-        if let urlImage = viewModel.manageData.getImageOfSearchResultAt(index: indexPath, searchText: viewModel.searchText) {
+        cell.categoryLabel.text = viewModel.getNameOrTitleOfSearchAt(indexPath, searchText: viewModel.searchText)
+        if let urlImage = viewModel.getImageOfSearchAt(index: indexPath, Text: viewModel.searchText) {
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     cell.categoryImage.image = urlImage
@@ -111,8 +111,8 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
     
     private func setCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
-        cell.categoryLabel.text = viewModel.manageData.getNameOrTitle(index: indexPath)
-        if let image = viewModel.manageData.getImage(index: indexPath) {
+        cell.categoryLabel.text = viewModel.getNameOrTitleAt(indexPath)
+        if let image = viewModel.getImageAt(indexPath) {
             DispatchQueue.global().async {
                 DispatchQueue.main.async {
                     cell.categoryImage.image = image
@@ -126,9 +126,10 @@ extension CategoryViewController: UICollectionViewDataSource {
 // MARK: UICollectionViewDelegate
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        CategoryManager.shared.result = viewModel.getResult()[indexPath.row]
-//        let informationViewController = DetailViewController(viewModel: DetailViewModel(result: viewModel.getResult()[indexPath.row] as! Decodable, categoryImage: viewModel.getImage(index: indexPath.row)!))
-//        self.navigationController?.pushViewController(informationViewController, animated: true)
+        viewModel.setSelectedResultAt(indexPath.row)
+        let detailViewModel = DetailViewModel(manageData: viewModel.getManageData())
+        let detailViewController = DetailViewController(viewModel: detailViewModel)
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }
 

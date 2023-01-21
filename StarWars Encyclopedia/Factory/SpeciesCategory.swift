@@ -12,7 +12,8 @@ class SpeciesCategory: ManageData {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: Species? = nil
+    var result: Species?
+    var resultSelected: SpeciesResult?
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
@@ -70,5 +71,75 @@ class SpeciesCategory: ManageData {
         guard let searchText = searchText else { return nil }
         let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+    }
+    
+    func setResultSelectedAt(index: Int) {
+        guard let result = result else { return }
+        resultSelected = result.results[index]
+    }
+    
+    func getImageOfResultSelected() -> UIImage? {
+        guard let resultSelected = resultSelected else { return nil }
+        return self.imageCacheManager.imageCache.object(forKey: resultSelected.name as AnyObject) as? UIImage
+    }
+    
+    func getNameOrTitle() -> String {
+        guard let resultSelected = resultSelected else { return "No hay resultado seleccionado" }
+        return resultSelected.name
+    }
+    
+    func getNameOfSection(index: Int) -> String {
+        getSectionsOfSpecies()[index - 1]
+    }
+    
+    private func getSectionsOfSpecies() -> [String]{
+        let codingKeys = SpeciesResult.CodingKeys.self
+        
+        let sections: [String] = [codingKeys.films.rawValue,
+                                  codingKeys.people.rawValue]
+        
+        return sections
+    }
+    
+    func getNumberOfSections() -> Int {
+        3
+    }
+    
+    func getInfoOfResultSelected() -> [String : String]? {
+        getSpeciesInfo()
+    }
+    
+    private func getSpeciesInfo() -> [String: String]? {
+        guard let resultSelected = resultSelected else { return nil }
+        let codingKeys = SpeciesResult.CodingKeys.self
+        var dictionary: [String: String] = [:]
+        
+        dictionary[codingKeys.name.rawValue] = resultSelected.name
+        dictionary[codingKeys.classification.rawValue] = resultSelected.classification
+        dictionary["designation:"] = resultSelected.designation.rawValue
+        dictionary[codingKeys.averageHeight.rawValue] = resultSelected.averageHeight
+        dictionary[codingKeys.skinColors.rawValue] = resultSelected.skinColors
+        dictionary[codingKeys.hairColors.rawValue] = resultSelected.hairColors
+        dictionary[codingKeys.skinColors.rawValue] = resultSelected.eyeColors
+        dictionary[codingKeys.language.rawValue] = resultSelected.language
+        dictionary[codingKeys.averageLifespan.rawValue] = resultSelected.averageLifespan
+        
+        return dictionary
+    }
+    
+    func getSectionValuesAt(index: Int) -> [String]? {
+        getSectionValuesOfSpecies(index: index)
+    }
+    
+    private func getSectionValuesOfSpecies(index: Int) -> [String]? {
+        guard let resultSelected = resultSelected else { return nil }
+        switch index {
+        case 1:
+            return resultSelected.films
+        case 2:
+            return resultSelected.people
+        default:
+            return resultSelected.films
+        }
     }
 }
