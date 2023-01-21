@@ -142,6 +142,7 @@ extension DetailViewController: UITableViewDataSource {
                         rightLabel.text = value
                         horizontalStackView.addArrangedSubview(leftLabel)
                         horizontalStackView.addArrangedSubview(rightLabel)
+                        horizontalStackView.alignment = .top
                         
                         cell.verticalStackView.addArrangedSubview(horizontalStackView)
                     }
