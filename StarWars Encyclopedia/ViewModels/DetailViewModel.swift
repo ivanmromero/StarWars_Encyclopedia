@@ -9,33 +9,33 @@ import Foundation
 import UIKit
 
 class DetailViewModel {
-    private let manageData: ManageData
+    private let categoryDataManage: CategoryDataManage
     
-    init(manageData: ManageData) {
-        self.manageData = manageData
+    init(categoryDataManage: CategoryDataManage) {
+        self.categoryDataManage = categoryDataManage
     }
     
     func getImage() -> UIImage? {
-        manageData.getImageOfResultSelected()
+        categoryDataManage.getImageOfResultSelected()
     }
     
     func getNameOrTitle() -> String {
-        manageData.getNameOrTitle()
+        categoryDataManage.getNameOrTitle()
     }
     
     func getSectionNameAt(index: Int) -> String {
-        manageData.getNameOfSection(index: index)
+        categoryDataManage.getNameOfSection(index: index)
     }
     
     func getCountOfSections() -> Int {
-        manageData.getNumberOfSections()
+        categoryDataManage.getNumberOfSections()
     }
     
     func getInfo() -> [String: String]? {
-        manageData.getInfoOfResultSelected()
+        categoryDataManage.getInfoOfResultSelected()
     }
     
-    func getSectionDataAt(index: Int) -> [String]? {
-        manageData.getSectionValuesAt(index: index)
+    func getSectionDataManage(index : Int) -> SectionDataManage? {
+        categoryDataManage.getSectionDataManageAt(index)
     }
 }

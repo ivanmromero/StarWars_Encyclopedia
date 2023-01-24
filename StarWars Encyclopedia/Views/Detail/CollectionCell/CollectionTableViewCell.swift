@@ -9,9 +9,11 @@ import UIKit
 
 class CollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
-    var viewModel: CollectionTableViewCellViewModel = CollectionTableViewCellViewModel(categoryArray: []) {
+    var viewModel: CollectionTableViewCellViewModel = CollectionTableViewCellViewModel() {
         didSet {
-            horizontalCollectionView.reloadData()
+            DispatchQueue.main.async {
+                self.horizontalCollectionView.reloadData()
+            }
         }
     }
     
@@ -39,6 +41,14 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = horizontalCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCell", for: indexPath) as! DetailCollectionViewCell
         
+        cell.categoryDetailTitle.text = viewModel.getNameOrTitleAtIndex(index: indexPath.row)
+        if let image = viewModel.getImage(index: indexPath.row) {
+            DispatchQueue.global().async {
+                DispatchQueue.main.async {
+                    cell.categoryDetailImage.image = image
+                }
+            }
+        }
         
         return cell
     }

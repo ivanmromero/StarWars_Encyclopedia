@@ -1,5 +1,5 @@
 //
-//  SpeciesCategory.swift
+//  VehiclesCategory.swift
 //  StarWars Encyclopedia
 //
 //  Created by Ivan Romero on 16/01/2023.
@@ -8,23 +8,23 @@
 import Foundation
 import UIKit
 
-class SpeciesCategory: ManageData {
+class VehiclesCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: Species?
-    var resultSelected: SpeciesResult?
+    var result: Vehicles?
+    var resultSelected: VehicleResult?
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
-            let url = self.request.getURL(valueCategoryPath: Categories.species.rawValue)
-            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Species, Error>) in
+            let url = self.request.getURL(valueCategoryPath: Categories.vehicles.rawValue)
+            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Vehicles, Error>) in
                 guard let self = self else { return }
                 switch result {
                 case .success(let result):
                     self.result = result
                     result.results.enumerated().forEach { (index,result) in
-                        self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .species)
+                        self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .vehicles)
                     }
                     completion(false)
                 case .failure(let error):
@@ -89,14 +89,14 @@ class SpeciesCategory: ManageData {
     }
     
     func getNameOfSection(index: Int) -> String {
-        getSectionsOfSpecies()[index - 1]
+        getSectionsOfVehicles()[index - 1]
     }
     
-    private func getSectionsOfSpecies() -> [String]{
-        let codingKeys = SpeciesResult.CodingKeys.self
+    private func getSectionsOfVehicles() -> [String]{
+        let codingKeys = VehicleResult.CodingKeys.self
         
-        let sections: [String] = [codingKeys.films.rawValue,
-                                  codingKeys.people.rawValue]
+        let sections: [String] = [codingKeys.pilots.rawValue,
+                                  codingKeys.films.rawValue]
         
         return sections
     }
@@ -106,39 +106,43 @@ class SpeciesCategory: ManageData {
     }
     
     func getInfoOfResultSelected() -> [String : String]? {
-        getSpeciesInfo()
+        getVehiclesInfo()
     }
     
-    private func getSpeciesInfo() -> [String: String]? {
+    private func getVehiclesInfo() -> [String: String]? {
         guard let resultSelected = resultSelected else { return nil }
-        let codingKeys = SpeciesResult.CodingKeys.self
+        
+        let codingKeys = VehicleResult.CodingKeys.self
         var dictionary: [String: String] = [:]
         
-        dictionary["\(codingKeys.classification.rawValue):"] = resultSelected.classification
-        dictionary["\(codingKeys.designation.rawValue):"] = resultSelected.designation.rawValue
-        dictionary["\(codingKeys.averageHeight.rawValue):"] = resultSelected.averageHeight
-        dictionary["\(codingKeys.skinColors.rawValue):"] = resultSelected.skinColors
-        dictionary["\(codingKeys.hairColors.rawValue):"] = resultSelected.hairColors
-        dictionary["\(codingKeys.skinColors.rawValue):"] = resultSelected.eyeColors
-        dictionary["\(codingKeys.language.rawValue):"] = resultSelected.language
-        dictionary["\(codingKeys.averageLifespan.rawValue):"] = resultSelected.averageLifespan
+        dictionary["\(codingKeys.model.rawValue):"] = resultSelected.model
+        dictionary["\(codingKeys.manufacturer.rawValue):"] = resultSelected.manufacturer
+        dictionary["\(codingKeys.costInCredits.rawValue):"] = resultSelected.costInCredits
+        dictionary["\(codingKeys.length.rawValue):"] = resultSelected.length
+        dictionary["\(codingKeys.crew.rawValue):"] = resultSelected.crew
+        dictionary["\(codingKeys.maxAtmospheringSpeed.rawValue):"] = resultSelected.maxAtmospheringSpeed
+        dictionary["\(codingKeys.passengers.rawValue):"] = resultSelected.passengers
+        dictionary["\(codingKeys.cargoCapacity.rawValue):"] = resultSelected.cargoCapacity
+        dictionary["\(codingKeys.consumables.rawValue):"] = resultSelected.consumables
+        dictionary["\(codingKeys.vehicleClass.rawValue):"] = resultSelected.vehicleClass
         
         return dictionary
     }
     
-    func getSectionValuesAt(index: Int) -> [String]? {
-        getSectionValuesOfSpecies(index: index)
-    }
-    
-    private func getSectionValuesOfSpecies(index: Int) -> [String]? {
+    func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
+        var urls: [String]
+        var type: Categories
         switch index {
         case 1:
-            return resultSelected.films
+            type = .people
+            urls = resultSelected.pilots
         case 2:
-            return resultSelected.people
+            type = .films
+            urls = resultSelected.films
         default:
-            return resultSelected.films
+            return nil
         }
+        return SectionDataManageFactory.builder(type: type, urls: urls, request: self.request, imageCacheManager: self.imageCacheManager)
     }
 }

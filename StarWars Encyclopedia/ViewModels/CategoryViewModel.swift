@@ -11,7 +11,7 @@ import UIKit
 class CategoryViewModel {
     private let category: Categories
     private let requestHandler: RequestHandler
-    private let manageData: ManageData
+    private let categoryDataManage: CategoryDataManage
     
     var searchText: String? {
         didSet {
@@ -29,11 +29,11 @@ class CategoryViewModel {
     init() {
         self.requestHandler = RequestHandler()
         self.category = CategoryManager.shared.category!
-        self.manageData = ManageDataFactory.buildManageData(typeCategory: self.category)
+        self.categoryDataManage = CategoryDataManageFactory.buildCategoryDataManage(typeCategory: self.category)
     }
     
     func getData(completion: @escaping ()->Void) {
-        manageData.getResults { isTrue in
+        categoryDataManage.getResults { isTrue in
             self.isLoading = isTrue
             print(self.requestHandler.imageDictionary)
             completion()
@@ -41,34 +41,34 @@ class CategoryViewModel {
     }
     
     func getResultsCount() -> Int {
-        manageData.getResultsCount()
+        categoryDataManage.getResultsCount()
     }
     
     func getNameOrTitleAt(_ index: Int) -> String {
-        manageData.getNameOrTitle(index: index)
+        categoryDataManage.getNameOrTitle(index: index)
     }
     
     func getSearchCountFor(_ searchText: String?) -> Int {
-        manageData.getSearchResultsCountFor(searchText: searchText)
+        categoryDataManage.getSearchResultsCountFor(searchText: searchText)
     }
     
     func getNameOrTitleOfSearchAt(_ index: Int, searchText: String?) -> String? {
-        manageData.getNameOrTitleOfSearchResultAt(index, searchText: searchText)
+        categoryDataManage.getNameOrTitleOfSearchResultAt(index, searchText: searchText)
     }
     
     func getImageAt(_ index: Int) -> UIImage? {
-        manageData.getImage(index: index)
+        categoryDataManage.getImage(index: index)
     }
     
     func getImageOfSearchAt(index: Int, Text: String?) -> UIImage? {
-        manageData.getImageOfSearchResultAt(index: index, searchText: Text)
+        categoryDataManage.getImageOfSearchResultAt(index: index, searchText: Text)
     }
     
     func setSelectedResultAt(_ index: Int) {
-        manageData.setResultSelectedAt(index: index)
+        categoryDataManage.setResultSelectedAt(index: index)
     }
     
-    func getManageData() -> ManageData {
-        manageData
+    func getCategoryDataManage() -> CategoryDataManage {
+        categoryDataManage
     }
 }

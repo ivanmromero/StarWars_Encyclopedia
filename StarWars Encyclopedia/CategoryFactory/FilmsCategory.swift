@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class FilmsCategory: ManageData {
+class FilmsCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
@@ -122,25 +122,29 @@ class FilmsCategory: ManageData {
         return dictionary
     }
     
-    func getSectionValuesAt(index: Int) -> [String]? {
-        getSectionValuesOfFilms(index: index)
-    }
-    
-    private func getSectionValuesOfFilms(index: Int) -> [String]? {
+    func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
+        var urls: [String]
+        var type: Categories
         switch index {
         case 1:
-            return resultSelected.characters
+            type = .people
+            urls = resultSelected.characters
         case 2:
-            return resultSelected.planets
+            type = .planets
+            urls = resultSelected.planets
         case 3:
-            return resultSelected.starships
+            type = .starships
+            urls = resultSelected.starships
         case 4:
-            return resultSelected.vehicles
+            type = .vehicles
+            urls = resultSelected.vehicles
         case 5:
-            return resultSelected.species
+            type = .species
+            urls = resultSelected.species
         default:
-            return resultSelected.characters
+            return nil
         }
+        return SectionDataManageFactory.builder(type: type, urls: urls, request: self.request, imageCacheManager: self.imageCacheManager)
     }
 }

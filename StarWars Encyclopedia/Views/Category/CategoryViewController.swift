@@ -127,7 +127,7 @@ extension CategoryViewController: UICollectionViewDataSource {
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.setSelectedResultAt(indexPath.row)
-        let detailViewModel = DetailViewModel(manageData: viewModel.getManageData())
+        let detailViewModel = DetailViewModel(categoryDataManage: viewModel.getCategoryDataManage())
         let detailViewController = DetailViewController(viewModel: detailViewModel)
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }

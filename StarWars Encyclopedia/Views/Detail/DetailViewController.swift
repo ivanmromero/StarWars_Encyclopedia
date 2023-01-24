@@ -152,8 +152,16 @@ extension DetailViewController: UITableViewDataSource {
         default:
             let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath) as! CollectionTableViewCell
             
-            if let categoryArray = viewModel.getSectionDataAt(index: indexPath.section) {
-                cell.viewModel = CollectionTableViewCellViewModel(categoryArray: categoryArray)
+            if let sectionDataManage = viewModel.getSectionDataManage(index: indexPath.section) {
+                if cell.viewModel.sectionDataManage == nil {
+                    let viewModel = CollectionTableViewCellViewModel()
+                    viewModel.sectionDataManage = sectionDataManage
+                    viewModel.getData {
+                        DispatchQueue.main.async {
+                            cell.viewModel = viewModel
+                        }
+                    }
+                }
             }
                 
             return cell

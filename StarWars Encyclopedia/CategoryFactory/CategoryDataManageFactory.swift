@@ -1,5 +1,5 @@
 //
-//  ManageDataFactory.swift
+//  CategoryDataManageFactory.swift
 //  StarWars Encyclopedia
 //
 //  Created by Ivan Romero on 14/01/2023.
@@ -7,8 +7,8 @@
 
 import Foundation
 
-class ManageDataFactory {
-    static func buildManageData(typeCategory: Categories) -> ManageData {
+class CategoryDataManageFactory {
+    static func buildCategoryDataManage(typeCategory: Categories) -> CategoryDataManage {
         switch typeCategory {
         case .people:
             return PeopleCategory()

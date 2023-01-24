@@ -1,5 +1,5 @@
 //
-//  ManageData.swift
+//  CategoryDataManage.swift
 //  StarWars Encyclopedia
 //
 //  Created by Ivan Romero on 14/01/2023.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-protocol ManageData {
+protocol CategoryDataManage {
     var request: RequestManager { get }
     var imageCacheManager: ImageCacheManager { get }
     func getResults(completion: @escaping(Bool)->Void)
@@ -24,5 +24,5 @@ protocol ManageData {
     func getNameOfSection(index: Int) -> String
     func getNumberOfSections() -> Int
     func getInfoOfResultSelected() -> [String: String]?
-    func getSectionValuesAt(index: Int) -> [String]?
+    func getSectionDataManageAt(_ index: Int) -> SectionDataManage?
 }
