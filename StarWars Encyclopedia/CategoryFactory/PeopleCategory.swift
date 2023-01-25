@@ -95,17 +95,28 @@ class PeopleCategory: CategoryDataManage {
     private func getSectionsOfPeople() -> [String]{
         let codingKeys = PeopleResult.CodingKeys.self
 
-        let sections: [String] = [codingKeys.films.rawValue,
-                                  codingKeys.species.rawValue,
-                                  codingKeys.vehicles.rawValue,
-                                  codingKeys.starships.rawValue]
+        var sections: [String] = []
+        
+        if !(resultSelected!.films.isEmpty) {
+            sections.append(codingKeys.films.rawValue)
+        }
+        
+        if !(resultSelected!.species.isEmpty) {
+            sections.append(codingKeys.species.rawValue)
+        }
+        
+        if !(resultSelected!.vehicles.isEmpty) {
+            sections.append(codingKeys.vehicles.rawValue)
+        }
+        
+        if !(resultSelected!.starships.isEmpty) {
+            sections.append(codingKeys.starships.rawValue)
+        }
         
         return sections
     }
 
-    func getNumberOfSections() -> Int {
-        return 5
-    }
+    func getNumberOfSections() -> Int { getSectionsOfPeople().count + 1 }
     
     func getInfoOfResultSelected() -> [String: String]? {
         getPeopleInfo()
@@ -128,19 +139,23 @@ class PeopleCategory: CategoryDataManage {
     
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
-        var urls: [String]
+        let codingKeys = PeopleResult.CodingKeys.self
+        var urls: [String] = []
         var type: Categories
-        switch index {
-        case 1:
+
+        let section = getSectionsOfPeople()[index-1]
+
+        switch section {
+        case codingKeys.films.rawValue:
             type = .films
             urls = resultSelected.films
-        case 2:
+        case codingKeys.species.rawValue:
             type = .species
             urls = resultSelected.species
-        case 3:
+        case codingKeys.vehicles.rawValue:
             type = .vehicles
             urls = resultSelected.vehicles
-        case 4:
+        case codingKeys.starships.rawValue:
             type = .starships
             urls = resultSelected.starships
         default:

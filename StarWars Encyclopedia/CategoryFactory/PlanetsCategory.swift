@@ -95,15 +95,20 @@ class PlanetsCategory: CategoryDataManage {
     private func getSectionsOfPlanets() -> [String]{
         let codingKeys = PlanetResult.CodingKeys.self
         
-        let sections: [String] = [codingKeys.residents.rawValue,
-                                  codingKeys.films.rawValue]
+        var sections: [String] = []
+        
+        if !(resultSelected!.residents.isEmpty) {
+            sections.append(codingKeys.residents.rawValue)
+        }
+        
+        if !(resultSelected!.films.isEmpty) {
+            sections.append(codingKeys.films.rawValue)
+        }
         
         return sections
     }
     
-    func getNumberOfSections() -> Int {
-        3
-    }
+    func getNumberOfSections() -> Int { getSectionsOfPlanets().count + 1 }
     
     func getInfoOfResultSelected() -> [String : String]? {
         getPlanetsInfo()
@@ -128,13 +133,17 @@ class PlanetsCategory: CategoryDataManage {
     
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
-        var urls: [String]
+        let codingKeys = PlanetResult.CodingKeys.self
+        var urls: [String] = []
         var type: Categories
-        switch index {
-        case 1:
+        
+        let section = getSectionsOfPlanets()[index-1]
+
+        switch section {
+        case codingKeys.residents.rawValue:
             type = .people
             urls = resultSelected.residents
-        case 2:
+        case codingKeys.films.rawValue:
             type = .films
             urls = resultSelected.films
         default:

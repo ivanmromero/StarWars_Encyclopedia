@@ -94,16 +94,20 @@ class SpeciesCategory: CategoryDataManage {
     
     private func getSectionsOfSpecies() -> [String]{
         let codingKeys = SpeciesResult.CodingKeys.self
+        var sections: [String] = []
         
-        let sections: [String] = [codingKeys.films.rawValue,
-                                  codingKeys.people.rawValue]
+        if !(resultSelected!.films.isEmpty) {
+            sections.append(codingKeys.films.rawValue)
+        }
+        
+        if !(resultSelected!.people.isEmpty) {
+            sections.append(codingKeys.people.rawValue)
+        }
         
         return sections
     }
     
-    func getNumberOfSections() -> Int {
-        3
-    }
+    func getNumberOfSections() -> Int { getSectionsOfSpecies().count + 1 }
     
     func getInfoOfResultSelected() -> [String : String]? {
         getSpeciesInfo()
@@ -128,13 +132,17 @@ class SpeciesCategory: CategoryDataManage {
     
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
-        var urls: [String]
+        let codingKeys = SpeciesResult.CodingKeys.self
+        var urls: [String] = []
         var type: Categories
-        switch index {
-        case 1:
+        
+        let section = getSectionsOfSpecies()[index-1]
+        
+        switch section {
+        case codingKeys.films.rawValue:
             type = .films
             urls = resultSelected.films
-        case 2:
+        case codingKeys.people.rawValue:
             type = .people
             urls = resultSelected.people
         default:

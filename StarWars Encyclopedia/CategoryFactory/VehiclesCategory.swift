@@ -94,16 +94,20 @@ class VehiclesCategory: CategoryDataManage {
     
     private func getSectionsOfVehicles() -> [String]{
         let codingKeys = VehicleResult.CodingKeys.self
+        var sections: [String] = []
         
-        let sections: [String] = [codingKeys.pilots.rawValue,
-                                  codingKeys.films.rawValue]
+        if !(resultSelected!.pilots.isEmpty) {
+            sections.append(codingKeys.pilots.rawValue)
+        }
+        
+        if !(resultSelected!.films.isEmpty) {
+            sections.append(codingKeys.films.rawValue)
+        }
         
         return sections
     }
     
-    func getNumberOfSections() -> Int {
-        3
-    }
+    func getNumberOfSections() -> Int { getSectionsOfVehicles().count + 1 }
     
     func getInfoOfResultSelected() -> [String : String]? {
         getVehiclesInfo()
@@ -131,13 +135,17 @@ class VehiclesCategory: CategoryDataManage {
     
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
-        var urls: [String]
+        let codingKeys = VehicleResult.CodingKeys.self
+        var urls: [String] = []
         var type: Categories
-        switch index {
-        case 1:
+        
+        let section = getSectionsOfVehicles()[index-1]
+        
+        switch section {
+        case codingKeys.pilots.rawValue:
             type = .people
             urls = resultSelected.pilots
-        case 2:
+        case codingKeys.films.rawValue:
             type = .films
             urls = resultSelected.films
         default:

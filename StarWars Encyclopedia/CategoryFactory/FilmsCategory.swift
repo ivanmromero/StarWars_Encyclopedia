@@ -95,15 +95,32 @@ class FilmsCategory: CategoryDataManage {
     private func getSectionsOfFilms() -> [String]{
         let codingKeys = FilmResult.CodingKeys.self
         
-        let sections: [String] = [codingKeys.characters.rawValue,
-                                  codingKeys.planets.rawValue,
-                                  codingKeys.starships.rawValue,
-                                  codingKeys.vehicles.rawValue,
-                                  codingKeys.species.rawValue]
+        var sections: [String] = []
+        
+        if !(resultSelected!.characters.isEmpty) {
+            sections.append(codingKeys.characters.rawValue)
+        }
+        
+        if !(resultSelected!.planets.isEmpty) {
+            sections.append(codingKeys.planets.rawValue)
+        }
+        
+        if !(resultSelected!.starships.isEmpty) {
+            sections.append(codingKeys.starships.rawValue)
+        }
+        
+        if !(resultSelected!.vehicles.isEmpty) {
+            sections.append(codingKeys.vehicles.rawValue)
+        }
+        
+        if !(resultSelected!.species.isEmpty) {
+            sections.append(codingKeys.species.rawValue)
+        }
+        
         return sections
     }
     
-    func getNumberOfSections() -> Int { 5 }
+    func getNumberOfSections() -> Int { getSectionsOfFilms().count + 1 }
     
     func getInfoOfResultSelected() -> [String : String]? {
         getFilmInfo()
@@ -124,22 +141,26 @@ class FilmsCategory: CategoryDataManage {
     
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage? {
         guard let resultSelected = resultSelected else { return nil }
-        var urls: [String]
-        var type: Categories
-        switch index {
-        case 1:
+        let codingKeys = FilmResult.CodingKeys.self
+        var urls: [String] = []
+        var type: Categories = .films
+
+        let section = getSectionsOfFilms()[index-1]
+
+        switch section {
+        case codingKeys.characters.rawValue:
             type = .people
             urls = resultSelected.characters
-        case 2:
+        case codingKeys.planets.rawValue:
             type = .planets
             urls = resultSelected.planets
-        case 3:
+        case codingKeys.starships.rawValue:
             type = .starships
             urls = resultSelected.starships
-        case 4:
+        case codingKeys.vehicles.rawValue:
             type = .vehicles
             urls = resultSelected.vehicles
-        case 5:
+        case codingKeys.species.rawValue:
             type = .species
             urls = resultSelected.species
         default:
