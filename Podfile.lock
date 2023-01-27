@@ -1,16 +1,20 @@
 PODS:
   - iProgressHUD (1.1.1)
+  - lottie-ios (4.1.2)
 
 DEPENDENCIES:
   - iProgressHUD
+  - lottie-ios
 
 SPEC REPOS:
   trunk:
     - iProgressHUD
+    - lottie-ios
 
 SPEC CHECKSUMS:
   iProgressHUD: caa742128253c97f2c2e1ec59e2bbe6cf689df6a
+  lottie-ios: b3846a9fa8ca1a1a3bebfa256ebe8b6fd4aaaaad
 
-PODFILE CHECKSUM: a5742c10ae3e2dd30da705b53e160c4033fa6589
+PODFILE CHECKSUM: 5a44a17b6ef46636050cd460f22d14f85b78444a
 
 COCOAPODS: 1.11.3
