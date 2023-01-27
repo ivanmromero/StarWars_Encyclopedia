@@ -47,7 +47,7 @@ class FilmSection: SectionDataManage {
     }
     
     func getSubtitleAt(_ index: Int) -> String {
-        return result[index].producer
+        return result[index].director
     }
     
     func getImage(_ index: Int) -> UIImage? {

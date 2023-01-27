@@ -42,6 +42,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
+                <outlet property="contentCollectionView" destination="H2p-sc-9uM" id="KRe-7p-fc8"/>
                 <outlet property="horizontalCollectionView" destination="Pjk-zq-LUG" id="0f2-jV-QNP"/>
             </connections>
             <point key="canvasLocation" x="130" y="14.928909952606634"/>

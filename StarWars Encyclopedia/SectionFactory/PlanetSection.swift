@@ -47,7 +47,7 @@ class PlanetSection: SectionDataManage {
     }
     
     func getSubtitleAt(_ index: Int) -> String {
-        return result[index].diameter
+        return result[index].climate
     }
     
     func getImage(_ index: Int) -> UIImage? {

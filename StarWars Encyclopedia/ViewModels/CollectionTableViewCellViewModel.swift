@@ -23,7 +23,7 @@ class CollectionTableViewCellViewModel {
     
     func getSubtitleAt(_ index: Int) -> String {
         guard let sectionDataManage = sectionDataManage else { return "No hay subtitulo" }
-        return sectionDataManage.getSubtitleAt(index)
+        return sectionDataManage.getSubtitleAt(index).capitalized
     }
     
     func getImage(index: Int) -> UIImage? {
@@ -31,10 +31,12 @@ class CollectionTableViewCellViewModel {
         return sectionDataManage.getImage(index)
     }
     
-    func getData(completion: @escaping()->Void) {
-        guard let sectionDataManage = sectionDataManage else { return completion() }
+    func getData(completion: @escaping(Bool)->Void) {
+        guard let sectionDataManage = sectionDataManage else { return completion(true) }
         sectionDataManage.getData {
-            completion()
+            DispatchQueue.main.async {
+                completion(false)
+            }
         }
     }
 }
