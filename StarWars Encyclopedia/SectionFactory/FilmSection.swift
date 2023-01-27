@@ -46,6 +46,10 @@ class FilmSection: SectionDataManage {
         return result[index].title
     }
     
+    func getSubtitleAt(_ index: Int) -> String {
+        return result[index].producer
+    }
+    
     func getImage(_ index: Int) -> UIImage? {
         return imageCacheManager.imageCache.object(forKey: result[index].title as AnyObject) as? UIImage
     }

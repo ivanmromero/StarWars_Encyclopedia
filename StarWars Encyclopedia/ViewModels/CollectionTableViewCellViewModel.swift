@@ -21,6 +21,11 @@ class CollectionTableViewCellViewModel {
         return sectionDataManage.getNameOrTitleAt(index)
     }
     
+    func getSubtitleAt(_ index: Int) -> String {
+        guard let sectionDataManage = sectionDataManage else { return "No hay subtitulo" }
+        return sectionDataManage.getSubtitleAt(index)
+    }
+    
     func getImage(index: Int) -> UIImage? {
         guard let sectionDataManage = sectionDataManage else { return nil }
         return sectionDataManage.getImage(index)

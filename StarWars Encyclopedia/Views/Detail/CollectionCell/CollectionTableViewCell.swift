@@ -42,6 +42,7 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
         let cell = horizontalCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCell", for: indexPath) as! DetailCollectionViewCell
         
         cell.categoryDetailTitle.text = viewModel.getNameOrTitleAtIndex(index: indexPath.row)
+        cell.categoryDetailSubtitle.text = viewModel.getSubtitleAt(indexPath.row)
         if let image = viewModel.getImage(index: indexPath.row) {
             DispatchQueue.global().async {
                 DispatchQueue.main.async {

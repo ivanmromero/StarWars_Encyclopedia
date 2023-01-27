@@ -16,4 +16,5 @@ protocol SectionDataManage {
     func getData(completion: @escaping()->Void)
     func getNameOrTitleAt(_ index: Int) -> String
     func getImage(_ index: Int) -> UIImage?
+    func getSubtitleAt(_ index: Int) -> String
 }

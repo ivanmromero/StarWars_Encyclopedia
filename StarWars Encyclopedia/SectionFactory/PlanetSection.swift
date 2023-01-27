@@ -46,6 +46,10 @@ class PlanetSection: SectionDataManage {
         return result[index].name
     }
     
+    func getSubtitleAt(_ index: Int) -> String {
+        return result[index].diameter
+    }
+    
     func getImage(_ index: Int) -> UIImage? {
         return imageCacheManager.imageCache.object(forKey: result[index].name as AnyObject) as? UIImage
     }

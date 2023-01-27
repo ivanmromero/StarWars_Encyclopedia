@@ -14,10 +14,18 @@ class DetailCollectionViewCell: UICollectionViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setupCellView()
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         categoryDetailImage.image = nil
+    }
+    
+    private func setupCellView() {
+        categoryDetailImage.layer.masksToBounds = true
+        categoryDetailImage.layer.cornerRadius = 15
+        categoryDetailImage.layer.borderWidth = 1
+        categoryDetailImage.layer.borderColor = UIColor.white.cgColor
     }
 }
