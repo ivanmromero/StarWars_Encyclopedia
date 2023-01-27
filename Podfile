@@ -8,6 +8,7 @@ target 'StarWars Encyclopedia' do
   # Pods for StarWars Encyclopedia
 
 pod 'iProgressHUD'
+pod 'lottie-ios'
 
   target 'StarWars EncyclopediaTests' do
     inherit! :search_paths
