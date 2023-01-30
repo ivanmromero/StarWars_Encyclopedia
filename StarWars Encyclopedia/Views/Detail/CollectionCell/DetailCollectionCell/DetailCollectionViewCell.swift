@@ -11,6 +11,8 @@ class DetailCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var categoryDetailImage: UIImageView!
     @IBOutlet weak var categoryDetailTitle: UILabel!
     @IBOutlet weak var categoryDetailSubtitle: UILabel!
+    
+    var noImageView: UIView? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,6 +22,14 @@ class DetailCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         categoryDetailImage.image = nil
+        categoryDetailImage.subviews.forEach { subview in
+            if let noImageView = noImageView {
+                if subview.isDescendant(of: noImageView ) {
+                    subview.removeFromSuperview()
+                    self.noImageView = nil
+                }
+            }
+        }
     }
     
     private func setupCellView() {
@@ -27,5 +37,14 @@ class DetailCollectionViewCell: UICollectionViewCell {
         categoryDetailImage.layer.cornerRadius = 15
         categoryDetailImage.layer.borderWidth = 1
         categoryDetailImage.layer.borderColor = UIColor.white.cgColor
+        categoryDetailImage.backgroundColor = UIColor.black
+    }
+    
+    func addLottieViewOnCategoryImage() {
+        let noImageAnimation = NoImageViewController()
+        noImageAnimation.view.frame = categoryDetailImage.frame
+        noImageAnimation.setTopConstraint(topConstaint: 5)
+        noImageView = noImageAnimation.view
+        categoryDetailImage.addSubview(noImageAnimation.view)
     }
 }

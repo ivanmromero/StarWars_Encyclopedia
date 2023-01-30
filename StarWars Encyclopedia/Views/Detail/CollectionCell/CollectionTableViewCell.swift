@@ -68,6 +68,8 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
                         cell.categoryDetailImage.image = image
                     }
                 }
+            } else {
+                cell.addLottieViewOnCategoryImage()
             }
             contentCollectionView.dismissProgress()
         

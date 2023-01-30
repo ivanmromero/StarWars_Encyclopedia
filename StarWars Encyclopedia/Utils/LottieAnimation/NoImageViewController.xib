@@ -16,6 +16,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoImageViewController" customModule="StarWars_Encyclopedia" customModuleProvider="target">
             <connections>
                 <outlet property="animationView" destination="2Ac-Eh-yPh" id="n3n-wi-4GW"/>
+                <outlet property="noImageLabel" destination="vOj-U3-xqt" id="zLj-Ef-qUz"/>
+                <outlet property="noImageLabelTopConstraint" destination="htF-rq-jGr" id="Ea2-BZ-U6K"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -31,10 +33,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="245" height="217"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOj-U3-xqt">
-                            <rect key="frame" x="0.0" y="25" width="245" height="35"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="35" id="kZO-lA-eNK"/>
-                            </constraints>
+                            <rect key="frame" x="5" y="35" width="235" height="17.666666666666671"/>
                             <fontDescription key="fontDescription" name="SFDistantGalaxy-Italic" family="SF Distant Galaxy" pointSize="22"/>
                             <color key="textColor" name="StarWarsColor"/>
                             <nil key="highlightedColor"/>
@@ -42,9 +41,9 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="vOj-U3-xqt" firstAttribute="leading" secondItem="2Ac-Eh-yPh" secondAttribute="leading" id="amZ-Hg-gxG"/>
-                        <constraint firstItem="vOj-U3-xqt" firstAttribute="top" secondItem="2Ac-Eh-yPh" secondAttribute="top" constant="25" id="htF-rq-jGr"/>
-                        <constraint firstAttribute="trailing" secondItem="vOj-U3-xqt" secondAttribute="trailing" id="ubf-Fh-LMD"/>
+                        <constraint firstItem="vOj-U3-xqt" firstAttribute="leading" secondItem="2Ac-Eh-yPh" secondAttribute="leading" constant="5" id="S5v-Av-dSr"/>
+                        <constraint firstItem="vOj-U3-xqt" firstAttribute="top" secondItem="2Ac-Eh-yPh" secondAttribute="top" constant="35" id="htF-rq-jGr"/>
+                        <constraint firstAttribute="trailing" secondItem="vOj-U3-xqt" secondAttribute="trailing" constant="5" id="wiq-bJ-5V4"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="animationName" value="130911-baby-yoda-jumping"/>
