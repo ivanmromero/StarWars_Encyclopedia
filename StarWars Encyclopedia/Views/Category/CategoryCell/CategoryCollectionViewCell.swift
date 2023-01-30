@@ -33,6 +33,13 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    private func setupCellView() {
+        cellView.layer.masksToBounds = true
+        cellView.layer.cornerRadius = 15
+        cellView.layer.borderWidth = 1
+        cellView.layer.borderColor = UIColor.white.cgColor
+    }
+    
     func  addLottieViewOnCategoryImage() {
         let noImageAnimation = NoImageViewController()
         noImageAnimation.view.frame = categoryImage.frame
@@ -40,10 +47,4 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         categoryImage.addSubview(noImageAnimation.view)
     }
     
-    private func setupCellView() {
-        cellView.layer.masksToBounds = true
-        cellView.layer.cornerRadius = 15
-        cellView.layer.borderWidth = 1
-        cellView.layer.borderColor = UIColor.white.cgColor
-    }
 }
