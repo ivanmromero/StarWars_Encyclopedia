@@ -51,7 +51,6 @@ class DetailViewController: UIViewController {
             let noImageView = NoImageViewController()
             noImageView.view.frame = self.categoryImage.bounds
             self.categoryImage.addSubview(noImageView.view)
-            //self.categoryImage.layoutIfNeeded()
         }
         self.categoryImage.backgroundColor = UIColor.black
         self.categoryImage.layer.borderWidth = 1
@@ -144,7 +143,7 @@ extension DetailViewController: UITableViewDataSource {
                         
                         leftLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 15.0)
                         leftLabel.textColor = .white
-                        leftLabel.text = key
+                        leftLabel.text = key.replacingOccurrences(of: "_", with: " ")
                         rightLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 15.0)
                         rightLabel.textColor = UIColor(named: "StarWarsColor")
                         rightLabel.text = value
