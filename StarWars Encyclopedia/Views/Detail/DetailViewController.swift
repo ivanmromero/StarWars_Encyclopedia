@@ -45,7 +45,15 @@ class DetailViewController: UIViewController {
     }
     
     private func setupCategoryImage() {
-        self.categoryImage.image = viewModel.getImage()
+        if let image = viewModel.getImage() {
+            self.categoryImage.image = image
+        } else {
+            let noImageView = NoImageViewController()
+            noImageView.view.frame = self.categoryImage.bounds
+            self.categoryImage.addSubview(noImageView.view)
+            //self.categoryImage.layoutIfNeeded()
+        }
+        self.categoryImage.backgroundColor = UIColor.black
         self.categoryImage.layer.borderWidth = 1
         self.categoryImage.layer.masksToBounds = false
         self.categoryImage.layer.borderColor = UIColor.white.cgColor

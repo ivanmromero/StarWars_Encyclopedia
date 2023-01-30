@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -23,23 +24,26 @@
             <rect key="frame" x="0.0" y="0.0" width="245" height="217"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stars-clear" translatesAutoresizingMaskIntoConstraints="NO" id="XZM-GL-1pg">
+                    <rect key="frame" x="0.0" y="0.0" width="245" height="217"/>
+                </imageView>
                 <view contentMode="scaleAspectFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ac-Eh-yPh" customClass="LottieAnimationView" customModule="Lottie">
                     <rect key="frame" x="0.0" y="0.0" width="245" height="217"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NO IMAGE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vOj-U3-xqt">
-                            <rect key="frame" x="0.0" y="15" width="245" height="35"/>
+                            <rect key="frame" x="0.0" y="25" width="245" height="35"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="35" id="kZO-lA-eNK"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="SFDistantGalaxy-Italic" family="SF Distant Galaxy" pointSize="22"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" name="StarWarsColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="vOj-U3-xqt" firstAttribute="leading" secondItem="2Ac-Eh-yPh" secondAttribute="leading" id="amZ-Hg-gxG"/>
-                        <constraint firstItem="vOj-U3-xqt" firstAttribute="top" secondItem="2Ac-Eh-yPh" secondAttribute="top" constant="15" id="htF-rq-jGr"/>
+                        <constraint firstItem="vOj-U3-xqt" firstAttribute="top" secondItem="2Ac-Eh-yPh" secondAttribute="top" constant="25" id="htF-rq-jGr"/>
                         <constraint firstAttribute="trailing" secondItem="vOj-U3-xqt" secondAttribute="trailing" id="ubf-Fh-LMD"/>
                     </constraints>
                     <userDefinedRuntimeAttributes>
@@ -49,13 +53,23 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="XZM-GL-1pg" secondAttribute="trailing" id="9Hz-wQ-mfy"/>
+                <constraint firstAttribute="bottom" secondItem="XZM-GL-1pg" secondAttribute="bottom" id="DiC-Wl-T65"/>
+                <constraint firstItem="XZM-GL-1pg" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="H6A-B6-R9e"/>
                 <constraint firstItem="2Ac-Eh-yPh" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="YPT-gg-DcM"/>
                 <constraint firstAttribute="trailing" secondItem="2Ac-Eh-yPh" secondAttribute="trailing" id="by0-yb-A6u"/>
                 <constraint firstItem="2Ac-Eh-yPh" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="bzo-Dm-yI4"/>
+                <constraint firstItem="XZM-GL-1pg" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="cyl-06-H8N"/>
                 <constraint firstAttribute="bottom" secondItem="2Ac-Eh-yPh" secondAttribute="bottom" id="d8R-0Y-5jR"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="17.557251908396946" y="264.43661971830988"/>
         </view>
     </objects>
+    <resources>
+        <image name="stars-clear" width="2000" height="1375"/>
+        <namedColor name="StarWarsColor">
+            <color red="1" green="0.83499997854232788" blue="0.3059999942779541" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>
