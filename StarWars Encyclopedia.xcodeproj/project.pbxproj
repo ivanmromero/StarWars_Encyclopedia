@@ -53,6 +53,9 @@
 		D2E8D5382980742900B862CF /* SpecieSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8D5372980742900B862CF /* SpecieSection.swift */; };
 		D2E8D53A2980754E00B862CF /* StarshipSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8D5392980754E00B862CF /* StarshipSection.swift */; };
 		D2E8D53E2980769A00B862CF /* VehicleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2E8D53D2980769A00B862CF /* VehicleSection.swift */; };
+		D2F97D782984A46F00462672 /* 130911-baby-yoda-jumping.json in Resources */ = {isa = PBXBuildFile; fileRef = D2F97D772984A46E00462672 /* 130911-baby-yoda-jumping.json */; };
+		D2F97D7B29880F5100462672 /* NoImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2F97D7929880F5100462672 /* NoImageViewController.swift */; };
+		D2F97D7C29880F5100462672 /* NoImageViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2F97D7A29880F5100462672 /* NoImageViewController.xib */; };
 		D2FBEEF428F39D59008A867F /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */; };
 		D2FBEEF528F39D59008A867F /* CategoryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */; };
 		D2FBEEF828F4B18C008A867F /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEEF728F4B18C008A867F /* RequestManager.swift */; };
@@ -146,6 +149,9 @@
 		D2E8D5372980742900B862CF /* SpecieSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpecieSection.swift; sourceTree = "<group>"; };
 		D2E8D5392980754E00B862CF /* StarshipSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipSection.swift; sourceTree = "<group>"; };
 		D2E8D53D2980769A00B862CF /* VehicleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleSection.swift; sourceTree = "<group>"; };
+		D2F97D772984A46E00462672 /* 130911-baby-yoda-jumping.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "130911-baby-yoda-jumping.json"; sourceTree = "<group>"; };
+		D2F97D7929880F5100462672 /* NoImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoImageViewController.swift; sourceTree = "<group>"; };
+		D2F97D7A29880F5100462672 /* NoImageViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoImageViewController.xib; sourceTree = "<group>"; };
 		D2FBEEF228F39D59008A867F /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		D2FBEEF328F39D59008A867F /* CategoryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryCollectionViewCell.xib; sourceTree = "<group>"; };
 		D2FBEEF728F4B18C008A867F /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
@@ -321,6 +327,7 @@
 		D2A0DA3828F22CDC006FF15C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				D2F97D7229849A6D00462672 /* LottieAnimation */,
 				D2A0DA3928F22CE4006FF15C /* Enums */,
 				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
 				D2FBEF0F28F87E75008A867F /* RequestHandler.swift */,
@@ -410,6 +417,16 @@
 				D2E8D53D2980769A00B862CF /* VehicleSection.swift */,
 			);
 			path = SectionFactory;
+			sourceTree = "<group>";
+		};
+		D2F97D7229849A6D00462672 /* LottieAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				D2F97D772984A46E00462672 /* 130911-baby-yoda-jumping.json */,
+				D2F97D7929880F5100462672 /* NoImageViewController.swift */,
+				D2F97D7A29880F5100462672 /* NoImageViewController.xib */,
+			);
+			path = LottieAnimation;
 			sourceTree = "<group>";
 		};
 		D2FBEEF128F39B13008A867F /* CategoryCell */ = {
@@ -578,8 +595,10 @@
 				D212C8852911E9E500B806F2 /* DetailCollectionViewCell.xib in Resources */,
 				D2A0DA3228F22C05006FF15C /* Starjedi.ttf in Resources */,
 				D2A0DA1E28F1FD39006FF15C /* CategoriesTableViewCell.xib in Resources */,
+				D2F97D782984A46F00462672 /* 130911-baby-yoda-jumping.json in Resources */,
 				D2FBEF1C290773EB008A867F /* InfoTableViewCell.xib in Resources */,
 				D212C87C2911E77A00B806F2 /* CollectionTableViewCell.xib in Resources */,
+				D2F97D7C29880F5100462672 /* NoImageViewController.xib in Resources */,
 				D2A0DA4028F23E68006FF15C /* CategoryViewController.xib in Resources */,
 				D2A0DA3528F22C05006FF15C /* Starjedi.ttf.old.ttf in Resources */,
 				D2A0DA3628F22C05006FF15C /* SfDistantGalaxyItalic.ttf in Resources */,
@@ -752,6 +771,7 @@
 				D2DDEDE9297624FD0006FCA3 /* VehiclesCategory.swift in Sources */,
 				D2DDEDDD297306700006FCA3 /* CategoryDataManageFactory.swift in Sources */,
 				D2360AD928EE572E0010847F /* SceneDelegate.swift in Sources */,
+				D2F97D7B29880F5100462672 /* NoImageViewController.swift in Sources */,
 				D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

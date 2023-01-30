@@ -6,41 +6,38 @@
 //
 
 import UIKit
-import iProgressHUD
+import Lottie
 
 class CategoryCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
-    private let iprogress: iProgressHUD = iProgressHUD()
+    var noImageView: UIView? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCellView()
-        DispatchQueue.main.async {
-            self.setupImageSpinner()
-        }
     }
     
     override func prepareForReuse() {
         super.prepareForReuse()
         categoryImage.image = nil
+        categoryImage.subviews.forEach { subview in
+            if let noImageView = noImageView {
+                if subview.isDescendant(of: noImageView ) {
+                    subview.removeFromSuperview()
+                    self.noImageView = nil
+                }
+            }
+        }
     }
     
-    private func setupImageSpinner() {
-        iprogress.captionSize = 25
-        iprogress.isShowModal = false
-        iprogress.isShowBox = false
-        iprogress.isShowCaption = false
-        iprogress.iprogressStyle = .horizontal
-        iprogress.indicatorStyle = .ballRotateChase
-        iprogress.indicatorSize = 100
-        iprogress.alphaModal = 0.7
-        iprogress.captionDistance = 10
-        iprogress.indicatorColor = UIColor(named: "StarWarsColor")!
-        iprogress.attachProgress(toView: categoryImage)
-        categoryImage.showProgress()
+    func  addLottieViewOnCategoryImage() {
+        let noImageAnimation = NoImageViewController()
+        noImageAnimation.view.frame = categoryImage.frame
+        noImageView = noImageAnimation.view
+        categoryImage.addSubview(noImageAnimation.view)
     }
     
     private func setupCellView() {

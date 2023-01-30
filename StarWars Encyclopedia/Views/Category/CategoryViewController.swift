@@ -107,6 +107,8 @@ extension CategoryViewController: UICollectionViewDataSource {
                     cell.categoryImage.image = urlImage
                 }
             }
+        } else {
+            cell.addLottieViewOnCategoryImage()
         }
     }
     
@@ -119,6 +121,8 @@ extension CategoryViewController: UICollectionViewDataSource {
                     cell.categoryImage.dismissProgress()
                 }
             }
+        } else {
+            cell.addLottieViewOnCategoryImage()
         }
     }
 }
