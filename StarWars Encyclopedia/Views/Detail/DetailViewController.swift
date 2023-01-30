@@ -144,6 +144,8 @@ extension DetailViewController: UITableViewDataSource {
                         leftLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 15.0)
                         leftLabel.textColor = .white
                         leftLabel.text = key.replacingOccurrences(of: "_", with: " ")
+                        leftLabel.numberOfLines = 1
+                        leftLabel.adjustsFontSizeToFitWidth = true
                         rightLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 15.0)
                         rightLabel.textColor = UIColor(named: "StarWarsColor")
                         rightLabel.text = value
