@@ -25,4 +25,6 @@ protocol CategoryDataManage {
     func getNumberOfSections() -> Int
     func getInfoOfResultSelected() -> [String: String]?
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage?
+    func setSearchResults(searchText: String)
+    func setResultSelectedForSearchAt(index: Int)
 }

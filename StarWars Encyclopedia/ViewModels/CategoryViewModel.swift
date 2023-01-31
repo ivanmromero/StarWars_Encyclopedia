@@ -19,6 +19,7 @@ class CategoryViewModel {
                 isSearching = false
             } else {
                 isSearching = true
+                categoryDataManage.setSearchResults(searchText: searchText!)
             }
         }
     }
@@ -65,7 +66,11 @@ class CategoryViewModel {
     }
     
     func setSelectedResultAt(_ index: Int) {
-        categoryDataManage.setResultSelectedAt(index: index)
+        if isSearching {
+            categoryDataManage.setResultSelectedForSearchAt(index: index)
+        } else {
+            categoryDataManage.setResultSelectedAt(index: index)
+        }
     }
     
     func getCategoryDataManage() -> CategoryDataManage {

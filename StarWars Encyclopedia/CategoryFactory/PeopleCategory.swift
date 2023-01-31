@@ -13,6 +13,7 @@ class PeopleCategory: CategoryDataManage {
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
     var peopleResults: [PeopleResult] = []
+    var searchResults: [PeopleResult]?
     var resultSelected: PeopleResult?
     var nextPage: String?
     
@@ -59,14 +60,13 @@ class PeopleCategory: CategoryDataManage {
     }
     
     func getSearchResultsCountFor(searchText: String?) -> Int {
-        guard let searchText = searchText else { return 0 }
-        return self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}.count
+        guard let searchResults = searchResults else { return 0 }
+        return searchResults.count
     }
     
     func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String? {
-        guard let searchText = searchText else { return nil }
-        let searchResults = self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
-        print(self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())})
+        guard let searchResults = searchResults else { return nil }
+        print(searchResults)
         print(searchResults[index].name)
         return searchResults[index].name
     }
@@ -77,15 +77,23 @@ class PeopleCategory: CategoryDataManage {
     }
     
     func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage? {
-        guard let searchText = searchText else { return nil }
-        let searchResults = self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        guard let searchResults = searchResults else { return nil }
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
+    }
+    
+    func setSearchResults(searchText: String) {
+        self.searchResults = peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
     }
     
     func setResultSelectedAt(index: Int) {
         resultSelected = self.peopleResults[index]
     }
     
+    func setResultSelectedForSearchAt(index: Int) {
+        guard let searchResults = searchResults else { return }
+        resultSelected = searchResults[index]
+    }
+
     func getImageOfResultSelected() -> UIImage? {
         return self.imageCacheManager.imageCache.object(forKey: resultSelected!.name as AnyObject) as? UIImage
     }
