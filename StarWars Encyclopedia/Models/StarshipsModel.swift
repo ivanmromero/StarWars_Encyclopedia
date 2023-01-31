@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Starships
 struct Starships: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let results: [StarshipResult]
 }
 

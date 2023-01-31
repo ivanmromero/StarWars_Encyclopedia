@@ -12,70 +12,77 @@ class FilmsCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: Films?
+    var filmResults: [FilmResult] = []
     var resultSelected: FilmResult?
+    var nextPage: String?
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
-            let url = self.request.getURL(valueCategoryPath: Categories.films.rawValue)
-            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Films, Error>) in
-                guard let self = self else { return }
-                switch result {
-                case .success(let result):
-                    self.result = result
-                    result.results.enumerated().forEach { (index,result) in
-                        self.imageCacheManager.setImageOnCache(result.url, key: result.title, request: self.request, typeOfCategory: .films)
-                    }
-                    completion(false)
-                case .failure(let error):
-                    print(error)
-                }
+            var url: URL?
+            
+            if let next = self.nextPage {
+                url = URL(string: next)
+            } else {
+                url = self.request.getURL(valueCategoryPath: Categories.films.rawValue)
             }
+                self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Films, Error>) in
+                    guard let self = self else { return }
+                    switch result {
+                    case .success(let result):
+                        self.filmResults.append(contentsOf: result.results)
+                        result.results.enumerated().forEach { (index,result) in
+                            self.imageCacheManager.setImageOnCache(result.url, key: result.title, request: self.request, typeOfCategory: .films)
+                        }
+                        self.nextPage = result.next
+                        if self.nextPage != nil {
+                            self.getResults { isLoading in
+                                completion(isLoading)
+                            }
+                        } else {
+                            completion(false)
+                        }
+                    case .failure(let error):
+                        print(error)
+                    }
+                }
         }
     }
     
     func getResultsCount() -> Int {
-        guard let result = result else { return 0 }
-        return result.results.count
+        return filmResults.count
     }
     
     func getNameOrTitle(index: Int) -> String {
-        guard let result = result else { return "No hay resultado" }
-        let data = result.results
+        let data = filmResults
         return data[index].title
     }
     
     func getSearchResultsCountFor(searchText: String?) -> Int {
-        guard let result = result else { return 0 }
         guard let searchText = searchText else { return 0 }
-        return result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}.count
+        return filmResults.filter{$0.title.lowercased().contains(searchText.lowercased())}.count
     }
     
     func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}
-        print(result.results.filter{$0.title.lowercased().contains(searchText.lowercased())})
+        let searchResults = filmResults.filter{$0.title.lowercased().contains(searchText.lowercased())}
+        print(filmResults.filter{$0.title.lowercased().contains(searchText.lowercased())})
         print(searchResults[index].title)
         return searchResults[index].title
     }
     
     func getImage(index: Int) -> UIImage? {
-        guard let result = result else { return nil }
-        let data = result.results
+        let data = filmResults
         return self.imageCacheManager.imageCache.object(forKey: data[index].title as AnyObject) as? UIImage
     }
     
     func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.title.lowercased().contains(searchText.lowercased())}
+        let searchResults = filmResults.filter{$0.title.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].title as AnyObject) as? UIImage
     }
     
     func setResultSelectedAt(index: Int) {
-        guard let result = result else { return }
-        resultSelected = result.results[index]
+        resultSelected = filmResults[index]
     }
     
     func getImageOfResultSelected() -> UIImage? {

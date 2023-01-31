@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Vehicles
 struct Vehicles: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let results: [VehicleResult]
 }
 

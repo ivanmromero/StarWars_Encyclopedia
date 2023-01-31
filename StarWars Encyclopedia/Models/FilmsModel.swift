@@ -9,6 +9,8 @@ import Foundation
 
 // MARK: - Welcome
 struct Films: Codable {
+    let count: Int?
+    let next: String?
     let results: [FilmResult]
 }
 

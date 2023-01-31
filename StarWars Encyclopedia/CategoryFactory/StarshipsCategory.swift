@@ -12,21 +12,35 @@ class StarshipsCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: Starships?
+    var starshipResults: [StarshipResult] = []
     var resultSelected: StarshipResult?
+    var nextPage: String?
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue.main.async {
-            let url = self.request.getURL(valueCategoryPath: Categories.starships.rawValue)
+            var url: URL?
+            
+            if let next = self.nextPage {
+                url = URL(string: next)
+            } else {
+                url = self.request.getURL(valueCategoryPath: Categories.starships.rawValue)
+            }
             self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Starships, Error>) in
                 guard let self = self else { return }
                 switch result {
                 case .success(let result):
-                    self.result = result
+                    self.starshipResults.append(contentsOf: result.results)
                     result.results.enumerated().forEach { (index,result) in
                         self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .starships)
                     }
-                    completion(false)
+                    self.nextPage = result.next
+                    if self.nextPage != nil {
+                        self.getResults { isLoading in
+                            completion(isLoading)
+                        }
+                    } else {
+                        completion(false)
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -35,47 +49,40 @@ class StarshipsCategory: CategoryDataManage {
     }
     
     func getResultsCount() -> Int {
-        guard let result = result else { return 0 }
-        return result.results.count
+        return starshipResults.count
     }
     
     func getNameOrTitle(index: Int) -> String {
-        guard let result = result else { return "No hay resultado" }
-        let data = result.results
+        let data = starshipResults
         return data[index].name
     }
     
     func getSearchResultsCountFor(searchText: String?) -> Int {
-        guard let result = result else { return 0 }
         guard let searchText = searchText else { return 0 }
-        return result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}.count
+        return starshipResults.filter{$0.name.lowercased().contains(searchText.lowercased())}.count
     }
     
     func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
-        print(result.results.filter{$0.name.lowercased().contains(searchText.lowercased())})
+        let searchResults = starshipResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        print(starshipResults.filter{$0.name.lowercased().contains(searchText.lowercased())})
         print(searchResults[index].name)
         return searchResults[index].name
     }
     
     func getImage(index: Int) -> UIImage? {
-        guard let result = result else { return nil }
-        let data = result.results
+        let data = starshipResults
         return self.imageCacheManager.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
     }
     
     func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        let searchResults = starshipResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
     }
     
     func setResultSelectedAt(index: Int) {
-        guard let result = result else { return }
-        resultSelected = result.results[index]
+        resultSelected = starshipResults[index]
     }
     
     func getImageOfResultSelected() -> UIImage? {

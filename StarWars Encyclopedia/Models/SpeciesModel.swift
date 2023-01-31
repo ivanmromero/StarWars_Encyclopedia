@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Species
 struct Species: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let results: [SpeciesResult]
 }
 

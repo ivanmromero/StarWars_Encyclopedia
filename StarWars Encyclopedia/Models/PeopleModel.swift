@@ -10,7 +10,7 @@ import Foundation
 // MARK: - People
 struct People: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let results: [PeopleResult]
 }
 
@@ -38,4 +38,6 @@ enum Gender: String, Codable {
     case female = "female"
     case male = "male"
     case nA = "n/a"
+    case hermaphrodite = "hermaphrodite"
+    case none = "none"
 }

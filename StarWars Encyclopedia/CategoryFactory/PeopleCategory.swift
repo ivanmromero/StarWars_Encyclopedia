@@ -12,21 +12,36 @@ class PeopleCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
     
-    var result: People?
+    var peopleResults: [PeopleResult] = []
     var resultSelected: PeopleResult?
+    var nextPage: String?
     
     func getResults(completion: @escaping(Bool)->Void) {
         DispatchQueue.main.async {
-            let url = self.request.getURL(valueCategoryPath: "people")
+            var url: URL?
+            
+            if let next = self.nextPage {
+                url = URL(string: next)
+            } else {
+                url = self.request.getURL(valueCategoryPath: "people")
+            }
+            
             self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<People, Error>) in
                 guard let self = self else { return }
                 switch result {
                 case .success(let result):
-                    self.result = result
+                    self.peopleResults.append(contentsOf: result.results)
                     result.results.enumerated().forEach { (index,result) in
                         self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .people)
                     }
-                    completion(false)
+                    self.nextPage = result.next
+                    if self.nextPage != nil {
+                        self.getResults { isLoading in
+                            completion(isLoading)
+                        }
+                    } else {
+                        completion(false)
+                    }
                 case .failure(let error):
                     print(error)
                 }
@@ -35,57 +50,48 @@ class PeopleCategory: CategoryDataManage {
     }
     
     func getResultsCount() -> Int {
-        guard let result = result else { return 0 }
-        return result.results.count
+        return self.peopleResults.count
     }
     
     func getNameOrTitle(index: Int) -> String {
-        guard let result = result else { return "No hay resultado" }
-        let data = result.results
+        let data = self.peopleResults
         return data[index].name
     }
     
     func getSearchResultsCountFor(searchText: String?) -> Int {
-        guard let result = result else { return 0 }
         guard let searchText = searchText else { return 0 }
-        return result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}.count
+        return self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}.count
     }
     
     func getNameOrTitleOfSearchResultAt(_ index: Int, searchText: String?) -> String? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
-        print(result.results.filter{$0.name.lowercased().contains(searchText.lowercased())})
+        let searchResults = self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        print(self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())})
         print(searchResults[index].name)
         return searchResults[index].name
     }
     
     func getImage(index: Int) -> UIImage? {
-        guard let result = result else { return nil }
-        let data = result.results
+        let data = self.peopleResults
         return self.imageCacheManager.imageCache.object(forKey: data[index].name as AnyObject) as? UIImage
     }
     
     func getImageOfSearchResultAt(index: Int, searchText: String?) -> UIImage? {
-        guard let result = result else { return nil }
         guard let searchText = searchText else { return nil }
-        let searchResults = result.results.filter{$0.name.lowercased().contains(searchText.lowercased())}
+        let searchResults = self.peopleResults.filter{$0.name.lowercased().contains(searchText.lowercased())}
         return self.imageCacheManager.imageCache.object(forKey: searchResults[index].name as AnyObject) as? UIImage
     }
     
     func setResultSelectedAt(index: Int) {
-        guard let result = result else { return }
-        resultSelected = result.results[index]
+        resultSelected = self.peopleResults[index]
     }
     
     func getImageOfResultSelected() -> UIImage? {
-        guard let resultSelected = resultSelected else { return nil }
-        return self.imageCacheManager.imageCache.object(forKey: resultSelected.name as AnyObject) as? UIImage
+        return self.imageCacheManager.imageCache.object(forKey: resultSelected!.name as AnyObject) as? UIImage
     }
     
     func getNameOrTitle() -> String {
-        guard let resultSelected = resultSelected else { return "No hay resultado seleccionado" }
-        return resultSelected.name
+        return resultSelected!.name
     }
     
     func getNameOfSection(index: Int) -> String {

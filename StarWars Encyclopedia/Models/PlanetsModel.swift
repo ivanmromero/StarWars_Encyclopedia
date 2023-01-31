@@ -10,7 +10,7 @@ import Foundation
 // MARK: - Planets
 struct Planets: Codable {
     let count: Int
-    let next: String
+    let next: String?
     let results: [PlanetResult]
 }
 
