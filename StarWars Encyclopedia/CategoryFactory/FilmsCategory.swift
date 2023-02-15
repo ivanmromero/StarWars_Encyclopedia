@@ -18,7 +18,8 @@ class FilmsCategory: CategoryDataManage {
     var nextPage: String?
     
     func getResults(completion: @escaping (Bool) -> Void) {
-        DispatchQueue.main.async {
+        DispatchQueue(label: "com.queue.filmSerial", qos: .userInteractive).async {
+            let dowloadGroup: DispatchGroup = DispatchGroup()
             var url: URL?
             
             if let next = self.nextPage {
@@ -26,26 +27,33 @@ class FilmsCategory: CategoryDataManage {
             } else {
                 url = self.request.getURL(valueCategoryPath: Categories.films.rawValue)
             }
-                self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Films, Error>) in
-                    guard let self = self else { return }
-                    switch result {
-                    case .success(let result):
-                        self.filmResults.append(contentsOf: result.results)
-                        result.results.enumerated().forEach { (index,result) in
-                            self.imageCacheManager.setImageOnCache(result.url, key: result.title, request: self.request, typeOfCategory: .films)
-                        }
-                        self.nextPage = result.next
-                        if self.nextPage != nil {
-                            self.getResults { isLoading in
-                                completion(isLoading)
-                            }
-                        } else {
-                            completion(false)
-                        }
-                    case .failure(let error):
-                        print(error)
+            
+            dowloadGroup.enter()
+            self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Films, Error>) in
+                guard let self = self else { return }
+                switch result {
+                case .success(let result):
+                    self.filmResults.append(contentsOf: result.results)
+                    DispatchQueue.concurrentPerform(iterations: result.results.count) { index in
+                        self.imageCacheManager.setImageOnCache(result.results[index].url, key: result.results[index].title, request: self.request, typeOfCategory: .films)
                     }
+                    
+                    self.nextPage = result.next
+                    if self.nextPage != nil {
+                        self.getResults { isLoading in
+                            dowloadGroup.leave()
+                            completion(isLoading)
+                        }
+                    } else {
+                        completion(false)
+                    }
+                case .failure(let error):
+                    print(error)
                 }
+            }
+            dowloadGroup.notify(queue: .main) {
+                print("Tarea de descargas de categoria films terminada")
+            }
         }
     }
     

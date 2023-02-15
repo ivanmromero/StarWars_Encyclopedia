@@ -18,7 +18,8 @@ class StarshipsCategory: CategoryDataManage {
     var nextPage: String?
     
     func getResults(completion: @escaping (Bool) -> Void) {
-        DispatchQueue.main.async {
+        DispatchQueue(label: "com.queue.peopleSerial", qos: .userInteractive).async {
+            let dowloadGroup: DispatchGroup = DispatchGroup()
             var url: URL?
             
             if let next = self.nextPage {
@@ -26,17 +27,21 @@ class StarshipsCategory: CategoryDataManage {
             } else {
                 url = self.request.getURL(valueCategoryPath: Categories.starships.rawValue)
             }
+            
+            dowloadGroup.enter()
             self.request.makeRequest(url: url) { [weak self] (result: Swift.Result<Starships, Error>) in
                 guard let self = self else { return }
                 switch result {
                 case .success(let result):
                     self.starshipResults.append(contentsOf: result.results)
-                    result.results.enumerated().forEach { (index,result) in
-                        self.imageCacheManager.setImageOnCache(result.url, key: result.name, request: self.request, typeOfCategory: .starships)
+                    DispatchQueue.concurrentPerform(iterations: result.results.count) { index in
+                        self.imageCacheManager.setImageOnCache(result.results[index].url, key: result.results[index].name, request: self.request, typeOfCategory: .starships)
                     }
+                    
                     self.nextPage = result.next
                     if self.nextPage != nil {
                         self.getResults { isLoading in
+                            dowloadGroup.leave()
                             completion(isLoading)
                         }
                     } else {
@@ -45,6 +50,9 @@ class StarshipsCategory: CategoryDataManage {
                 case .failure(let error):
                     print(error)
                 }
+            }
+            dowloadGroup.notify(queue: .main) {
+                print("Tarea de descargas de categoria Starships terminada")
             }
         }
     }

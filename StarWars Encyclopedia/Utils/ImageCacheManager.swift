@@ -15,7 +15,9 @@ class ImageCacheManager {
         if let id: Int =  getIntForString(resultUrl) {
             if let urlImage = request.getURLVisualGuide(index: id, type: typeOfCategory.rawValue) {
                 if let image = self.transforURLtoImage(url: urlImage) {
-                    self.imageCache.setObject(image, forKey: key as AnyObject)
+                    DispatchQueue.global().async {
+                        self.imageCache.setObject(image, forKey: key as AnyObject)
+                    }
                 }
             }
         }

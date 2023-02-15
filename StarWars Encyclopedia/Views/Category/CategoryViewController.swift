@@ -115,12 +115,12 @@ extension CategoryViewController: UICollectionViewDataSource {
     private func setCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
         cell.categoryLabel.text = viewModel.getNameOrTitleAt(indexPath)
         if let image = viewModel.getImageAt(indexPath) {
-            DispatchQueue.global().async {
+            
                 DispatchQueue.main.async {
                     cell.categoryImage.image = image
                     cell.categoryImage.dismissProgress()
                 }
-            }
+            
         } else {
             cell.addLottieViewOnCategoryImage()
         }

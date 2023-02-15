@@ -165,11 +165,9 @@ extension DetailViewController: UITableViewDataSource {
                 if cell.viewModel.sectionDataManage == nil {
                     let viewModel = CollectionTableViewCellViewModel()
                     viewModel.sectionDataManage = sectionDataManage
-                    viewModel.getData { isLoadign in
-                        if !isLoadign {
-                            DispatchQueue.main.async {
+                    viewModel.getData { isLoading in
+                        if !isLoading {
                                 cell.viewModel = viewModel
-                            }
                         }
                     }
                 }

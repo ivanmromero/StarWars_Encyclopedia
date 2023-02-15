@@ -12,8 +12,8 @@ class FilmSection: SectionDataManage {
     let sectionUrls: [String]
     let request: RequestManager
     let imageCacheManager: ImageCacheManager
+    let downloadGroup: DispatchGroup = DispatchGroup()
 
-    
     var result: [FilmResult] = []
     
     init(sectionUrls: [String], request: RequestManager, imageCacheManager: ImageCacheManager) {
@@ -22,23 +22,32 @@ class FilmSection: SectionDataManage {
         self.imageCacheManager = imageCacheManager
     }
     
-    func getData(completion: @escaping()->Void) {
-        DispatchQueue.main.async {
-            self.sectionUrls.forEach { url in
-                let url = URL(string: url)
-                self.request.makeRequest(url: url) { [weak self] (result: Result<FilmResult,Error>) in
-                    guard let self = self else { return }
-                    switch result {
-                    case .success(let result):
-                        self.result.append(result)
-                        self.imageCacheManager.setImageOnCache(result.url, key: result.title, request: self.request, typeOfCategory: .films)
-                        completion()
-                    case .failure(let error):
-                        print(error)
-                        completion()
-                    }
+    func getData(completion: @escaping(Bool)->Void) {
+        let downloadGroup: DispatchGroup = DispatchGroup()
+        var results = [FilmResult?](repeating: nil, count: sectionUrls.count)
+        
+        DispatchQueue.concurrentPerform(iterations: sectionUrls.count) { index in
+            let url = URL(string: sectionUrls[index])
+            
+            downloadGroup.enter()
+            self.request.makeRequest(url: url) { [weak self] (result: Result<FilmResult,Error>) in
+                guard let self = self else { return }
+                switch result {
+                case .success(let result):
+                    results[index] = result
+                    self.imageCacheManager.setImageOnCache(result.url, key: result.title, request: self.request, typeOfCategory: .films)
+                    downloadGroup.leave()
+                    completion(false)
+                case .failure(let error):
+                    print(error)
+                    completion(true)
                 }
             }
+        }
+        
+        downloadGroup.notify(queue: .main) {
+            print("Termino la tarea de descarga de la seccion films")
+            self.result = results.compactMap({ $0 })
         }
     }
     

@@ -13,7 +13,7 @@ protocol SectionDataManage {
     var imageCacheManager: ImageCacheManager { get }
     var sectionUrls: [String] { get }
     func getResultsCount() -> Int
-    func getData(completion: @escaping()->Void)
+    func getData(completion: @escaping(Bool)->Void)
     func getNameOrTitleAt(_ index: Int) -> String
     func getImage(_ index: Int) -> UIImage?
     func getSubtitleAt(_ index: Int) -> String

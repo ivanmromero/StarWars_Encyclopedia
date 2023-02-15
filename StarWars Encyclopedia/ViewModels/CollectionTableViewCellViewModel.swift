@@ -33,10 +33,8 @@ class CollectionTableViewCellViewModel {
     
     func getData(completion: @escaping(Bool)->Void) {
         guard let sectionDataManage = sectionDataManage else { return completion(true) }
-        sectionDataManage.getData {
-            DispatchQueue.main.async {
-                completion(false)
-            }
+        sectionDataManage.getData { isLoading in
+                completion(isLoading)
         }
     }
 }

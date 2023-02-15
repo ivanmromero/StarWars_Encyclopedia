@@ -60,18 +60,16 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = horizontalCollectionView.dequeueReusableCell(withReuseIdentifier: "DetailCollectionCell", for: indexPath) as! DetailCollectionViewCell
         
-            cell.categoryDetailTitle.text = viewModel.getNameOrTitleAtIndex(index: indexPath.row)
-            cell.categoryDetailSubtitle.text = viewModel.getSubtitleAt(indexPath.row)
-            if let image = viewModel.getImage(index: indexPath.row) {
-                DispatchQueue.global().async {
-                    DispatchQueue.main.async {
-                        cell.categoryDetailImage.image = image
-                    }
-                }
-            } else {
-                cell.addLottieViewOnCategoryImage()
+        cell.categoryDetailTitle.text = viewModel.getNameOrTitleAtIndex(index: indexPath.row)
+        cell.categoryDetailSubtitle.text = viewModel.getSubtitleAt(indexPath.row)
+        if let image = viewModel.getImage(index: indexPath.row) {
+            DispatchQueue.main.async {
+                cell.categoryDetailImage.image = image
             }
-            contentCollectionView.dismissProgress()
+        } else {
+            cell.addLottieViewOnCategoryImage()
+        }
+        contentCollectionView.dismissProgress()
         
         return cell
     }
