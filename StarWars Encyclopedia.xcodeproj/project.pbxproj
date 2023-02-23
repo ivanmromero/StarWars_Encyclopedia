@@ -422,11 +422,19 @@
 		D2F97D7229849A6D00462672 /* LottieAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				D2F97D7D29A6EAA400462672 /* NoImageAnimation */,
+			);
+			path = LottieAnimation;
+			sourceTree = "<group>";
+		};
+		D2F97D7D29A6EAA400462672 /* NoImageAnimation */ = {
+			isa = PBXGroup;
+			children = (
 				D2F97D772984A46E00462672 /* 130911-baby-yoda-jumping.json */,
 				D2F97D7929880F5100462672 /* NoImageViewController.swift */,
 				D2F97D7A29880F5100462672 /* NoImageViewController.xib */,
 			);
-			path = LottieAnimation;
+			path = NoImageAnimation;
 			sourceTree = "<group>";
 		};
 		D2FBEEF128F39B13008A867F /* CategoryCell */ = {
