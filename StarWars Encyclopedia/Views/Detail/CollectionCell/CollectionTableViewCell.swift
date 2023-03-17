@@ -13,6 +13,7 @@ class CollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var contentCollectionView: UIView!
     
     private let iprogress: iProgressHUD = iProgressHUD()
+    private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
     
     var viewModel: CollectionTableViewCellViewModel = CollectionTableViewCellViewModel() {
         didSet {
@@ -25,7 +26,8 @@ class CollectionTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         setuphorizontalCollection()
-        setupImageSpinner()
+        spinnerAnimation.addLottieAnimationToView(self.contentView)
+//        setupImageSpinner()
     }
     
     private func setuphorizontalCollection() {
@@ -69,6 +71,7 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
         } else {
             cell.addLottieViewOnCategoryImage()
         }
+        spinnerAnimation.reomoveLottieAnimationToView(self.contentView)
         contentCollectionView.dismissProgress()
         
         return cell

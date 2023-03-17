@@ -15,6 +15,7 @@ class CategoryViewController: UIViewController {
     
     private var viewModel: CategoryViewModel = CategoryViewModel()
     private let iprogress: iProgressHUD = iProgressHUD()
+    private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,8 +23,9 @@ class CategoryViewController: UIViewController {
         setupCollectionView()
         setupCategoryLabel()
         setupBackButton()
-        setupSpinner()
+        //setupSpinner()
         setupData()
+        spinnerAnimation.addLottieAnimationToView(self.collectionView)
     }
     
     private func setupData() {
@@ -93,6 +95,7 @@ extension CategoryViewController: UICollectionViewDataSource {
         
         if !viewModel.isLoading {
             setCell(cell, indexPath: indexPath.row)
+            self.spinnerAnimation.reomoveLottieAnimationToView(collectionView)
             collectionView.dismissProgress()
             return cell
         }
