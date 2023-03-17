@@ -10,7 +10,6 @@ import UIKit
 
 class CategoryViewModel {
     private let category: Categories
-    private let requestHandler: RequestHandler
     private let categoryDataManage: CategoryDataManage
     
     var searchText: String? {
@@ -28,7 +27,6 @@ class CategoryViewModel {
     var isLoading: Bool = true
     
     init() {
-        self.requestHandler = RequestHandler()
         self.category = CategoryManager.shared.category!
         self.categoryDataManage = CategoryDataManageFactory.buildCategoryDataManage(typeCategory: self.category)
     }
@@ -36,7 +34,6 @@ class CategoryViewModel {
     func getData(completion: @escaping ()->Void) {
         categoryDataManage.getResults { isTrue in
             self.isLoading = isTrue
-            print(self.requestHandler.imageDictionary)
             completion()
         }
     }

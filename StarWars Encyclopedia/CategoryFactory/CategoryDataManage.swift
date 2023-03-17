@@ -11,6 +11,7 @@ import UIKit
 protocol CategoryDataManage {
     var request: RequestManager { get }
     var imageCacheManager: ImageCacheManager { get }
+    var nextPage: String? {get set}
     func getResults(completion: @escaping(Bool)->Void)
     func getResultsCount() -> Int
     func getNameOrTitle(index: Int) -> String

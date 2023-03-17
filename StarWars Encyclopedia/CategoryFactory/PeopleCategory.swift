@@ -11,11 +11,11 @@ import UIKit
 class PeopleCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
+    var nextPage: String?
     
     var peopleResults: [PeopleResult] = []
     var searchResults: [PeopleResult]?
     var resultSelected: PeopleResult?
-    var nextPage: String?
     
     func getResults(completion: @escaping(Bool)->Void) {
         DispatchQueue(label: "com.queue.peopleSerial", qos: .userInteractive).async() {

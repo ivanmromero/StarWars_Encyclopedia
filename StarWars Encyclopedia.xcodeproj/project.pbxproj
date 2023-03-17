@@ -72,7 +72,6 @@
 		D2FBEF0828F62379008A867F /* VehiclesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0728F62379008A867F /* VehiclesModel.swift */; };
 		D2FBEF0A28F624D6008A867F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */; };
 		D2FBEF0E28F784B7008A867F /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0D28F784B7008A867F /* CategoryManager.swift */; };
-		D2FBEF1028F87E75008A867F /* RequestHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0F28F87E75008A867F /* RequestHandler.swift */; };
 		D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */; };
 		D2FBEF1528FF7DEB008A867F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */; };
 		D2FBEF1729074177008A867F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1629074177008A867F /* DetailViewModel.swift */; };
@@ -172,7 +171,6 @@
 		D2FBEF0728F62379008A867F /* VehiclesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesModel.swift; sourceTree = "<group>"; };
 		D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		D2FBEF0D28F784B7008A867F /* CategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
-		D2FBEF0F28F87E75008A867F /* RequestHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestHandler.swift; sourceTree = "<group>"; };
 		D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D2FBEF1629074177008A867F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -338,7 +336,6 @@
 				D2F97D7229849A6D00462672 /* LottieAnimation */,
 				D2A0DA3928F22CE4006FF15C /* Enums */,
 				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
-				D2FBEF0F28F87E75008A867F /* RequestHandler.swift */,
 				D2DDEDDE297325A40006FCA3 /* ImageCacheManager.swift */,
 			);
 			path = Utils;
@@ -776,7 +773,6 @@
 				D2B80C2328F1E1BF0021F4AD /* CategoriesViewController.swift in Sources */,
 				D2DDEDE7297624360006FCA3 /* StarshipsCategory.swift in Sources */,
 				D2E8D52E297F47F600B862CF /* SectionDataManage.swift in Sources */,
-				D2FBEF1028F87E75008A867F /* RequestHandler.swift in Sources */,
 				D2DDEDD92973040E0006FCA3 /* CategoryDataManage.swift in Sources */,
 				D2FBEEFA28F4BE73008A867F /* FilmsModel.swift in Sources */,
 				D2DDEDDF297325A40006FCA3 /* ImageCacheManager.swift in Sources */,
