@@ -6,13 +6,11 @@
 //
 
 import UIKit
-import iProgressHUD
 
 class CollectionTableViewCell: UITableViewCell {
     @IBOutlet weak var horizontalCollectionView: UICollectionView!
     @IBOutlet weak var contentCollectionView: UIView!
     
-    private let iprogress: iProgressHUD = iProgressHUD()
     private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
     
     var viewModel: CollectionTableViewCellViewModel = CollectionTableViewCellViewModel() {
@@ -27,26 +25,12 @@ class CollectionTableViewCell: UITableViewCell {
         super.awakeFromNib()
         setuphorizontalCollection()
         spinnerAnimation.addLottieAnimationToView(self.contentView)
-//        setupImageSpinner()
     }
     
     private func setuphorizontalCollection() {
         horizontalCollectionView.register(UINib(nibName: "DetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailCollectionCell")
         horizontalCollectionView.dataSource = self
         horizontalCollectionView.indicatorStyle = .white
-    }
-    
-    private func setupImageSpinner() {
-        iprogress.isShowModal = false
-        iprogress.isShowBox = false
-        iprogress.iprogressStyle = .horizontal
-        iprogress.indicatorStyle = .ballRotateChase
-        iprogress.indicatorSize = 250
-        iprogress.alphaModal = 0.7
-        iprogress.captionDistance = 10
-        iprogress.indicatorColor = UIColor(named: "StarWarsColor")!
-        iprogress.attachProgress(toView: contentCollectionView)
-        contentCollectionView.showProgress()
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -73,7 +57,6 @@ extension CollectionTableViewCell: UICollectionViewDataSource {
             cell.addLottieViewOnCategoryImage()
         }
         spinnerAnimation.reomoveLottieAnimationToView(self.contentView)
-        contentCollectionView.dismissProgress()
         
         return cell
     }

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import iProgressHUD
 
 class CategoryViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -14,7 +13,6 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     private var viewModel: CategoryViewModel = CategoryViewModel()
-    private let iprogress: iProgressHUD = iProgressHUD()
     private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
     
     override func viewDidLoad() {
@@ -23,7 +21,6 @@ class CategoryViewController: UIViewController {
         setupCollectionView()
         setupCategoryLabel()
         setupBackButton()
-        //setupSpinner()
         setupData()
         spinnerAnimation.addLottieAnimationToView(self.collectionView)
     }
@@ -34,21 +31,6 @@ class CategoryViewController: UIViewController {
                 self.collectionView.reloadData()
             }
         }
-    }
-    
-    private func setupSpinner() {
-        iprogress.captionSize = 25
-        iprogress.isShowModal = false
-        iprogress.isShowBox = false
-        iprogress.iprogressStyle = .horizontal
-        iprogress.indicatorStyle = .ballRotateChase
-        iprogress.indicatorSize = 90
-        iprogress.alphaModal = 0.7
-        iprogress.captionDistance = 10
-        iprogress.indicatorColor = UIColor(named: "StarWarsColor")!
-        iprogress.attachProgress(toView: self.collectionView)
-
-        collectionView.showProgress()
     }
     
     private func setupCollectionView() {
@@ -97,7 +79,6 @@ extension CategoryViewController: UICollectionViewDataSource {
         if !viewModel.isLoading {
             setCell(cell, indexPath: indexPath.row)
             self.spinnerAnimation.reomoveLottieAnimationToView(collectionView)
-            collectionView.dismissProgress()
             return cell
         }
         return cell
@@ -119,12 +100,9 @@ extension CategoryViewController: UICollectionViewDataSource {
     private func setCell(_ cell: CategoryCollectionViewCell, indexPath: Int) {
         cell.categoryLabel.text = viewModel.getNameOrTitleAt(indexPath)
         if let image = viewModel.getImageAt(indexPath) {
-            
                 DispatchQueue.main.async {
                     cell.categoryImage.image = image
-                    cell.categoryImage.dismissProgress()
                 }
-            
         } else {
             cell.addLottieViewOnCategoryImage()
         }
