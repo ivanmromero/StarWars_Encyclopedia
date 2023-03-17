@@ -24,7 +24,7 @@ class SpinnerAnimationViewController: UIViewController {
     
     func addLottieAnimationToView(_ view: UIView) {
         if view.frame.size.height > view.frame.size.width {
-            self.view.frame.size = CGSize(width: view.frame.size.width*0.7, height: view.frame.size.height)
+            self.view.frame.size = CGSize(width: view.frame.size.width * 0.7, height: view.frame.size.height)
             self.view.center = CGPoint(x: view.bounds.size.width  / 2, y: view.bounds.size.height  / 3)
         } else if view.frame.size.height < view.frame.size.width {
             self.view.frame.size = CGSize(width: view.frame.size.width / 2, height: view.frame.size.height)

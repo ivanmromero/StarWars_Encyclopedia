@@ -55,6 +55,7 @@ class CategoryViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         collectionView.register(UINib(nibName: "CategoryCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "CategoryCell")
+        collectionView.indicatorStyle = .white
     }
     
     private func setupSearchBar() {

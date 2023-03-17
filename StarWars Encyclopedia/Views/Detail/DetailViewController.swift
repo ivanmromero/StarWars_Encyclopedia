@@ -36,12 +36,13 @@ class DetailViewController: UIViewController {
         detailTableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
         self.detailTableView.dataSource = self
         self.detailTableView.delegate = self
+        detailTableView.indicatorStyle = .white
     }
     
     private func setupBackButton() {
         let buttonItem = UIBarButtonItem()
         buttonItem.title = CategoryManager.shared.category!.rawValue
-        self.navigationController?.navigationBar.topItem?.backButtonTitle = CategoryManager.shared.category!.rawValue
+        self.navigationController?.navigationBar.topItem?.backBarButtonItem = buttonItem
     }
     
     private func setupCategoryImage() {

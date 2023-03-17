@@ -60,7 +60,7 @@ class RequestManager {
     
     func getURL(valueCategoryPath: String, valueIdPath: String? = nil) -> URL?{
         var url = URLComponents()
-        url.host = ProcessInfo.processInfo.environment["host"]
+        url.host = "swapi.dev"
         url.scheme = "https"
         
         if let valueIdPath = valueIdPath {

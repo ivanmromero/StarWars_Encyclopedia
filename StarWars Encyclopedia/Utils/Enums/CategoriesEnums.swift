@@ -30,13 +30,13 @@ enum Categories: String, CaseIterable {
     func getSingularCategoriesRawValue() -> String {
         switch self {
         case .people:
-            return "people"
+            return "Character"
         case .films:
             return "film"
         case .planets:
             return "planet"
         case .species:
-            return "specie"
+            return "species"
         case .starships:
             return "starship"
         case .vehicles:

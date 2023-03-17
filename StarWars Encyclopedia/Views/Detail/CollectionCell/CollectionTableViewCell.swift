@@ -33,6 +33,7 @@ class CollectionTableViewCell: UITableViewCell {
     private func setuphorizontalCollection() {
         horizontalCollectionView.register(UINib(nibName: "DetailCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "DetailCollectionCell")
         horizontalCollectionView.dataSource = self
+        horizontalCollectionView.indicatorStyle = .white
     }
     
     private func setupImageSpinner() {
