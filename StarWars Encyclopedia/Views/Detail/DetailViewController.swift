@@ -41,7 +41,7 @@ class DetailViewController: UIViewController {
     
     private func setupBackButton() {
         let buttonItem = UIBarButtonItem()
-        buttonItem.title = CategoryManager.shared.category!.rawValue
+        buttonItem.title = viewModel.getCategoryRawValue()
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = buttonItem
     }
     

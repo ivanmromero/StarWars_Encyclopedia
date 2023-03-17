@@ -71,7 +71,6 @@
 		D2FBEF0628F622DB008A867F /* StarshipsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0528F622DB008A867F /* StarshipsModel.swift */; };
 		D2FBEF0828F62379008A867F /* VehiclesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0728F62379008A867F /* VehiclesModel.swift */; };
 		D2FBEF0A28F624D6008A867F /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */; };
-		D2FBEF0E28F784B7008A867F /* CategoryManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF0D28F784B7008A867F /* CategoryManager.swift */; };
 		D2FBEF1428FF7DEB008A867F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */; };
 		D2FBEF1528FF7DEB008A867F /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */; };
 		D2FBEF1729074177008A867F /* DetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2FBEF1629074177008A867F /* DetailViewModel.swift */; };
@@ -170,7 +169,6 @@
 		D2FBEF0528F622DB008A867F /* StarshipsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipsModel.swift; sourceTree = "<group>"; };
 		D2FBEF0728F62379008A867F /* VehiclesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehiclesModel.swift; sourceTree = "<group>"; };
 		D2FBEF0928F624D6008A867F /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
-		D2FBEF0D28F784B7008A867F /* CategoryManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryManager.swift; sourceTree = "<group>"; };
 		D2FBEF1228FF7DEB008A867F /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D2FBEF1328FF7DEB008A867F /* DetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		D2FBEF1629074177008A867F /* DetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewModel.swift; sourceTree = "<group>"; };
@@ -335,7 +333,6 @@
 			children = (
 				D2F97D7229849A6D00462672 /* LottieAnimation */,
 				D2A0DA3928F22CE4006FF15C /* Enums */,
-				D2FBEF0D28F784B7008A867F /* CategoryManager.swift */,
 				D2DDEDDE297325A40006FCA3 /* ImageCacheManager.swift */,
 			);
 			path = Utils;
@@ -784,7 +781,6 @@
 				D2E8D5342980727800B862CF /* PeopleSection.swift in Sources */,
 				D2FBEF0A28F624D6008A867F /* CategoryViewModel.swift in Sources */,
 				D2A0DA3B28F22D13006FF15C /* CategoriesEnums.swift in Sources */,
-				D2FBEF0E28F784B7008A867F /* CategoryManager.swift in Sources */,
 				D2360AD728EE572E0010847F /* AppDelegate.swift in Sources */,
 				D2F97D8329A6FAD900462672 /* SpinnerAnimationViewController.swift in Sources */,
 				D2FBEEF828F4B18C008A867F /* RequestManager.swift in Sources */,

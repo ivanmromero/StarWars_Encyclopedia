@@ -17,6 +17,14 @@ class VehiclesCategory: CategoryDataManage {
     var resultSelected: VehicleResult?
     var nextPage: String?
     
+    func getCategorySelectedRawValue() -> String {
+        Categories.vehicles.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.vehicles.getSingularCategoriesRawValue()
+    }
+    
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue(label: "com.queue.vehicleSerial", qos: .userInteractive).async {
             let dowloadGroup: DispatchGroup = DispatchGroup()

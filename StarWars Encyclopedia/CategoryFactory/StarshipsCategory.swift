@@ -17,6 +17,14 @@ class StarshipsCategory: CategoryDataManage {
     var resultSelected: StarshipResult?
     var nextPage: String?
     
+    func getCategorySelectedRawValue() -> String {
+        Categories.starships.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.starships.getSingularCategoriesRawValue()
+    }
+    
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue(label: "com.queue.peopleSerial", qos: .userInteractive).async {
             let dowloadGroup: DispatchGroup = DispatchGroup()

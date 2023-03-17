@@ -17,6 +17,14 @@ class FilmsCategory: CategoryDataManage {
     var resultSelected: FilmResult?
     var nextPage: String?
     
+    func getCategorySelectedRawValue() -> String {
+        Categories.films.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.films.getSingularCategoriesRawValue()
+    }
+    
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue(label: "com.queue.filmSerial", qos: .userInteractive).async {
             let dowloadGroup: DispatchGroup = DispatchGroup()

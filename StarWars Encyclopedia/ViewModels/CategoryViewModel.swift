@@ -9,7 +9,6 @@ import Foundation
 import UIKit
 
 class CategoryViewModel {
-    private let category: Categories
     private let categoryDataManage: CategoryDataManage
     
     var searchText: String? {
@@ -26,9 +25,8 @@ class CategoryViewModel {
     var isSearching: Bool = false
     var isLoading: Bool = true
     
-    init() {
-        self.category = CategoryManager.shared.category!
-        self.categoryDataManage = CategoryDataManageFactory.buildCategoryDataManage(typeCategory: self.category)
+    init(categoryDataManage: CategoryDataManage) {
+        self.categoryDataManage = categoryDataManage
     }
     
     func getData(completion: @escaping ()->Void) {
@@ -72,5 +70,13 @@ class CategoryViewModel {
     
     func getCategoryDataManage() -> CategoryDataManage {
         categoryDataManage
+    }
+    
+    func getSingularCategoryRawValue() -> String {
+        categoryDataManage.getCategorySelectedSingularRawValue()
+    }
+    
+    func getCategoryRawValue() -> String {
+        categoryDataManage.getCategorySelectedRawValue()
     }
 }

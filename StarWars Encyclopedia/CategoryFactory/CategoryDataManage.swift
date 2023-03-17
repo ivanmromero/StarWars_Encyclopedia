@@ -28,4 +28,6 @@ protocol CategoryDataManage {
     func getSectionDataManageAt(_ index: Int) -> SectionDataManage?
     func setSearchResults(searchText: String)
     func setResultSelectedForSearchAt(index: Int)
+    func getCategorySelectedRawValue() -> String
+    func getCategorySelectedSingularRawValue() -> String
 }

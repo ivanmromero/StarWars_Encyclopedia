@@ -46,7 +46,8 @@ extension CategoriesViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         print(viewModel.getSelectedCategory(indexPath: indexPath.row))
-        CategoryManager.shared.category = viewModel.getSelectedCategory(indexPath: indexPath.row)
-        self.navigationController?.pushViewController(CategoryViewController(), animated: true)
+        let categoryDataManage = CategoryDataManageFactory.buildCategoryDataManage(typeCategory: viewModel.getSelectedCategory(indexPath: indexPath.row))
+        let viewModel = CategoryViewModel(categoryDataManage: categoryDataManage)
+        self.navigationController?.pushViewController(CategoryViewController(viewModel: viewModel), animated: true)
     }
 }

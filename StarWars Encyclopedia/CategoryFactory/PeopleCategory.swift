@@ -17,6 +17,14 @@ class PeopleCategory: CategoryDataManage {
     var searchResults: [PeopleResult]?
     var resultSelected: PeopleResult?
     
+    func getCategorySelectedRawValue() -> String {
+        Categories.people.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.people.getSingularCategoriesRawValue()
+    }
+    
     func getResults(completion: @escaping(Bool)->Void) {
         DispatchQueue(label: "com.queue.peopleSerial", qos: .userInteractive).async() {
             let dowloadGroup: DispatchGroup = DispatchGroup()

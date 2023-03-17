@@ -11,11 +11,19 @@ import UIKit
 class PlanetsCategory: CategoryDataManage {
     let request: RequestManager = RequestManager()
     let imageCacheManager: ImageCacheManager = ImageCacheManager()
+    var nextPage: String?
     
     var planetResults: [PlanetResult] = []
     var searchResults: [PlanetResult]?
     var resultSelected: PlanetResult?
-    var nextPage: String?
+    
+    func getCategorySelectedRawValue() -> String {
+        Categories.planets.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.planets.getSingularCategoriesRawValue()
+    }
     
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue(label: "com.queue.peopleSerial", qos: .userInteractive).async {

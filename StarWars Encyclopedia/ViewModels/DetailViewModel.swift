@@ -38,4 +38,12 @@ class DetailViewModel {
     func getSectionDataManage(index : Int) -> SectionDataManage? {
         categoryDataManage.getSectionDataManageAt(index)
     }
+    
+    func getSingularCategoryRawValue() -> String {
+        categoryDataManage.getCategorySelectedSingularRawValue()
+    }
+    
+    func getCategoryRawValue() -> String {
+        categoryDataManage.getCategorySelectedRawValue()
+    }
 }

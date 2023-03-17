@@ -12,8 +12,17 @@ class CategoryViewController: UIViewController {
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var viewModel: CategoryViewModel = CategoryViewModel()
+    private var viewModel: CategoryViewModel
     private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
+    
+    init(viewModel: CategoryViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: "CategoryViewController", bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +52,13 @@ class CategoryViewController: UIViewController {
     private func setupSearchBar() {
         searchBar.searchTextField.backgroundColor = .black
         searchBar.searchTextField.textColor = UIColor(named: "StarWarsColor")
-        searchBar.placeholder = "Find your favorite \(CategoryManager.shared.category!.getSingularCategoriesRawValue())"
+        searchBar.placeholder = "Find your favorite \(viewModel.getSingularCategoryRawValue())"
         searchBar.searchTextField.clearButtonMode = .never
         searchBar.delegate = self
     }
     
     private func setupCategoryLabel() {
-        categoryLabel.text = CategoryManager.shared.category?.rawValue
+        categoryLabel.text = viewModel.getCategoryRawValue()
     }
     
     private func setupBackButton() {

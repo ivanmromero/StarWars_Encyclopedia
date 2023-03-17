@@ -17,6 +17,14 @@ class SpeciesCategory: CategoryDataManage {
     var resultSelected: SpeciesResult?
     var nextPage: String?
     
+    func getCategorySelectedRawValue() -> String {
+        Categories.species.rawValue
+    }
+    
+    func getCategorySelectedSingularRawValue() -> String {
+        Categories.species.getSingularCategoriesRawValue()
+    }
+    
     func getResults(completion: @escaping (Bool) -> Void) {
         DispatchQueue(label: "com.queue.speciesSerial", qos: .userInteractive).async {
             let dowloadGroup: DispatchGroup = DispatchGroup()
