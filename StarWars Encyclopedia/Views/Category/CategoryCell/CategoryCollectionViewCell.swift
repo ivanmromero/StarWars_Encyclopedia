@@ -9,12 +9,16 @@ import UIKit
 import Lottie
 
 class CategoryCollectionViewCell: UICollectionViewCell {
+    //MARK: IBOutlets
     @IBOutlet weak var cellView: UIView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var categoryLabel: UILabel!
     
-    var noImageView: UIView? = nil
+    //MARK: Private Vars
+    private var noImageView: UIView? = nil
     
+
+    //MARK: Override funcs
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCellView()
@@ -33,6 +37,7 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    //MARK: setups
     private func setupCellView() {
         cellView.layer.masksToBounds = true
         cellView.layer.cornerRadius = 15
@@ -40,11 +45,11 @@ class CategoryCollectionViewCell: UICollectionViewCell {
         cellView.layer.borderColor = UIColor.white.cgColor
     }
     
-    func  addLottieViewOnCategoryImage() {
+    //MARK: addNoImageAnimation
+    func  addNoImageAnimationOnCategoryImage() {
         let noImageAnimation = NoImageViewController()
         noImageAnimation.view.frame = categoryImage.frame
         noImageView = noImageAnimation.view
         categoryImage.addSubview(noImageAnimation.view)
     }
-    
 }
