@@ -8,13 +8,16 @@
 import UIKit
 
 class CategoryViewController: UIViewController {
+    //MARK: IBOutlets
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var collectionView: UICollectionView!
     
-    private var viewModel: CategoryViewModel
+    //MARK: Private Cons
+    private let viewModel: CategoryViewModel
     private let spinnerAnimation: SpinnerAnimationViewController = SpinnerAnimationViewController()
     
+    //MARK: Inits
     init(viewModel: CategoryViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "CategoryViewController", bundle: nil)
@@ -24,6 +27,7 @@ class CategoryViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupSearchBar()
@@ -34,6 +38,7 @@ class CategoryViewController: UIViewController {
         spinnerAnimation.addLottieAnimationToView(self.collectionView)
     }
     
+    //MARK: setups
     private func setupData() {
         viewModel.getData {
             DispatchQueue.main.async {
@@ -68,7 +73,7 @@ class CategoryViewController: UIViewController {
     }
 }
 
-// MARK: UICollectionViewDataSource
+//MARK: - UICollectionViewDataSource
 extension CategoryViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if viewModel.isSearching {
@@ -118,7 +123,7 @@ extension CategoryViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: UICollectionViewDelegate
+//MARK: - UICollectionViewDelegate
 extension CategoryViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         viewModel.setSelectedResultAt(indexPath.row)
@@ -128,14 +133,14 @@ extension CategoryViewController: UICollectionViewDelegate {
     }
 }
 
-// MARK: UICollectionViewDelegateFlowLayout
+//MARK: - UICollectionViewDelegateFlowLayout
 extension CategoryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: (collectionView.bounds.width / 2), height: (collectionView.bounds.height / 3))
     }
 }
 
-// MARK: UISearchBarDelegate
+//MARK: - UISearchBarDelegate
 extension CategoryViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         viewModel.searchText = searchText
