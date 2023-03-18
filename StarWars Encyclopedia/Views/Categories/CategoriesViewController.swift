@@ -8,19 +8,19 @@
 import UIKit
 
 class CategoriesViewController: UIViewController {
-//MARK: IBOutlets
+    //MARK: IBOutlets
     @IBOutlet weak var tableView: UITableView!
     
-//MARK: Private Cons
+    //MARK: Private Cons
     private let viewModel = CategoriesViewModel()
     
-//MARK: viewDidLoad
+    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
     }
     
-//MARK: setups
+    //MARK: setups
     private func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self

@@ -8,20 +8,24 @@
 import UIKit
 
 class CategoriesTableViewCell: UITableViewCell {
+    //MARK: IBOutlets
     @IBOutlet weak var categoriesImage: UIImageView!
     @IBOutlet weak var categoriesName: UILabel!
     
+    //MARK: awakeFromNib
     override func awakeFromNib() {
         super.awakeFromNib()
         setupCell()
     }
     
+    //MARK: setups
     func setupCell() {
         self.contentView.layer.masksToBounds = true
         self.contentView.layer.cornerRadius = 15
         self.selectionStyle = .none
     }
     
+    //MARK: override funcs
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
