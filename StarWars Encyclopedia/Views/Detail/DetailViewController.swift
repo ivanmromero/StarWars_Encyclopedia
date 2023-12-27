@@ -8,15 +8,12 @@
 import UIKit
 
 class DetailViewController: UIViewController {
-    //MARK: IBOutlets
     @IBOutlet weak var detailTableView: UITableView!
     @IBOutlet weak var categoryImage: UIImageView!
     @IBOutlet weak var selectedCategoryLabel: UILabel!
-    
-    //MARK: Private Cons
-    private let viewModel: DetailViewModel
-    
-    //MARK: Inits
+
+    private var viewModel: DetailViewModel
+
     init(viewModel: DetailViewModel) {
         self.viewModel = viewModel
         super.init(nibName: "DetailViewController", bundle: nil)
@@ -26,7 +23,6 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    //MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         setupBackButton()
@@ -35,7 +31,6 @@ class DetailViewController: UIViewController {
         setupSelectedCategoryLabel()
     }
     
-    //MARK: setups
     private func setupDetailTableView() {
         detailTableView.register(UINib(nibName: "InfoTableViewCell", bundle: nil), forCellReuseIdentifier: "InfoCell")
         detailTableView.register(UINib(nibName: "CollectionTableViewCell", bundle: nil), forCellReuseIdentifier: "CollectionCell")
@@ -54,7 +49,9 @@ class DetailViewController: UIViewController {
         if let image = viewModel.getImage() {
             self.categoryImage.image = image
         } else {
-            addNoImageViewOnView(self.categoryImage)
+            let noImageView = NoImageViewController()
+            noImageView.view.frame = self.categoryImage.bounds
+            self.categoryImage.addSubview(noImageView.view)
         }
         self.categoryImage.backgroundColor = UIColor.black
         self.categoryImage.layer.borderWidth = 1
@@ -63,12 +60,6 @@ class DetailViewController: UIViewController {
         self.categoryImage.layer.cornerRadius = CGRectGetWidth(self.categoryImage.frame) / 2
         self.categoryImage.clipsToBounds = true
     }
-    
-    private func addNoImageViewOnView(_ view: UIView) {
-        let noImageView = NoImageViewController()
-        noImageView.view.frame = self.categoryImage.bounds
-        view.addSubview(noImageView.view)
-    }
 
     private func setupSelectedCategoryLabel() {
         self.selectedCategoryLabel.text = viewModel.getNameOrTitle()
@@ -76,44 +67,38 @@ class DetailViewController: UIViewController {
 }
 
 //MARK: - UITableViewDelegate
-
 extension DetailViewController: UITableViewDelegate {
-
-    //MARK: Setup Header tableView
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section != 0 {
-            let header = getHeaderOfTableView(width: tableView.bounds.size.width, height: getHeaderHeightConstant())
-            header.text = viewModel.getSectionNameAt(index: section)
-            
-            return header
+            let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.bounds.size.width, height: 30))
+            headerLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 20)
+            headerLabel.textColor = .white
+            headerLabel.text = viewModel.getSectionNameAt(index: section)
+            headerLabel.textAlignment = .center
+            headerLabel.sizeToFit()
+
+            return headerLabel
         }
-        
         return nil
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         if section != 0 {
-            return getHeaderHeightConstant()
+            return 30
         }
         return 1
     }
     
-    private func getHeaderHeightConstant() -> CGFloat { 30 }
-    
-    private func getHeaderOfTableView(width: CGFloat, height: CGFloat) -> UILabel {
-        let headerLabel = UILabel(frame: CGRect(x: 0, y: 0, width: width, height: height))
-        headerLabel.font = UIFont(name: "SFDistantGalaxy-Italic", size: 20)
-        headerLabel.textColor = .white
-        headerLabel.textAlignment = .center
-        headerLabel.sizeToFit()
-
-        return headerLabel
-    }
-    
-    //MARK: Setup Footer tableView
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        // UIView with darkGray background for section-separators as Section Footer
         if section != (viewModel.getCountOfSections() - 1) {
-            return getFooterOfTableView(width: tableView.bounds.size.width, height: getFooterHeightConstant())
+            let v = UIView(frame: CGRect(x: 0, y:0, width: tableView.frame.width, height: 20))
+            v.backgroundColor = .clear
+            let separator = UIView(frame: CGRect(x: 0, y: (v.frame.height/2), width: v.frame.width, height: 1))
+            separator.backgroundColor = .darkGray
+            v.addSubview(separator)
+            v.clipsToBounds = true
+            return v
         }
 
         return nil
@@ -121,21 +106,9 @@ extension DetailViewController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         if section != (viewModel.getCountOfSections() - 1) {
-            return getFooterHeightConstant()
+            return 20
         }
         return 1
-    }
-    
-    private func getFooterHeightConstant() -> CGFloat { 20 }
-    
-    private func getFooterOfTableView(width: CGFloat, height: CGFloat) -> UIView {
-        let view = UIView(frame: CGRect(x: 0, y:0, width: width, height: getFooterHeightConstant()))
-        view.backgroundColor = .clear
-        let separator = UIView(frame: CGRect(x: 0, y: (view.frame.height/2), width: view.frame.width, height: 1))
-        separator.backgroundColor = .darkGray
-        view.addSubview(separator)
-        view.clipsToBounds = true
-        return view
     }
 }
 

@@ -4,27 +4,36 @@ import UIKit
 #endif
 
 extension Bundle {
-  func getAnimationData(_ name: String, subdirectory: String? = nil) throws -> Data {
+  func getAnimationData(_ name: String, subdirectory: String? = nil) throws -> Data? {
     // Check for files in the bundle at the given path
     let name = name.removingJSONSuffix()
     if let url = url(forResource: name, withExtension: "json", subdirectory: subdirectory) {
       return try Data(contentsOf: url)
     }
 
-    // Check for data assets
+    // Check for data assets (not available on macOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || targetEnvironment(macCatalyst)
     let assetKey = subdirectory != nil ? "\(subdirectory ?? "")/\(name)" : name
-    return try Data(assetName: assetKey, in: self)
+    return NSDataAsset(name: assetKey, bundle: self)?.data
+    #else
+    return nil
+    #endif
   }
 
-  func dotLottieData(_ name: String, subdirectory: String? = nil) throws -> Data {
+  func dotLottieData(_ name: String, subdirectory: String? = nil) throws -> Data? {
     // Check for files in the bundle at the given path
     let name = name.removingDotLottieSuffix()
     if let url = url(forResource: name, withExtension: "lottie", subdirectory: subdirectory) {
       return try Data(contentsOf: url)
     }
 
+    // Check for data assets (not available on macOS)
+    #if os(iOS) || os(tvOS) || os(watchOS) || targetEnvironment(macCatalyst)
     let assetKey = subdirectory != nil ? "\(subdirectory ?? "")/\(name)" : name
-    return try Data(assetName: assetKey, in: self)
+    return NSDataAsset(name: assetKey, bundle: self)?.data
+    #else
+    return nil
+    #endif
   }
 }
 

@@ -115,58 +115,20 @@ extension KeypathSearchable {
     return nil
   }
 
-  /// Searches this layer's keypaths to find the keypath for the given layer
-  func keypath(for layer: CALayer) -> AnimationKeypath? {
-    let allKeypaths = layerKeypaths()
-    return allKeypaths[layer]
-  }
-
-  /// Computes the list of animation keypaths that descend from this layer
-  func allKeypaths(for keyPath: AnimationKeypath? = nil) -> [String] {
-    var allKeypaths: [String] = []
-
+  func logKeypaths(for keyPath: AnimationKeypath?, logger: LottieLogger) {
     let newKeypath: AnimationKeypath
     if let previousKeypath = keyPath {
       newKeypath = previousKeypath.appendingKey(keypathName)
     } else {
       newKeypath = AnimationKeypath(keys: [keypathName])
     }
-
-    allKeypaths.append(newKeypath.fullPath)
-
+    logger.info(newKeypath.fullPath)
     for key in keypathProperties.keys {
-      allKeypaths.append(newKeypath.appendingKey(key).fullPath)
+      logger.info(newKeypath.appendingKey(key).fullPath)
     }
-
     for child in childKeypaths {
-      allKeypaths.append(contentsOf: child.allKeypaths(for: newKeypath))
+      child.logKeypaths(for: newKeypath, logger: logger)
     }
-
-    return allKeypaths
-  }
-
-  /// Computes the list of animation keypaths that descend from this layer
-  func layerKeypaths(for keyPath: AnimationKeypath? = nil) -> [CALayer: AnimationKeypath] {
-    var allKeypaths: [CALayer: AnimationKeypath] = [:]
-
-    let newKeypath: AnimationKeypath
-    if let previousKeypath = keyPath {
-      newKeypath = previousKeypath.appendingKey(keypathName)
-    } else {
-      newKeypath = AnimationKeypath(keys: [keypathName])
-    }
-
-    if let layer = self as? CALayer {
-      allKeypaths[layer] = newKeypath
-    }
-
-    for child in childKeypaths {
-      for (layer, keypath) in child.layerKeypaths(for: newKeypath) {
-        allKeypaths[layer] = keypath
-      }
-    }
-
-    return allKeypaths
   }
 }
 
@@ -203,8 +165,8 @@ extension AnimationKeypath {
     guard
       let currentKey = currentKey,
       currentKey.equalsKeypath(keyname),
-      keys.count > 1
-    else {
+      keys.count > 1 else
+    {
       // Current key either doesnt match or we are on the last key.
       return nil
     }

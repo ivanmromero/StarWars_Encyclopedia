@@ -55,25 +55,14 @@ final class Transform: Codable, DictionaryInitializable {
       KeyframeGroup(LottieVector3D(x: Double(100), y: 100, z: 100))
 
     // Rotation
-    if let rotation = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationX) {
-      rotationX = rotation
+    if let rotationZ = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationZ) {
+      rotation = rotationZ
     } else {
-      rotationX = KeyframeGroup(LottieVector1D(0))
-    }
-
-    if let rotation = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationY) {
-      rotationY = rotation
-    } else {
-      rotationY = KeyframeGroup(LottieVector1D(0))
-    }
-
-    if let rotation = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationZ) {
-      rotationZ = rotation
-    } else {
-      rotationZ = try container
+      rotation = try container
         .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotation) ?? KeyframeGroup(LottieVector1D(0))
     }
-    rotation = nil
+    rotationZ = nil
+
     // Opacity
     opacity = try container
       .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .opacity) ?? KeyframeGroup(LottieVector1D(100))
@@ -125,39 +114,20 @@ final class Transform: Codable, DictionaryInitializable {
     } else {
       scale = KeyframeGroup(LottieVector3D(x: Double(100), y: 100, z: 100))
     }
-
     if
-      let rotationDictionary = dictionary[CodingKeys.rotationX.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationX = rotation
-    } else {
-      rotationX = KeyframeGroup(LottieVector1D(0))
-    }
-
-    if
-      let rotationDictionary = dictionary[CodingKeys.rotationY.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationY = rotation
-    } else {
-      rotationY = KeyframeGroup(LottieVector1D(0))
-    }
-
-    if
-      let rotationDictionary = dictionary[CodingKeys.rotation.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationZ = rotation
-    } else if
       let rotationDictionary = dictionary[CodingKeys.rotationZ.rawValue] as? [String: Any],
       let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
     {
-      rotationZ = rotation
+      self.rotation = rotation
+    } else if
+      let rotationDictionary = dictionary[CodingKeys.rotation.rawValue] as? [String: Any],
+      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
+    {
+      self.rotation = rotation
     } else {
-      rotationZ = KeyframeGroup(LottieVector1D(0))
+      rotation = KeyframeGroup(LottieVector1D(0))
     }
-    rotation = nil
+    rotationZ = nil
     if
       let opacityDictionary = dictionary[CodingKeys.opacity.rawValue] as? [String: Any],
       let opacity = try? KeyframeGroup<LottieVector1D>(dictionary: opacityDictionary)
@@ -177,8 +147,6 @@ final class Transform: Codable, DictionaryInitializable {
     case positionY = "py"
     case scale = "s"
     case rotation = "r"
-    case rotationX = "rx"
-    case rotationY = "ry"
     case rotationZ = "rz"
     case opacity = "o"
   }
@@ -201,23 +169,15 @@ final class Transform: Codable, DictionaryInitializable {
   /// The positionY of the transform. This is nil if the position property is set.
   let positionY: KeyframeGroup<LottieVector1D>?
 
-  /// The scale of the transform.
+  /// The scale of the transform
   let scale: KeyframeGroup<LottieVector3D>
 
-  /// The rotation of the transform on X axis.
-  let rotationX: KeyframeGroup<LottieVector1D>
-
-  /// The rotation of the transform on Y axis.
-  let rotationY: KeyframeGroup<LottieVector1D>
-
-  /// The rotation of the transform on Z axis.
-  let rotationZ: KeyframeGroup<LottieVector1D>
+  /// The rotation of the transform. Note: This is single dimensional rotation.
+  let rotation: KeyframeGroup<LottieVector1D>
 
   /// The opacity of the transform.
   let opacity: KeyframeGroup<LottieVector1D>
 
-  // MARK: Private
-
-  /// Here for the CodingKeys.rotation = "r". `r` and `rz` are the same.
-  private let rotation: KeyframeGroup<LottieVector1D>?
+  /// Should always be nil.
+  let rotationZ: KeyframeGroup<LottieVector1D>?
 }

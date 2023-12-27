@@ -23,10 +23,10 @@ final class PolygonNodeProperties: NodePropertyMap, KeypathSearchable {
     rotation = NodeProperty(provider: KeyframeInterpolator(keyframes: star.rotation.keyframes))
     points = NodeProperty(provider: KeyframeInterpolator(keyframes: star.points.keyframes))
     keypathProperties = [
-      PropertyName.position.rawValue : position,
+      "Position" : position,
       "Outer Radius" : outerRadius,
       "Outer Roundedness" : outerRoundedness,
-      PropertyName.rotation.rawValue : rotation,
+      "Rotation" : rotation,
       "Points" : points,
     ]
     properties = Array(keypathProperties.values)

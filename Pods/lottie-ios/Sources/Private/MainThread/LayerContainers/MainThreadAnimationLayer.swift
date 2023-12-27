@@ -21,9 +21,8 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
   init(
     animation: LottieAnimation,
     imageProvider: AnimationImageProvider,
-    textProvider: AnimationKeypathTextProvider,
+    textProvider: AnimationTextProvider,
     fontProvider: AnimationFontProvider,
-    maskAnimationToBounds: Bool,
     logger: LottieLogger)
   {
     layerImageProvider = LayerImageProvider(imageProvider: imageProvider, assets: animation.assetLibrary?.imageAssets)
@@ -32,16 +31,14 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
     animationLayers = []
     self.logger = logger
     super.init()
-    masksToBounds = maskAnimationToBounds
+    masksToBounds = true
     bounds = animation.bounds
     let layers = animation.layers.initializeCompositionLayers(
       assetLibrary: animation.assetLibrary,
       layerImageProvider: layerImageProvider,
-      layerTextProvider: layerTextProvider,
       textProvider: textProvider,
       fontProvider: fontProvider,
-      frameRate: CGFloat(animation.framerate),
-      rootAnimationLayer: self)
+      frameRate: CGFloat(animation.framerate))
 
     var imageLayers = [ImageCompositionLayer]()
     var textLayers = [TextCompositionLayer]()
@@ -141,26 +138,13 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
     if respectAnimationFrameRate {
       newFrame = floor(newFrame)
     }
-    for animationLayer in animationLayers {
-      animationLayer.displayWithFrame(frame: newFrame, forceUpdates: forceDisplayUpdateOnEachFrame)
-    }
+    animationLayers.forEach { $0.displayWithFrame(frame: newFrame, forceUpdates: false) }
   }
 
   // MARK: Internal
 
   /// The animatable Current Frame Property
   @NSManaged var currentFrame: CGFloat
-
-  /// The parent `LottieAnimationLayer` that manages this layer
-  weak var lottieAnimationLayer: LottieAnimationLayer?
-
-  /// Whether or not to use `forceDisplayUpdate()` when rendering each individual frame.
-  ///  - The main thread rendering engine implements optimizations to decrease the amount
-  ///    of properties that have to be re-rendered on each frame. There are some cases
-  ///    where this can result in bugs / incorrect behavior, so we allow it to be disabled.
-  ///  - Forcing a full render on every frame will decrease performance, and is not recommended
-  ///    except as a workaround to a bug in the main thread rendering engine.
-  var forceDisplayUpdateOnEachFrame = false
 
   var animationLayers: ContiguousArray<CompositionLayer>
 
@@ -187,13 +171,11 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
 
   var renderScale: CGFloat = 1 {
     didSet {
-      for animationLayer in animationLayers {
-        animationLayer.renderScale = renderScale
-      }
+      animationLayers.forEach { $0.renderScale = renderScale }
     }
   }
 
-  var textProvider: AnimationKeypathTextProvider {
+  var textProvider: AnimationTextProvider {
     get { layerTextProvider.textProvider }
     set { layerTextProvider.textProvider = newValue }
   }
@@ -213,21 +195,12 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
 
   /// Forces the view to update its drawing.
   func forceDisplayUpdate() {
-    for animationLayer in animationLayers {
-      animationLayer.displayWithFrame(frame: currentFrame, forceUpdates: true)
-    }
+    animationLayers.forEach { $0.displayWithFrame(frame: currentFrame, forceUpdates: true) }
   }
 
   func logHierarchyKeypaths() {
     logger.info("Lottie: Logging Animation Keypaths")
-
-    for keypath in allHierarchyKeypaths() {
-      logger.info(keypath)
-    }
-  }
-
-  func allHierarchyKeypaths() -> [String] {
-    animationLayers.flatMap { $0.allKeypaths() }
+    animationLayers.forEach { $0.logKeypaths(for: nil, logger: self.logger) }
   }
 
   func setValueProvider(_ valueProvider: AnyValueProvider, keypath: AnimationKeypath) {
@@ -269,15 +242,6 @@ final class MainThreadAnimationLayer: CALayer, RootAnimationLayer {
     for layer in animationLayers {
       if let foundLayer = layer.layer(for: keypath) {
         return foundLayer
-      }
-    }
-    return nil
-  }
-
-  func keypath(for layerToFind: CALayer) -> AnimationKeypath? {
-    for layer in animationLayers {
-      if let foundKeypath = layer.keypath(for: layerToFind) {
-        return foundKeypath
       }
     }
     return nil

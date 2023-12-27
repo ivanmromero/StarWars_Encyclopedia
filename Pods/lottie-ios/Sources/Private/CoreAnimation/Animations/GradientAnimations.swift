@@ -57,7 +57,7 @@ extension GradientRenderLayer {
 
     try addAnimation(
       for: .colors,
-      keyframes: gradient.colors,
+      keyframes: gradient.colors.keyframes,
       value: { colorComponents in
         gradient.colorConfiguration(from: colorComponents, type: type).map { $0.color }
       },
@@ -65,7 +65,7 @@ extension GradientRenderLayer {
 
     try addAnimation(
       for: .locations,
-      keyframes: gradient.colors,
+      keyframes: gradient.colors.keyframes,
       value: { colorComponents in
         gradient.colorConfiguration(from: colorComponents, type: type).map { $0.location }
       },
@@ -94,7 +94,7 @@ extension GradientRenderLayer {
 
     try addAnimation(
       for: .startPoint,
-      keyframes: gradient.startPoint,
+      keyframes: gradient.startPoint.keyframes,
       value: { absoluteStartPoint in
         percentBasedPointInBounds(from: absoluteStartPoint.pointValue)
       },
@@ -102,7 +102,7 @@ extension GradientRenderLayer {
 
     try addAnimation(
       for: .endPoint,
-      keyframes: gradient.endPoint,
+      keyframes: gradient.endPoint.keyframes,
       value: { absoluteEndPoint in
         percentBasedPointInBounds(from: absoluteEndPoint.pointValue)
       },
@@ -128,13 +128,13 @@ extension GradientRenderLayer {
 
     try addAnimation(
       for: .startPoint,
-      keyframes: combinedKeyframes,
+      keyframes: combinedKeyframes.keyframes,
       value: \.startPoint,
       context: context)
 
     try addAnimation(
       for: .endPoint,
-      keyframes: combinedKeyframes,
+      keyframes: combinedKeyframes.keyframes,
       value: \.endPoint,
       context: context)
   }

@@ -26,17 +26,11 @@ final class ValueProviderStore {
       because that would require calling the closure on the main thread once per frame.
       """)
 
-    let supportedProperties = PropertyName.allCases.map { $0.rawValue }
-    let propertyBeingCustomized = keypath.keys.last ?? ""
-
+    // TODO: Support more value types
     logger.assert(
-      supportedProperties.contains(propertyBeingCustomized),
-      """
-      The Core Animation rendering engine currently doesn't support customizing "\(propertyBeingCustomized)" \
-      properties. Supported properties are: \(supportedProperties.joined(separator: ", ")).
-      """)
+      keypath.keys.last == PropertyName.color.rawValue,
+      "The Core Animation rendering engine currently only supports customizing color values")
 
-    valueProviders.removeAll(where: { $0.keypath == keypath })
     valueProviders.append((keypath: keypath, valueProvider: valueProvider))
   }
 
@@ -48,7 +42,9 @@ final class ValueProviderStore {
     context: LayerAnimationContext)
     throws -> KeyframeGroup<Value>?
   {
-    context.recordHierarchyKeypath?(keypath.fullPath)
+    if context.logHierarchyKeypaths {
+      context.logger.info(keypath.fullPath)
+    }
 
     guard let anyValueProvider = valueProvider(for: keypath) else {
       return nil
@@ -73,11 +69,9 @@ final class ValueProviderStore {
 
     // Convert the type-erased keyframe values using this `CustomizableProperty`'s conversion closure
     let typedKeyframes = typeErasedKeyframes.compactMap { typeErasedKeyframe -> Keyframe<Value>? in
-      guard let convertedValue = customizableProperty.conversion(typeErasedKeyframe.value, anyValueProvider) else {
+      guard let convertedValue = customizableProperty.conversion(typeErasedKeyframe.value) else {
         logger.assertionFailure("""
-          Could not convert value of type \(type(of: typeErasedKeyframe.value)) from \(anyValueProvider) to expected type \(
-          Value
-          .self)
+          Could not convert value of type \(type(of: typeErasedKeyframe.value)) to expected type \(Value.self)
           """)
         return nil
       }
@@ -96,9 +90,10 @@ final class ValueProviderStore {
   // MARK: Private
 
   private let logger: LottieLogger
+
   private var valueProviders = [(keypath: AnimationKeypath, valueProvider: AnyValueProvider)]()
 
-  /// Retrieves the most-recently-registered Value Provider that matches the given keypath.
+  /// Retrieves the most-recently-registered Value Provider that matches the given keypat
   private func valueProvider(for keypath: AnimationKeypath) -> AnyValueProvider? {
     // Find the last keypath matching the given keypath,
     // so we return the value provider that was registered most-recently
@@ -130,21 +125,13 @@ extension AnimationKeypath {
       + keypath.keys.joined(separator: "\\.") // match this keypath, escaping "." characters
       + "$" // match the end of the string
 
-    // Replace the ** and * wildcards with markers that are guaranteed to be unique
-    // and won't conflict with regex syntax (e.g. `.*`).
-    let doubleWildcardMarker = UUID().uuidString
-    let singleWildcardMarker = UUID().uuidString
-    regex = regex.replacingOccurrences(of: "**", with: doubleWildcardMarker)
-    regex = regex.replacingOccurrences(of: "*", with: singleWildcardMarker)
+    // ** wildcards match anything
+    //  - "**.Color" matches both "Layer 1.Color" and "Layer 1.Layer 2.Color"
+    regex = regex.replacingOccurrences(of: "**", with: ".+")
 
-    // "**" wildcards match zero or more path segments separated by "\\."
-    //  - "**.Color" matches any of "Color", "Layer 1.Color", and "Layer 1.Layer 2.Color"
-    regex = regex.replacingOccurrences(of: "\(doubleWildcardMarker)\\.", with: ".*")
-    regex = regex.replacingOccurrences(of: doubleWildcardMarker, with: ".*")
-
-    // "*" wildcards match exactly one path component
+    // * wildcards match any individual path component
     //  - "*.Color" matches "Layer 1.Color" but not "Layer 1.Layer 2.Color"
-    regex = regex.replacingOccurrences(of: singleWildcardMarker, with: "[^.]+")
+    regex = regex.replacingOccurrences(of: "*", with: "[^.]+")
 
     return fullPath.range(of: regex, options: .regularExpression) != nil
   }

@@ -54,14 +54,14 @@ extension CAShapeLayer {
     if let strokeColor = stroke.strokeColor {
       try addAnimation(
         for: .strokeColor,
-        keyframes: strokeColor,
+        keyframes: strokeColor.keyframes,
         value: \.cgColorValue,
         context: context)
     }
 
     try addAnimation(
       for: .lineWidth,
-      keyframes: stroke.width,
+      keyframes: stroke.width.keyframes,
       value: \.cgFloatValue,
       context: context)
 
@@ -79,7 +79,7 @@ extension CAShapeLayer {
 
       try addAnimation(
         for: .lineDashPhase,
-        keyframes: KeyframeGroup(keyframes: dashPhase),
+        keyframes: dashPhase,
         value: \.cgFloatValue,
         context: context)
     }

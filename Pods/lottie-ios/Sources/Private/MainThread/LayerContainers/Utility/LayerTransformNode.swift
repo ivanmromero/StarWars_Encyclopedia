@@ -18,19 +18,14 @@ final class LayerTransformProperties: NodePropertyMap, KeypathSearchable {
   init(transform: Transform) {
     anchor = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.anchorPoint.keyframes))
     scale = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.scale.keyframes))
-    rotationX = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.rotationX.keyframes))
-    rotationY = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.rotationY.keyframes))
-    rotationZ = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.rotationZ.keyframes))
+    rotation = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.rotation.keyframes))
     opacity = NodeProperty(provider: KeyframeInterpolator(keyframes: transform.opacity.keyframes))
 
     var propertyMap: [String: AnyNodeProperty] = [
       "Anchor Point" : anchor,
-      PropertyName.scale.rawValue : scale,
-      PropertyName.rotation.rawValue: rotationZ,
-      "Rotation X" : rotationX,
-      "Rotation Y" : rotationY,
-      "Rotation Z" : rotationZ,
-      PropertyName.opacity.rawValue : opacity,
+      "Scale" : scale,
+      "Rotation" : rotation,
+      "Opacity" : opacity,
     ]
 
     if
@@ -46,7 +41,7 @@ final class LayerTransformProperties: NodePropertyMap, KeypathSearchable {
       position = nil
     } else if let positionKeyframes = transform.position?.keyframes {
       let position: NodeProperty<LottieVector3D> = NodeProperty(provider: KeyframeInterpolator(keyframes: positionKeyframes))
-      propertyMap[PropertyName.position.rawValue] = position
+      propertyMap["Position"] = position
       self.position = position
       positionX = nil
       positionY = nil
@@ -69,9 +64,7 @@ final class LayerTransformProperties: NodePropertyMap, KeypathSearchable {
 
   let anchor: NodeProperty<LottieVector3D>
   let scale: NodeProperty<LottieVector3D>
-  let rotationX: NodeProperty<LottieVector1D>
-  let rotationY: NodeProperty<LottieVector1D>
-  let rotationZ: NodeProperty<LottieVector1D>
+  let rotation: NodeProperty<LottieVector1D>
   let position: NodeProperty<LottieVector3D>?
   let positionX: NodeProperty<LottieVector1D>?
   let positionY: NodeProperty<LottieVector1D>?
@@ -137,9 +130,7 @@ class LayerTransformNode: AnimatorNode {
       anchor: transformProperties.anchor.value.pointValue,
       position: position,
       scale: transformProperties.scale.value.sizeValue,
-      rotationX: transformProperties.rotationX.value.cgFloatValue,
-      rotationY: transformProperties.rotationY.value.cgFloatValue,
-      rotationZ: transformProperties.rotationZ.value.cgFloatValue,
+      rotation: transformProperties.rotation.value.cgFloatValue,
       skew: nil,
       skewAxis: nil)
 

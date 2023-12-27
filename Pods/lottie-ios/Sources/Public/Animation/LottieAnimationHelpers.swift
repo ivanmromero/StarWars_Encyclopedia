@@ -59,7 +59,9 @@ extension LottieAnimation {
 
     do {
       /// Decode animation.
-      let json = try bundle.getAnimationData(name, subdirectory: subdirectory)
+      guard let json = try bundle.getAnimationData(name, subdirectory: subdirectory) else {
+        return nil
+      }
       let animation = try LottieAnimation.from(data: json)
       animationCache?.setAnimation(animation, forKey: cacheKey)
       return animation
@@ -95,10 +97,7 @@ extension LottieAnimation {
       animationCache?.setAnimation(animation, forKey: filepath)
       return animation
     } catch {
-      LottieLogger.shared.warn("""
-        Failed to load animation from filepath \(filepath)
-        with underlying error: \(error.localizedDescription)
-        """)
+      /// Decoding Error.
       return nil
     }
   }
@@ -126,19 +125,18 @@ extension LottieAnimation {
       return animation
     }
 
+    /// Load jsonData from Asset
+    guard let json = Data.jsonData(from: name, in: bundle) else {
+      return nil
+    }
+
     do {
-      /// Load jsonData from Asset
-      let json = try Data(assetName: name, in: bundle)
       /// Decode animation.
       let animation = try LottieAnimation.from(data: json)
       animationCache?.setAnimation(animation, forKey: cacheKey)
       return animation
     } catch {
-      LottieLogger.shared.warn("""
-        Failed to load animation with asset name \(name)
-        in \(bundle.bundlePath)
-        with underlying error: \(error.localizedDescription)
-        """)
+      /// Decoding error.
       return nil
     }
   }

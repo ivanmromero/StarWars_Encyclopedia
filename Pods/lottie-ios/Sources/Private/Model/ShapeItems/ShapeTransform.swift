@@ -22,25 +22,8 @@ final class ShapeTransform: ShapeItem {
     scale = try container
       .decodeIfPresent(KeyframeGroup<LottieVector3D>.self, forKey: .scale) ??
       KeyframeGroup(LottieVector3D(x: Double(100), y: 100, z: 100))
-
-    rotationX = try container
-      .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationX) ?? KeyframeGroup(LottieVector1D(0))
-    rotationY = try container
-      .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationY) ?? KeyframeGroup(LottieVector1D(0))
-    if
-      let rotation = try container
-        .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotation)
-    {
-      rotationZ = rotation
-    } else if
-      let rotation = try container
-        .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotationZ)
-    {
-      rotationZ = rotation
-    } else {
-      rotationZ = KeyframeGroup(LottieVector1D(0))
-    }
-
+    rotation = try container
+      .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .rotation) ?? KeyframeGroup(LottieVector1D(0))
     opacity = try container
       .decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .opacity) ?? KeyframeGroup(LottieVector1D(100))
     skew = try container.decodeIfPresent(KeyframeGroup<LottieVector1D>.self, forKey: .skew) ?? KeyframeGroup(LottieVector1D(0))
@@ -74,39 +57,14 @@ final class ShapeTransform: ShapeItem {
     } else {
       scale = KeyframeGroup(LottieVector3D(x: Double(100), y: 100, z: 100))
     }
-
-    if
-      let rotationDictionary = dictionary[CodingKeys.rotationX.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationX = rotation
-    } else {
-      rotationX = KeyframeGroup(LottieVector1D(0))
-    }
-
-    if
-      let rotationDictionary = dictionary[CodingKeys.rotationY.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationY = rotation
-    } else {
-      rotationY = KeyframeGroup(LottieVector1D(0))
-    }
-
     if
       let rotationDictionary = dictionary[CodingKeys.rotation.rawValue] as? [String: Any],
       let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
     {
-      rotationZ = rotation
-    } else if
-      let rotationDictionary = dictionary[CodingKeys.rotationZ.rawValue] as? [String: Any],
-      let rotation = try? KeyframeGroup<LottieVector1D>(dictionary: rotationDictionary)
-    {
-      rotationZ = rotation
+      self.rotation = rotation
     } else {
-      rotationZ = KeyframeGroup(LottieVector1D(0))
+      rotation = KeyframeGroup(LottieVector1D(0))
     }
-
     if
       let opacityDictionary = dictionary[CodingKeys.opacity.rawValue] as? [String: Any],
       let opacity = try? KeyframeGroup<LottieVector1D>(dictionary: opacityDictionary)
@@ -131,7 +89,6 @@ final class ShapeTransform: ShapeItem {
     } else {
       skewAxis = KeyframeGroup(LottieVector1D(0))
     }
-
     try super.init(dictionary: dictionary)
   }
 
@@ -146,14 +103,8 @@ final class ShapeTransform: ShapeItem {
   /// Scale
   let scale: KeyframeGroup<LottieVector3D>
 
-  /// Rotation on X axis
-  let rotationX: KeyframeGroup<LottieVector1D>
-
-  /// Rotation on Y axis
-  let rotationY: KeyframeGroup<LottieVector1D>
-
-  /// Rotation on Z axis
-  let rotationZ: KeyframeGroup<LottieVector1D>
+  /// Rotation
+  let rotation: KeyframeGroup<LottieVector1D>
 
   /// opacity
   let opacity: KeyframeGroup<LottieVector1D>
@@ -164,15 +115,22 @@ final class ShapeTransform: ShapeItem {
   /// Skew Axis
   let skewAxis: KeyframeGroup<LottieVector1D>
 
+  /// Whether or not this transform has a non-zero skew value
+  var hasSkew: Bool {
+    guard !skew.keyframes.isEmpty, !skewAxis.keyframes.isEmpty else {
+      return false
+    }
+
+    return skew.keyframes.contains(where: { $0.value.cgFloatValue != 0 })
+  }
+
   override func encode(to encoder: Encoder) throws {
     try super.encode(to: encoder)
     var container = encoder.container(keyedBy: CodingKeys.self)
     try container.encode(anchor, forKey: .anchor)
     try container.encode(position, forKey: .position)
     try container.encode(scale, forKey: .scale)
-    try container.encode(rotationX, forKey: .rotationX)
-    try container.encode(rotationY, forKey: .rotationY)
-    try container.encode(rotationZ, forKey: .rotationZ)
+    try container.encode(rotation, forKey: .rotation)
     try container.encode(opacity, forKey: .opacity)
     try container.encode(skew, forKey: .skew)
     try container.encode(skewAxis, forKey: .skewAxis)
@@ -185,9 +143,6 @@ final class ShapeTransform: ShapeItem {
     case position = "p"
     case scale = "s"
     case rotation = "r"
-    case rotationX = "rx"
-    case rotationY = "ry"
-    case rotationZ = "rz"
     case opacity = "o"
     case skew = "sk"
     case skewAxis = "sa"
